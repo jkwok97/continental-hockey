@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/ui/tab",
+  "sourceRoot": "libs/shared/ui/tab/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui/tab/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/tab"],
+      "options": {
+        "jestConfig": "libs/shared/ui/tab/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

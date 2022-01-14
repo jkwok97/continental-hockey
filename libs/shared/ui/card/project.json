@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/ui/card",
+  "sourceRoot": "libs/shared/ui/card/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui/card/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/card"],
+      "options": {
+        "jestConfig": "libs/shared/ui/card/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

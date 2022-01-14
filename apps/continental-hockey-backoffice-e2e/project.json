@@ -1,0 +1,30 @@
+{
+  "root": "apps/continental-hockey-backoffice-e2e",
+  "sourceRoot": "apps/continental-hockey-backoffice-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/continental-hockey-backoffice-e2e/cypress.json",
+        "devServerTarget": "continental-hockey-backoffice:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "continental-hockey-backoffice:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/continental-hockey-backoffice-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["continental-hockey-backoffice"]
+}

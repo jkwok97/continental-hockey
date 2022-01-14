@@ -1,0 +1,56 @@
+{
+  "root": "apps/continental-hockey-backoffice",
+  "sourceRoot": "apps/continental-hockey-backoffice",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "root": "apps/continental-hockey-backoffice",
+        "outputPath": "dist/apps/continental-hockey-backoffice"
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/next:server",
+      "options": {
+        "buildTarget": "continental-hockey-backoffice:build",
+        "dev": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "continental-hockey-backoffice:build:production",
+          "dev": false
+        }
+      }
+    },
+    "export": {
+      "executor": "@nrwl/next:export",
+      "options": {
+        "buildTarget": "continental-hockey-backoffice:build:production"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/continental-hockey-backoffice"],
+      "options": {
+        "jestConfig": "apps/continental-hockey-backoffice/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/continental-hockey-backoffice/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

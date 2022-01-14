@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/ui/field-set",
+  "sourceRoot": "libs/shared/ui/field-set/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui/field-set/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/field-set"],
+      "options": {
+        "jestConfig": "libs/shared/ui/field-set/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

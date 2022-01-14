@@ -2,6 +2,16 @@
   "version": 2,
   "projects": {
     "continental-hockey": "apps/continental-hockey",
-    "continental-hockey-e2e": "apps/continental-hockey-e2e"
+    "continental-hockey-backoffice": "apps/continental-hockey-backoffice",
+    "continental-hockey-backoffice-e2e": "apps/continental-hockey-backoffice-e2e",
+    "continental-hockey-e2e": "apps/continental-hockey-e2e",
+    "shared-ui-button": "libs/shared/ui/button",
+    "shared-ui-card": "libs/shared/ui/card",
+    "shared-ui-divider": "libs/shared/ui/divider",
+    "shared-ui-field-set": "libs/shared/ui/field-set",
+    "shared-ui-input": "libs/shared/ui/input",
+    "shared-ui-logos": "libs/shared/ui/logos",
+    "shared-ui-tab": "libs/shared/ui/tab",
+    "shared-ui-table": "libs/shared/ui/table"
   }
 }
