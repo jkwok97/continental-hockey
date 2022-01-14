@@ -9,7 +9,14 @@
       "defaultConfiguration": "production",
       "options": {
         "root": "apps/continental-hockey",
-        "outputPath": "dist/apps/continental-hockey"
+        "outputPath": "dist/apps/continental-hockey",
+        "assets": [
+          {
+            "input": "libs/shared/ui/logos/src/assets",
+            "glob": "**/*",
+            "output": "assets/logos"
+          }
+        ]
       },
       "configurations": {
         "production": {}
@@ -50,5 +57,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["app"]
 }
