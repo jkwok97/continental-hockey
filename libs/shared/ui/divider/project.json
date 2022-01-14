@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/divider",
   "sourceRoot": "libs/shared/ui/divider/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

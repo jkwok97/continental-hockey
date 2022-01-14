@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/field-set",
   "sourceRoot": "libs/shared/ui/field-set/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

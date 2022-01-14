@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/logos",
   "sourceRoot": "libs/shared/ui/logos/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/table",
   "sourceRoot": "libs/shared/ui/table/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

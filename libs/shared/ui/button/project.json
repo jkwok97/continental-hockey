@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/button",
   "sourceRoot": "libs/shared/ui/button/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

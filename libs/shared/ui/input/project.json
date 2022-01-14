@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/input",
   "sourceRoot": "libs/shared/ui/input/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
