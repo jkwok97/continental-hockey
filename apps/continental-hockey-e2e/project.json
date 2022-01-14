@@ -1,0 +1,28 @@
+{
+  "root": "apps/continental-hockey-e2e",
+  "sourceRoot": "apps/continental-hockey-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/continental-hockey-e2e/cypress.json",
+        "devServerTarget": "continental-hockey:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "continental-hockey:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/continental-hockey-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["continental-hockey"]
+}

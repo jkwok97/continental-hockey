@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "continental-hockey": "apps/continental-hockey",
+    "continental-hockey-e2e": "apps/continental-hockey-e2e"
+  }
+}
