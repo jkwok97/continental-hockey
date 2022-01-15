@@ -18,7 +18,7 @@ const SharedUiLogos = (props: SharedUiLogosProps) => {
   return (
     <Image
       src={Logos[`${teamName}`]}
-      alt="team logo"
+      alt={props.logo}
       width={width}
       height={height}
     />
