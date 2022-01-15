@@ -7,7 +7,11 @@ import SharedUiLogos, {
 const HomePage = () => {
   return (
     <Fragment>
-      <SharedUiLogos logo={SharedUiLogosEnum.STELLAR_JAYS} />
+      <SharedUiLogos
+        logo={SharedUiLogosEnum.KILLER_BEES}
+        width="150px"
+        height="150px"
+      />
     </Fragment>
   );
 };

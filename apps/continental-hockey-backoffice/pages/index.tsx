@@ -7,7 +7,7 @@ import SharedUiLogos, {
 const HomePage = () => {
   return (
     <Fragment>
-      <SharedUiLogos logo={SharedUiLogosEnum.STELLAR_JAYS} />
+      <SharedUiLogos logo={SharedUiLogosEnum.MUDBUGS} />
     </Fragment>
   );
 };

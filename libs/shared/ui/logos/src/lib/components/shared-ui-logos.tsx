@@ -6,19 +6,21 @@ import * as Logos from '../../assets';
 
 export interface SharedUiLogosProps {
   logo: SharedUiLogosEnum;
-  width?: string;
-  height?: string;
+  width?: string | null;
+  height?: string | null;
 }
 
 const SharedUiLogos = (props: SharedUiLogosProps) => {
   const teamName = props.logo;
+  const width = props.width || '75px';
+  const height = props.height || '75px';
 
   return (
     <Image
       src={Logos[`${teamName}`]}
       alt="team logo"
-      width="75px"
-      height="75px"
+      width={width}
+      height={height}
     />
   );
 };
