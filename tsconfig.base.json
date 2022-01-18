@@ -16,11 +16,17 @@
     "baseUrl": ".",
     "paths": {
       "@continental-hockey-next/shared/api": ["libs/shared/api/src/index.ts"],
+      "@continental-hockey-next/shared/ui/angular/button": [
+        "libs/shared/ui/angular/button/src/index.ts"
+      ],
       "@continental-hockey-next/shared/ui/angular/logo": [
         "libs/shared/ui/angular/logo/src/index.ts"
       ],
       "@continental-hockey-next/shared/ui/logos": [
         "libs/shared/ui/react/logos/src/index.ts"
+      ],
+      "@continental-hockey-next/shared/ui/react/button": [
+        "libs/shared/ui/react/button/src/index.ts"
       ]
     }
   },

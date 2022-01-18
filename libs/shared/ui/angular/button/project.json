@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/angular/button",
+  "sourceRoot": "libs/shared/ui/angular/button/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/angular/button"],
+      "options": {
+        "jestConfig": "libs/shared/ui/angular/button/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/angular/button/src/**/*.ts",
+          "libs/shared/ui/angular/button/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["ui-angular"]
+}

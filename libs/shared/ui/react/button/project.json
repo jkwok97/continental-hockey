@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/ui/react/button",
+  "sourceRoot": "libs/shared/ui/react/button/src",
+  "projectType": "library",
+  "tags": ["ui-react"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui/react/button/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/react/button"],
+      "options": {
+        "jestConfig": "libs/shared/ui/react/button/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
