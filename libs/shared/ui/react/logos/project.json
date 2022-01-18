@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/ui/react/logos",
+  "sourceRoot": "libs/shared/ui/react/logos/src",
+  "projectType": "library",
+  "tags": ["ui-react"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/ui/react/logos/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/react/logos"],
+      "options": {
+        "jestConfig": "libs/shared/ui/react/logos/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

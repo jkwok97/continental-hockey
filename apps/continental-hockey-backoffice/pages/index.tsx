@@ -1,13 +1,11 @@
+import { SharedUiLogosEnum } from '@continental-hockey-next/shared/api';
+import ReactLogo from '@continental-hockey-next/shared/ui/logos';
 import { Fragment } from 'react';
-
-import SharedUiLogos, {
-  SharedUiLogosEnum,
-} from '@continental-hockey-next/shared/ui/logos';
 
 const HomePage = () => {
   return (
     <Fragment>
-      <SharedUiLogos logo={SharedUiLogosEnum.MUDBUGS} />
+      <ReactLogo logo={SharedUiLogosEnum.MUDBUGS} />
     </Fragment>
   );
 };

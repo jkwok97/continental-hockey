@@ -15,29 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@continental-hockey-next/shared/ui/button": [
-        "libs/shared/ui/button/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/card": [
-        "libs/shared/ui/card/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/divider": [
-        "libs/shared/ui/divider/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/field-set": [
-        "libs/shared/ui/field-set/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/input": [
-        "libs/shared/ui/input/src/index.ts"
+      "@continental-hockey-next/shared/api": ["libs/shared/api/src/index.ts"],
+      "@continental-hockey-next/shared/ui/angular/logo": [
+        "libs/shared/ui/angular/logo/src/index.ts"
       ],
       "@continental-hockey-next/shared/ui/logos": [
-        "libs/shared/ui/logos/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/tab": [
-        "libs/shared/ui/tab/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/table": [
-        "libs/shared/ui/table/src/index.ts"
+        "libs/shared/ui/react/logos/src/index.ts"
       ]
     }
   },

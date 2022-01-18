@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/angular/logo",
+  "sourceRoot": "libs/shared/ui/angular/logo/src",
+  "prefix": "continental-hockey-next",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/angular/logo"],
+      "options": {
+        "jestConfig": "libs/shared/ui/angular/logo/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/angular/logo/src/**/*.ts",
+          "libs/shared/ui/angular/logo/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["ui-angular"]
+}

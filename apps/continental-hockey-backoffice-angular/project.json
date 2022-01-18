@@ -1,0 +1,101 @@
+{
+  "projectType": "application",
+  "root": "apps/continental-hockey-backoffice-angular",
+  "sourceRoot": "apps/continental-hockey-backoffice-angular/src",
+  "prefix": "continental-hockey-next",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/continental-hockey-backoffice-angular",
+        "index": "apps/continental-hockey-backoffice-angular/src/index.html",
+        "main": "apps/continental-hockey-backoffice-angular/src/main.ts",
+        "polyfills": "apps/continental-hockey-backoffice-angular/src/polyfills.ts",
+        "tsConfig": "apps/continental-hockey-backoffice-angular/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/continental-hockey-backoffice-angular/src/favicon.ico",
+          "apps/continental-hockey-backoffice-angular/src/assets",
+          {
+            "input": "libs/shared/ui/angular/logo/src/lib/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ],
+        "styles": [
+          "apps/continental-hockey-backoffice-angular/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/continental-hockey-backoffice-angular/src/environments/environment.ts",
+              "with": "apps/continental-hockey-backoffice-angular/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "continental-hockey-backoffice-angular:build:production"
+        },
+        "development": {
+          "browserTarget": "continental-hockey-backoffice-angular:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "continental-hockey-backoffice-angular:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/continental-hockey-backoffice-angular/src/**/*.ts",
+          "apps/continental-hockey-backoffice-angular/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/continental-hockey-backoffice-angular"],
+      "options": {
+        "jestConfig": "apps/continental-hockey-backoffice-angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["angular-app"]
+}

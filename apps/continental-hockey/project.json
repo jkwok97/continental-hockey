@@ -12,7 +12,7 @@
         "outputPath": "dist/apps/continental-hockey",
         "assets": [
           {
-            "input": "libs/shared/ui/logos/src/assets",
+            "input": "libs/shared/ui/react/logos/src/assets",
             "glob": "**/*",
             "output": "assets/logos"
           }
@@ -57,5 +57,5 @@
       }
     }
   },
-  "tags": ["app"]
+  "tags": ["next-app"]
 }

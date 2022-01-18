@@ -13,8 +13,20 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "next-app",
+                "onlyDependOnLibsWithTags": ["shared-api", "ui-react"]
+              },
+              {
+                "sourceTag": "angular-app",
+                "onlyDependOnLibsWithTags": ["shared-api", "ui-angular"]
+              },
+              {
+                "sourceTag": "ui-react",
+                "onlyDependOnLibsWithTags": ["shared-api"]
+              },
+              {
+                "sourceTag": "ui-angular",
+                "onlyDependOnLibsWithTags": ["shared-api"]
               }
             ]
           }
