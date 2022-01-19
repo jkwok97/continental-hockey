@@ -1,13 +1,20 @@
 import './button.module.css';
+import { Button } from 'primereact/button';
 
-/* eslint-disable-next-line */
-export interface ButtonProps {}
+export interface ButtonProps {
+  label: string;
+  iconType?: string;
+  hasIcon: boolean;
+  iconPosition?: 'left' | 'right' | 'top' | 'bottom';
+}
 
 const ReactButton = (props: ButtonProps) => {
   return (
-    <div>
-      <h1>Welcome to Button!</h1>
-    </div>
+    <Button
+      label={props.label}
+      icon={props.hasIcon ? props.iconType : ''}
+      iconPos={props.hasIcon ? props.iconPosition : 'left'}
+    />
   );
 };
 
