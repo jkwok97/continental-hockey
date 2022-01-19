@@ -23,7 +23,12 @@
             "output": "assets"
           }
         ],
-        "styles": ["apps/continental-hockey-angular/src/styles.scss"],
+        "styles": [
+          "apps/continental-hockey-angular/src/styles.scss",
+          "node_modules/primeicons/primeicons.css",
+          "node_modules/primeng/resources/themes/arya-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css"
+        ],
         "scripts": []
       },
       "configurations": {

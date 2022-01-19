@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'cha-ang-button',
@@ -6,4 +6,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {}
+export class ButtonComponent {
+  @Input() label = '';
+  @Input() type = 'button';
+  @Input() hasIcon = false;
+  @Input() iconType = '';
+  @Input() iconPosition: 'left' | 'right' | 'top' | 'bottom' = 'left';
+}
