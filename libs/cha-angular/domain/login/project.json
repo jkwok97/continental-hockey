@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/domain/login",
+  "sourceRoot": "libs/cha-angular/domain/login/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/domain/login"],
+      "options": {
+        "jestConfig": "libs/cha-angular/domain/login/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/domain/login/src/**/*.ts",
+          "libs/cha-angular/domain/login/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:domain"]
+}

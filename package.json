@@ -1,5 +1,5 @@
 {
-  "name": "continental-hockey-next",
+  "name": "cha",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -22,8 +22,10 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@ngx-formly/core": "^5.10.29",
     "@nrwl/next": "13.4.4",
     "core-js": "^3.6.5",
+    "formik": "^2.2.9",
     "next": "12.0.7",
     "primeicons": "^5.0.0",
     "primeng": "^13.1.0",

@@ -2,7 +2,7 @@
   "projectType": "application",
   "root": "apps/continental-hockey-backoffice-angular",
   "sourceRoot": "apps/continental-hockey-backoffice-angular/src",
-  "prefix": "continental-hockey-next",
+  "prefix": "cha-ang",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -100,5 +100,5 @@
       }
     }
   },
-  "tags": ["angular-app"]
+  "tags": ["angular:app"]
 }

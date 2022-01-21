@@ -13,19 +13,27 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "next-app",
-                "onlyDependOnLibsWithTags": ["shared-api", "ui-react"]
+                "sourceTag": "next:app",
+                "onlyDependOnLibsWithTags": ["shared-api", "react:ui"]
               },
               {
-                "sourceTag": "angular-app",
-                "onlyDependOnLibsWithTags": ["shared-api", "ui-angular"]
+                "sourceTag": "angular:app",
+                "onlyDependOnLibsWithTags": [
+                  "shared-api",
+                  "angular:ui",
+                  "angular:domain"
+                ]
               },
               {
-                "sourceTag": "ui-react",
+                "sourceTag": "angular:domain",
+                "onlyDependOnLibsWithTags": ["shared-api", "angular:ui"]
+              },
+              {
+                "sourceTag": "react:ui",
                 "onlyDependOnLibsWithTags": ["shared-api"]
               },
               {
-                "sourceTag": "ui-angular",
+                "sourceTag": "angular:ui",
                 "onlyDependOnLibsWithTags": ["shared-api"]
               }
             ]

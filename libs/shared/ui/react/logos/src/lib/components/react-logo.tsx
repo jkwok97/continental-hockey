@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { SharedUiLogosEnum } from '@continental-hockey-next/shared/api';
+import { SharedUiLogosEnum } from '@cha/shared/api';
 
 import * as Logos from '../../assets';
 

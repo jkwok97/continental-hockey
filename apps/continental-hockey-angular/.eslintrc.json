@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "continental-hockey-next",
+            "prefix": "cha-ang",
             "style": "kebab-case"
           }
         ]

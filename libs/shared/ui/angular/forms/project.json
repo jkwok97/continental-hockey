@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/angular/forms",
+  "sourceRoot": "libs/shared/ui/angular/forms/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/angular/forms"],
+      "options": {
+        "jestConfig": "libs/shared/ui/angular/forms/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/angular/forms/src/**/*.ts",
+          "libs/shared/ui/angular/forms/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:ui"]
+}

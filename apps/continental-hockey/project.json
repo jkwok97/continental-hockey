@@ -57,5 +57,5 @@
       }
     }
   },
-  "tags": ["next-app"]
+  "tags": ["next:app"]
 }

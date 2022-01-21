@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "cha-angular-domain-login": "libs/cha-angular/domain/login",
     "continental-hockey": "apps/continental-hockey",
     "continental-hockey-angular": "apps/continental-hockey-angular",
     "continental-hockey-angular-e2e": "apps/continental-hockey-angular-e2e",
@@ -11,8 +12,10 @@
     "continental-hockey-e2e": "apps/continental-hockey-e2e",
     "shared-api": "libs/shared/api",
     "shared-ui-angular-button": "libs/shared/ui/angular/button",
+    "shared-ui-angular-forms": "libs/shared/ui/angular/forms",
     "shared-ui-angular-logo": "libs/shared/ui/angular/logo",
     "shared-ui-react-button": "libs/shared/ui/react/button",
+    "shared-ui-react-forms": "libs/shared/ui/react/forms",
     "shared-ui-react-logos": "libs/shared/ui/react/logos"
   }
 }

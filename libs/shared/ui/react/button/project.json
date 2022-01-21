@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/react/button",
   "sourceRoot": "libs/shared/ui/react/button/src",
   "projectType": "library",
-  "tags": ["ui-react"],
+  "tags": ["react:ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

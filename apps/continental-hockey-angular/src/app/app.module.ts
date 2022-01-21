@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedUiAngularButtonModule } from '@continental-hockey-next/shared/ui/angular/button';
-import { SharedUiAngularLogoModule } from '@continental-hockey-next/shared/ui/angular/logo';
+import { ChaAngularDomainLoginModule } from '@cha/cha-angular/domain/login';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    SharedUiAngularLogoModule,
-    SharedUiAngularButtonModule,
-  ],
+  imports: [BrowserModule, ChaAngularDomainLoginModule],
   providers: [],
   bootstrap: [AppComponent],
 })

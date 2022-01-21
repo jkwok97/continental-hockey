@@ -1,6 +1,6 @@
-import { SharedUiLogosEnum } from '@continental-hockey-next/shared/api';
-import ReactLogo from '@continental-hockey-next/shared/ui/logos';
-import ReactButton from '@continental-hockey-next/shared/ui/react/button';
+import { SharedUiLogosEnum } from '@cha/shared/api';
+import ReactLogo from '@cha/shared/ui/logos';
+import ReactButton from '@cha/shared/ui/react/button';
 import { Fragment } from 'react';
 
 const HomePage = () => {

@@ -2,7 +2,7 @@
   "root": "libs/shared/ui/react/logos",
   "sourceRoot": "libs/shared/ui/react/logos/src",
   "projectType": "library",
-  "tags": ["ui-react"],
+  "tags": ["react:ui"],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",

@@ -14,8 +14,8 @@ import { ChaAngLogoEnum } from '../../model';
 })
 export class LogoComponent implements OnInit {
   @Input() logo: ChaAngLogoEnum | undefined;
-  @Input() width = '75px';
-  @Input() height = '75px';
+  @Input() width = 75;
+  @Input() height = 75;
 
   teamLogo = '/assets';
 

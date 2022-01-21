@@ -15,19 +15,24 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@continental-hockey-next/shared/api": ["libs/shared/api/src/index.ts"],
-      "@continental-hockey-next/shared/ui/angular/button": [
+      "@cha/cha-angular/domain/login": [
+        "libs/cha-angular/domain/login/src/index.ts"
+      ],
+      "@cha/shared/api": ["libs/shared/api/src/index.ts"],
+      "@cha/shared/ui/angular/button": [
         "libs/shared/ui/angular/button/src/index.ts"
       ],
-      "@continental-hockey-next/shared/ui/angular/logo": [
+      "@cha/shared/ui/angular/forms": [
+        "libs/shared/ui/angular/forms/src/index.ts"
+      ],
+      "@cha/shared/ui/angular/logo": [
         "libs/shared/ui/angular/logo/src/index.ts"
       ],
-      "@continental-hockey-next/shared/ui/logos": [
-        "libs/shared/ui/react/logos/src/index.ts"
-      ],
-      "@continental-hockey-next/shared/ui/react/button": [
+      "@cha/shared/ui/logos": ["libs/shared/ui/react/logos/src/index.ts"],
+      "@cha/shared/ui/react/button": [
         "libs/shared/ui/react/button/src/index.ts"
-      ]
+      ],
+      "@cha/shared/ui/react/forms": ["libs/shared/ui/react/forms/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

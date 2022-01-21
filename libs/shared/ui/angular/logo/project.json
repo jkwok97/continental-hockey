@@ -2,7 +2,7 @@
   "projectType": "library",
   "root": "libs/shared/ui/angular/logo",
   "sourceRoot": "libs/shared/ui/angular/logo/src",
-  "prefix": "continental-hockey-next",
+  "prefix": "cha-ang",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
@@ -22,5 +22,5 @@
       }
     }
   },
-  "tags": ["ui-angular"]
+  "tags": ["angular:ui"]
 }

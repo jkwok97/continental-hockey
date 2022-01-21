@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ChaAngLogoEnum } from '@continental-hockey-next/shared/ui/angular/logo';
+import { ChaAngLogoEnum } from '@cha/shared/ui/angular/logo';
 
 @Component({
-  selector: 'continental-hockey-next-root',
+  selector: 'cha-ang-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
