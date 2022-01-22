@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import 'libraries/libraries';
+
+*:focus {
+  outline: none;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
@@ -12,6 +19,27 @@ html {
 body {
   font-family: inherit;
   line-height: inherit;
+  overflow: hidden;
   margin: 0;
+  padding: 0;
   background-color: black;
+  color: whitesmoke;
+}
+
+/*
+------------
+Colors
+------------
+*/
+
+.cha-color-primary {
+  color: $cha-primary-color;
+}
+
+.cha-color-success {
+  color: $cha-primary-color;
+}
+
+.cha-color-danger {
+  color: $cha-warning-color;
 }

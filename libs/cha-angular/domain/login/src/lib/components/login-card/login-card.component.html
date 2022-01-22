@@ -1,0 +1,28 @@
+<div class="login-card">
+  <cha-ang-logo
+    [logo]="ChaLogo.LEAGUE"
+    [width]="200"
+    [height]="160"
+  ></cha-ang-logo>
+
+  <cha-ang-login-form></cha-ang-login-form>
+
+  <div class="login-card-buttons">
+    <cha-ang-button
+      label="Login"
+      [hasIcon]="true"
+      [iconType]="PrimeIcons.USER"
+      iconPosition="right"
+      (click)="handleClick($event)"
+    ></cha-ang-button>
+
+    <cha-ang-button
+      label="Cancel"
+      [hasIcon]="true"
+      [iconType]="PrimeIcons.TIMES_CIRCLE"
+      iconPosition="right"
+      [buttonClass]="PrimeButtonClass.SECONDARY"
+      (click)="handleClick($event)"
+    ></cha-ang-button>
+  </div>
+</div>

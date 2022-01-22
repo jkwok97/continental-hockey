@@ -1,1 +1,15 @@
-<p>control-wrapper works!</p>
+<nz-form-item>
+  <ng-container *ngIf="to.label">
+    <nz-form-label [nzFor]="id" [nzRequired]="to.required">
+      {{ to.label }}
+    </nz-form-label>
+  </ng-container>
+
+  <nz-form-control [nzErrorTip]="errorTpl" [nzValidateStatus]="errorState">
+    <ng-container #fieldComponent></ng-container>
+
+    <ng-template #errorTpl let-control>
+      <formly-validation-message [field]="field"></formly-validation-message>
+    </ng-template>
+  </nz-form-control>
+</nz-form-item>

@@ -1,5 +1,7 @@
 // CURRENT TEAMS
 
+const LEAGUE = './cha_logo.jpg';
+
 const OAK = './Assassins.png';
 const LSB = './Brahmas.png';
 const SFC = './Cocks.png';
@@ -113,4 +115,5 @@ export {
   VIC,
   LOU,
   WAS,
+  LEAGUE,
 };

@@ -24,7 +24,7 @@
           }
         ],
         "styles": [
-          "apps/continental-hockey-angular/src/styles.scss",
+          "apps/continental-hockey-angular/src/scss/styles.scss",
           "node_modules/primeicons/primeicons.css",
           "node_modules/primeng/resources/themes/arya-blue/theme.css",
           "node_modules/primeng/resources/primeng.min.css"

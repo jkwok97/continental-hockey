@@ -1,0 +1,17 @@
+@import '../variables';
+
+.ant-input {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: $cha-grey-1;
+  border-color: transparent;
+  border: 1px solid $cha-gray-2;
+  border-radius: 5px;
+  font-size: medium;
+}
+
+.ant-form-item-explain-error {
+  color: $cha-error-color;
+  font-size: small;
+}

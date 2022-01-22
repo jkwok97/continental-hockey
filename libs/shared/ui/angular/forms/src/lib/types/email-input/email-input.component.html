@@ -1,11 +1,9 @@
-<span class="p-input-icon-left">
-  <i class="pi pi-email"></i>
-  <input
-    type="email"
-    pInputText
-    placeholder="email"
-    [formlyAttributes]="field"
-    [formControl]="formControl"
-    [readOnly]="to.readonly"
-  />
-</span>
+<input
+  [attr.data-form-control-value]="key"
+  [formControl]="formControl"
+  [formlyAttributes]="field"
+  [placeholder]="to.placeholder"
+  [readOnly]="to.readonly"
+  nz-input
+  type="text"
+/>

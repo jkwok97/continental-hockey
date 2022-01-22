@@ -54,4 +54,6 @@ export enum ChaAngLogoEnum {
   VIPERS = 'Vipers.png',
   VOODOO = 'voodoo.png',
   WHISKEYJACKS = 'whiskeyjacks.png',
+
+  LEAGUE = 'cha_logo.jpg',
 }

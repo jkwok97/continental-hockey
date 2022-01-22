@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { PrimeButtonClass } from '@cha/shared/api';
 
 @Component({
   selector: 'cha-ang-button',
@@ -12,4 +13,5 @@ export class ButtonComponent {
   @Input() hasIcon = false;
   @Input() iconType = '';
   @Input() iconPosition: 'left' | 'right' | 'top' | 'bottom' = 'left';
+  @Input() buttonClass = PrimeButtonClass.PRIMARY;
 }
