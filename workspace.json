@@ -13,6 +13,7 @@
     "shared-api": "libs/shared/api",
     "shared-ui-angular-button": "libs/shared/ui/angular/button",
     "shared-ui-angular-forms": "libs/shared/ui/angular/forms",
+    "shared-ui-angular-layout": "libs/shared/ui/angular/layout",
     "shared-ui-angular-logo": "libs/shared/ui/angular/logo",
     "shared-ui-react-button": "libs/shared/ui/react/button",
     "shared-ui-react-forms": "libs/shared/ui/react/forms",
