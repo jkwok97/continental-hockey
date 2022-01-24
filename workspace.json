@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "cha-angular-domain-login": "libs/cha-angular/domain/login",
+    "cha-angular-domain-main-title": "libs/cha-angular/domain/main-title",
     "continental-hockey": "apps/continental-hockey",
     "continental-hockey-angular": "apps/continental-hockey-angular",
     "continental-hockey-angular-e2e": "apps/continental-hockey-angular-e2e",

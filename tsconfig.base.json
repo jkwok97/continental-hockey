@@ -25,6 +25,9 @@
       "@cha/shared/ui/angular/forms": [
         "libs/shared/ui/angular/forms/src/index.ts"
       ],
+      "@cha/shared/ui/angular/layout": [
+        "libs/shared/ui/angular/layout/src/index.ts"
+      ],
       "@cha/shared/ui/angular/logo": [
         "libs/shared/ui/angular/logo/src/index.ts"
       ],
@@ -33,8 +36,8 @@
         "libs/shared/ui/react/button/src/index.ts"
       ],
       "@cha/shared/ui/react/forms": ["libs/shared/ui/react/forms/src/index.ts"],
-      "@cha/shared/ui/angular/layout": [
-        "libs/shared/ui/angular/layout/src/index.ts"
+      "@cha/cha-angular/domain/main-title": [
+        "libs/cha-angular/domain/main-title/src/index.ts"
       ]
     }
   },
