@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "cha-angular-domain-app-config": "libs/cha-angular/domain/app-config",
+    "cha-angular-domain-core": "libs/cha-angular/domain/core",
     "cha-angular-domain-login": "libs/cha-angular/domain/login",
     "cha-angular-domain-main-title": "libs/cha-angular/domain/main-title",
     "cha-angular-features-main": "libs/cha-angular/features/main",

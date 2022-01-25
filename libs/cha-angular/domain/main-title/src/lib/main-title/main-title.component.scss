@@ -3,21 +3,7 @@
 .main-title {
   display: grid;
   justify-content: center;
-  grid-template-columns: min-content 90%;
-  align-content: center;
   padding: 20px;
-
-  .home {
-    display: grid;
-    align-content: center;
-    color: $cha-red-1;
-  }
-
-  .title {
-    width: 100%;
-    display: grid;
-    justify-content: center;
-  }
 
   h1 {
     font-weight: 100;

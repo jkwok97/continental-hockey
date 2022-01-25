@@ -18,6 +18,9 @@
       "@cha/cha-angular/domain/app-config": [
         "libs/cha-angular/domain/app-config/src/index.ts"
       ],
+      "@cha/cha-angular/domain/core": [
+        "libs/cha-angular/domain/core/src/index.ts"
+      ],
       "@cha/cha-angular/domain/login": [
         "libs/cha-angular/domain/login/src/index.ts"
       ],

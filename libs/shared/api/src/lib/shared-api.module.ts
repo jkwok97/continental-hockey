@@ -1,9 +1,11 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { TeamInfoService } from './services';
+
 @NgModule({
   imports: [HttpClientModule],
-  providers: [],
+  providers: [TeamInfoService],
 })
 export class SharedApiModule {
   constructor(

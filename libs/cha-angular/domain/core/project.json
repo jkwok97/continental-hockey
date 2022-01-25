@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/domain/core",
+  "sourceRoot": "libs/cha-angular/domain/core/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/domain/core"],
+      "options": {
+        "jestConfig": "libs/cha-angular/domain/core/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/domain/core/src/**/*.ts",
+          "libs/cha-angular/domain/core/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:domain"]
+}

@@ -14,6 +14,8 @@ import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
 import { ChaAngularDomainMainTitleModule } from '@cha/cha-angular/domain/main-title';
 import { SharedAuthAngularModule } from '@cha/shared/auth/angular/auth-angular';
 import { APP_CONFIG } from '@cha/cha-angular/domain/app-config';
+import { ChaAngularDomainCoreModule } from '@cha/cha-angular/domain/core';
+import { SharedApiModule } from '@cha/shared/api';
 
 import { AppComponent } from './app.component';
 import { AppConfigService } from '../services';
@@ -48,6 +50,8 @@ const getApiUrl = (appConfig: AppConfigService) => {
     SharedAuthAngularModule,
     ChaAngularDomainMainTitleModule,
     AppRoutingModule,
+    ChaAngularDomainCoreModule,
+    SharedApiModule,
 
     EffectsModule.forRoot(),
     StoreModule.forRoot(

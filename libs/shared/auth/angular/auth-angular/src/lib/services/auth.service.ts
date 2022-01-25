@@ -21,7 +21,6 @@ export class AuthService {
     const foundUser = localStorage.getItem('currentUser');
 
     if (foundUser) {
-      console.log(foundUser);
       this.loginSuccess(JSON.parse(foundUser));
     } else {
       this.router.navigate(['/login']);
@@ -44,7 +43,7 @@ export class AuthService {
   }
 
   loginSuccess(user: UserDto) {
-    this.authFacade.loginSuccess(user);
     this.router.navigate(['/home']);
+    this.authFacade.loginSuccess(user);
   }
 }

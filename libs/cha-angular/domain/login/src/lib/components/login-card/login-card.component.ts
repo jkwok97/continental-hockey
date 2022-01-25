@@ -7,7 +7,7 @@ import { ChaAngLogoEnum } from '@cha/shared/ui/angular/logo';
 import { LoginFormComponent } from '..';
 import { AuthFacade } from '@cha/shared/auth/angular/auth-angular';
 import { Router } from '@angular/router';
-import { combineLatest, first, Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 @UntilDestroy()
@@ -43,7 +43,7 @@ export class LoginCardComponent {
       .pipe(untilDestroyed(this))
       .subscribe(([loggingIn, logInComplete]: [boolean, boolean]) => {
         if (!loggingIn && logInComplete) {
-          this.router.navigate(['']);
+          this.router.navigate(['home']);
         }
         this.loginFormRef?.form.reset();
       });

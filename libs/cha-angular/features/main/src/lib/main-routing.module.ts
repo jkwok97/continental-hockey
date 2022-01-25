@@ -4,14 +4,13 @@ import { MainComponent } from './containers';
 
 const ROUTES: Route[] = [
   {
-    path: '',
+    path: 'home',
     component: MainComponent,
     children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        // resolve: [MainResolver],
-      },
+      // {
+      //   path: 'home',
+      //   component: MainComponent,
+      // },
     ],
   },
 ];
