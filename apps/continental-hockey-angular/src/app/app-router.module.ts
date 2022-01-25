@@ -9,7 +9,7 @@ const ROUTES: Route[] = [
     component: LoginComponent,
   },
   {
-    path: '',
+    path: 'home',
     loadChildren: () =>
       import('@cha/cha-angular/features/main').then(
         (mod) => mod.ChaAngularFeaturesMainModule

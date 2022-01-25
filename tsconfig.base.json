@@ -15,7 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cha/cha-angular/features/main": ["libs/cha-angular/features/main/src/index.ts"],
       "@cha/cha-angular/domain/app-config": [
         "libs/cha-angular/domain/app-config/src/index.ts"
       ],
@@ -24,6 +23,9 @@
       ],
       "@cha/cha-angular/domain/main-title": [
         "libs/cha-angular/domain/main-title/src/index.ts"
+      ],
+      "@cha/cha-angular/features/main": [
+        "libs/cha-angular/features/main/src/index.ts"
       ],
       "@cha/shared/api": ["libs/shared/api/src/index.ts"],
       "@cha/shared/auth/angular/auth-angular": [
@@ -40,6 +42,9 @@
       ],
       "@cha/shared/ui/angular/logo": [
         "libs/shared/ui/angular/logo/src/index.ts"
+      ],
+      "@cha/shared/ui/angular/menu": [
+        "libs/shared/ui/angular/menu/src/index.ts"
       ],
       "@cha/shared/ui/logos": ["libs/shared/ui/react/logos/src/index.ts"],
       "@cha/shared/ui/react/button": [

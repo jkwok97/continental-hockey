@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/angular/menu",
+  "sourceRoot": "libs/shared/ui/angular/menu/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/angular/menu"],
+      "options": {
+        "jestConfig": "libs/shared/ui/angular/menu/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/angular/menu/src/**/*.ts",
+          "libs/shared/ui/angular/menu/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:ui"]
+}

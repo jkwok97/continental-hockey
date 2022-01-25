@@ -4,13 +4,10 @@ import { Inject, Injectable, Optional } from '@angular/core';
 import { UserDto } from '@cha/shared/api';
 import { AppConfigModel, APP_CONFIG } from '@cha/cha-angular/domain/app-config';
 
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-
 import { AuthFacade } from '../+state/auth.facade';
-import { BehaviorSubject, filter, map, Observable, tap } from 'rxjs';
+import { map } from 'rxjs';
 import { Router } from '@angular/router';
 
-@UntilDestroy()
 @Injectable()
 export class AuthService {
   constructor(
@@ -48,6 +45,6 @@ export class AuthService {
 
   loginSuccess(user: UserDto) {
     this.authFacade.loginSuccess(user);
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 }
