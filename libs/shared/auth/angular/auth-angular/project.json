@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/auth/angular/auth-angular",
+  "sourceRoot": "libs/shared/auth/angular/auth-angular/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/auth/angular/auth-angular"],
+      "options": {
+        "jestConfig": "libs/shared/auth/angular/auth-angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/auth/angular/auth-angular/src/**/*.ts",
+          "libs/shared/auth/angular/auth-angular/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:auth"]
+}

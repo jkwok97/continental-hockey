@@ -1,8 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
 import { PrimeIcons } from 'primeng/api';
 
 import { PrimeButtonClass } from '@cha/shared/api';
 import { ChaAngLogoEnum } from '@cha/shared/ui/angular/logo';
+
+import { LoginFormComponent } from '..';
+import { AuthFacade } from '@cha/shared/auth/angular/auth-angular';
 
 @Component({
   selector: 'cha-ang-login-card',
@@ -15,7 +18,14 @@ export class LoginCardComponent {
   PrimeButtonClass = PrimeButtonClass;
   ChaLogo = ChaAngLogoEnum;
 
-  handleClick(event: MouseEvent) {
-    console.log(event);
+  @ViewChild(LoginFormComponent, { static: false })
+  public loginFormRef?: LoginFormComponent;
+
+  constructor(private authFacade: AuthFacade) {}
+
+  onSubmit() {
+    const formValue = this.loginFormRef?.form.value;
+
+    this.authFacade.login(formValue.email);
   }
 }

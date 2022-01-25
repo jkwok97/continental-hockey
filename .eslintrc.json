@@ -21,12 +21,21 @@
                 "onlyDependOnLibsWithTags": [
                   "shared-api",
                   "angular:ui",
-                  "angular:domain"
+                  "angular:domain",
+                  "angular:auth"
                 ]
               },
               {
                 "sourceTag": "angular:domain",
-                "onlyDependOnLibsWithTags": ["shared-api", "angular:ui"]
+                "onlyDependOnLibsWithTags": [
+                  "shared-api",
+                  "angular:ui",
+                  "angular:auth"
+                ]
+              },
+              {
+                "sourceTag": "angular:auth",
+                "onlyDependOnLibsWithTags": ["shared-api", "angular:domain"]
               },
               {
                 "sourceTag": "react:ui",

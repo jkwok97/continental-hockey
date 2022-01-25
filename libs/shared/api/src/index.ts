@@ -1,3 +1,3 @@
-export * from './lib/shared-api';
+export * from './lib/shared-api.module';
 
 export * from './lib/models';

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
+  namespace: 'cha',
+  version: 'v2',
+  back_end_url: 'https://cha-hockey-app-server.herokuapp.com',
 };
 
 /*
