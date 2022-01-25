@@ -11,8 +11,10 @@
     <cha-ang-button
       label="Login"
       [hasIcon]="true"
-      [iconType]="PrimeIcons.USER"
+      [iconType]="(loggingIn$ | async) ? PrimeIcons.SPINNER : PrimeIcons.USER"
       iconPosition="right"
+      [disabled]="loginFormRef?.form?.invalid"
+      [isLoading]="(loggingIn$ | async) ? true : false"
       (click)="onSubmit()"
     ></cha-ang-button>
   </div>

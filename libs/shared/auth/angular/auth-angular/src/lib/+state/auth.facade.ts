@@ -8,6 +8,7 @@ import { UserDto } from '@cha/shared/api';
 
 @Injectable()
 export class AuthFacade {
+  state$: Observable<State> = this.store.select(authQuery.selectState);
   user$: Observable<UserDto | null> = this.store.select(
     authQuery.selectUserData
   );
@@ -25,6 +26,10 @@ export class AuthFacade {
   );
 
   constructor(private store: Store<State>) {}
+
+  init() {
+    this.store.dispatch(authActions.init());
+  }
 
   login(email: string) {
     this.store.dispatch(authActions.login({ email }));

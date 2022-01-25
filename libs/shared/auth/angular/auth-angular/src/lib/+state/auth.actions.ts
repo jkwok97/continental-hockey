@@ -3,6 +3,8 @@ import { createAction, props } from '@ngrx/store';
 
 const NAMESPACE = '[Auth]';
 
+const init = createAction('[Auth] Init');
+
 const login = createAction(`${NAMESPACE} Login`, props<{ email: string }>());
 
 const loginSuccess = createAction(
@@ -17,6 +19,7 @@ const logout = createAction(`${NAMESPACE} Logout`);
 const logoutConfirmed = createAction(`${NAMESPACE} Logout Confirmed`);
 
 export const authActions = {
+  init,
   login,
   loginSuccess,
   loginFailed,

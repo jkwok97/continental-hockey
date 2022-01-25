@@ -8,6 +8,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 import { AuthFacade } from '../+state/auth.facade';
 import { BehaviorSubject, filter, map, Observable, tap } from 'rxjs';
+import { Router } from '@angular/router';
 
 @UntilDestroy()
 @Injectable()
@@ -15,40 +16,25 @@ export class AuthService {
   constructor(
     private authFacade: AuthFacade,
     private http: HttpClient,
+    private router: Router,
     @Optional() @Inject(APP_CONFIG) private appConfig: AppConfigModel
   ) {}
 
-  init(email: string) {
-    this.authFacade.login(email);
-
+  init() {
     const foundUser = localStorage.getItem('currentUser');
 
-    // if (foundUser) {
-    //   this.currentUserSubject = new BehaviorSubject<UserDto>(
-    //     JSON.parse(foundUser)
-    //   );
-    //   this.currentUser = this.currentUserSubject.asObservable();
-    //   this.currentUser
-    //     .pipe(
-    //       filter((user: UserDto) => user !== null),
-    //       tap((user: UserDto) => this.authFacade.loginSuccess(user)),
-    //       untilDestroyed(this)
-    //     )
-    //     .subscribe();
-    // } else {
-    //   // this.login(email);
-    // }
+    if (foundUser) {
+      console.log(foundUser);
+      this.loginSuccess(JSON.parse(foundUser));
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
   login(email: string) {
     return this.http
       .get<UserDto[]>(`${this.appConfig.apiUrl}/v2/users/${email}`)
-      .pipe(
-        map((users: UserDto[]) => {
-          console.log(users[0]);
-          return users[0];
-        })
-      );
+      .pipe(map((users: UserDto[]) => users[0]));
   }
 
   public logout() {
@@ -62,5 +48,6 @@ export class AuthService {
 
   loginSuccess(user: UserDto) {
     this.authFacade.loginSuccess(user);
+    this.router.navigate(['']);
   }
 }

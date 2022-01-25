@@ -22,7 +22,8 @@
                   "shared-api",
                   "angular:ui",
                   "angular:domain",
-                  "angular:auth"
+                  "angular:auth",
+                  "angular:feature"
                 ]
               },
               {

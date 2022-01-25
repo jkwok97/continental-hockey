@@ -1,10 +1,12 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { ToastModule } from 'primeng/toast';
 
 import { ChaAngularDomainLoginModule } from '@cha/cha-angular/domain/login';
 import { SharedUiAngularFormsModule } from '@cha/shared/ui/angular/forms';
@@ -16,6 +18,8 @@ import { APP_CONFIG } from '@cha/cha-angular/domain/app-config';
 import { AppComponent } from './app.component';
 import { AppConfigService } from '../services';
 import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-router.module';
+import { MessageService } from 'primeng/api';
 
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {
@@ -36,11 +40,14 @@ const getApiUrl = (appConfig: AppConfigService) => {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule,
+
     ChaAngularDomainLoginModule,
     SharedUiAngularFormsModule,
     SharedUiAngularLayoutModule,
     SharedAuthAngularModule,
     ChaAngularDomainMainTitleModule,
+    AppRoutingModule,
 
     EffectsModule.forRoot(),
     StoreModule.forRoot(
@@ -59,8 +66,10 @@ const getApiUrl = (appConfig: AppConfigService) => {
       name: 'Continental Hockey Association',
       logOnly: environment.production,
     }),
+    ToastModule,
   ],
   providers: [
+    MessageService,
     AppConfigService,
     {
       provide: APP_INITIALIZER,

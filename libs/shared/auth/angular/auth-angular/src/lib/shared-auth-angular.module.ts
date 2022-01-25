@@ -10,6 +10,7 @@ import { AuthEffects } from './+state/auth.effects';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthFacade } from './+state/auth.facade';
+import { SharedAuthResolver } from './resolvers/auth.resolver';
 
 @NgModule({
   imports: [
@@ -18,7 +19,13 @@ import { AuthFacade } from './+state/auth.facade';
     StoreModule.forFeature('auth', reducer),
     EffectsModule.forFeature([AuthEffects]),
   ],
-  providers: [AuthService, AuthEffects, AuthFacade, AuthGuard],
+  providers: [
+    AuthService,
+    AuthEffects,
+    AuthFacade,
+    AuthGuard,
+    SharedAuthResolver,
+  ],
 })
 export class SharedAuthAngularModule {
   constructor(@Optional() @SkipSelf() parentModule?: SharedAuthAngularModule) {

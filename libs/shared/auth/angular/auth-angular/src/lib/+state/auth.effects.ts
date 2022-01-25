@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import {
-  catchError,
-  exhaustMap,
-  map,
-  tap,
-  withLatestFrom,
-} from 'rxjs/operators';
+import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
 import { authActions } from './auth.actions';
 import { AuthService } from '../services/auth.service';
 import { UserDto } from '@cha/shared/api';
 import { of } from 'rxjs';
+import { MessageService } from 'primeng/api';
 
 @Injectable()
 export class AuthEffects {
-  constructor(private actions$: Actions, private authService: AuthService) {}
+  constructor(
+    private actions$: Actions,
+    private authService: AuthService,
+    private messageService: MessageService
+  ) {}
+
+  init$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(authActions.init),
+        tap(() => this.authService.init())
+      ),
+    { dispatch: false }
+  );
 
   login$ = createEffect(() =>
     this.actions$.pipe(
@@ -26,6 +34,17 @@ export class AuthEffects {
         )
       )
     )
+  );
+
+  loginFailed$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(authActions.loginFailed),
+        tap(() =>
+          this.messageService.add({ severity: 'error', summary: 'Wrong email' })
+        )
+      ),
+    { dispatch: false }
   );
 
   loginSuccess$ = createEffect(

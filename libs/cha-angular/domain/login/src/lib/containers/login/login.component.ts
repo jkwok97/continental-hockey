@@ -1,6 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ChaAngLogoEnum } from '@cha/shared/ui/angular/logo';
-import { PrimeIcons } from 'primeng/api';
+import { AuthFacade } from '@cha/shared/auth/angular/auth-angular';
 
 @Component({
   selector: 'cha-ang-login',
@@ -9,13 +8,7 @@ import { PrimeIcons } from 'primeng/api';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
-  logo = ChaAngLogoEnum.OAK;
-  logoHeight = 500;
-  logoWidth = 500;
-  hasIcon = true;
-  iconType = PrimeIcons.AMAZON;
-
-  handleClick(event: MouseEvent) {
-    console.log(event);
+  constructor(private authFacade: AuthFacade) {
+    this.authFacade.init();
   }
 }

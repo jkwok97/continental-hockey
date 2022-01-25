@@ -14,4 +14,6 @@ export class ButtonComponent {
   @Input() iconType = '';
   @Input() iconPosition: 'left' | 'right' | 'top' | 'bottom' = 'left';
   @Input() buttonClass = PrimeButtonClass.PRIMARY;
+  @Input() disabled: boolean | undefined = false;
+  @Input() isLoading = false;
 }
