@@ -1,0 +1,28 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/league-stats-players-detailed",
+  "sourceRoot": "libs/cha-angular/features/league-stats-players-detailed/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/cha-angular/features/league-stats-players-detailed"
+      ],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/league-stats-players-detailed/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/league-stats-players-detailed/src/**/*.ts",
+          "libs/cha-angular/features/league-stats-players-detailed/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

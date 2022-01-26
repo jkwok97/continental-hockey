@@ -51,11 +51,20 @@
       "@cha/cha-angular/features/league-stats-goalies": [
         "libs/cha-angular/features/league-stats-goalies/src/index.ts"
       ],
+      "@cha/cha-angular/features/league-stats-goalies-detailed": [
+        "libs/cha-angular/features/league-stats-goalies-detailed/src/index.ts"
+      ],
       "@cha/cha-angular/features/league-stats-players": [
         "libs/cha-angular/features/league-stats-players/src/index.ts"
       ],
+      "@cha/cha-angular/features/league-stats-players-detailed": [
+        "libs/cha-angular/features/league-stats-players-detailed/src/index.ts"
+      ],
       "@cha/cha-angular/features/league-stats-team": [
         "libs/cha-angular/features/league-stats-team/src/index.ts"
+      ],
+      "@cha/cha-angular/features/league-stats-team-detailed": [
+        "libs/cha-angular/features/league-stats-team-detailed/src/index.ts"
       ],
       "@cha/cha-angular/features/main": [
         "libs/cha-angular/features/main/src/index.ts"

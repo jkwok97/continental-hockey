@@ -40,19 +40,28 @@ export const mainMenuItems: MenuItem[] = [
         items: [
           {
             label: 'Teams Leaders',
-            routerLink: ['/league/stats/teams'],
+            routerLink: ['/league/stats/teams-leaders'],
           },
           {
             label: 'Players Leaders',
-            routerLink: ['/league/stats/players'],
+            routerLink: ['/league/stats/players-leaders'],
           },
           {
             label: 'Goalies Leaders',
-            routerLink: ['/league/stats/goalies'],
+            routerLink: ['/league/stats/goalies-leaders'],
           },
-          { label: 'Teams Detailed' },
-          { label: 'Players Detailed' },
-          { label: 'Goalies Detailed' },
+          {
+            label: 'Teams Detailed',
+            routerLink: ['/league/stats/teams-detailed'],
+          },
+          {
+            label: 'Players Detailed',
+            routerLink: ['/league/stats/players-detailed'],
+          },
+          {
+            label: 'Goalies Detailed',
+            routerLink: ['/league/stats/goalies-detailed'],
+          },
         ],
       },
       {

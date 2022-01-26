@@ -13,24 +13,49 @@ const ROUTES: Route[] = [
         redirectTo: 'teams',
       },
       {
-        path: 'teams',
+        path: 'teams-leaders',
         loadChildren: () =>
           import('@cha/cha-angular/features/league-stats-team').then(
             (mod) => mod.ChaAngularFeaturesLeagueStatsTeamModule
           ),
       },
       {
-        path: 'players',
+        path: 'players-leaders',
         loadChildren: () =>
           import('@cha/cha-angular/features/league-stats-players').then(
             (mod) => mod.ChaAngularFeaturesLeagueStatsPlayersModule
           ),
       },
       {
-        path: 'goalies',
+        path: 'goalies-leaders',
         loadChildren: () =>
           import('@cha/cha-angular/features/league-stats-goalies').then(
             (mod) => mod.ChaAngularFeaturesLeagueStatsGoaliesModule
+          ),
+      },
+      {
+        path: 'teams-detailed',
+        loadChildren: () =>
+          import('@cha/cha-angular/features/league-stats-team-detailed').then(
+            (mod) => mod.ChaAngularFeaturesLeagueStatsTeamDetailedModule
+          ),
+      },
+      {
+        path: 'players-detailed',
+        loadChildren: () =>
+          import(
+            '@cha/cha-angular/features/league-stats-players-detailed'
+          ).then(
+            (mod) => mod.ChaAngularFeaturesLeagueStatsPlayersDetailedModule
+          ),
+      },
+      {
+        path: 'goalies-detailed',
+        loadChildren: () =>
+          import(
+            '@cha/cha-angular/features/league-stats-goalies-detailed'
+          ).then(
+            (mod) => mod.ChaAngularFeaturesLeagueStatsGoaliesDetailedModule
           ),
       },
     ],
