@@ -4,16 +4,23 @@ export const mainMenuItems: MenuItem[] = [
   {
     label: 'Home',
     items: [
-      { label: 'Summary' },
+      {
+        label: 'Summary',
+        routerLink: ['/home/summary'],
+      },
       {
         label: 'History',
         items: [
-          { label: 'Franchise' },
+          {
+            label: 'Franchise',
+            routerLink: ['/home/franchise'],
+          },
           { label: 'Players' },
           { label: 'Goalies' },
           { label: 'Awards' },
         ],
       },
+      { label: 'Logout' },
     ],
   },
   {

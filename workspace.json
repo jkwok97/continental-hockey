@@ -5,6 +5,8 @@
     "cha-angular-domain-core": "libs/cha-angular/domain/core",
     "cha-angular-domain-login": "libs/cha-angular/domain/login",
     "cha-angular-domain-main-title": "libs/cha-angular/domain/main-title",
+    "cha-angular-features-home-franchise": "libs/cha-angular/features/home-franchise",
+    "cha-angular-features-home-summary": "libs/cha-angular/features/home-summary",
     "cha-angular-features-main": "libs/cha-angular/features/main",
     "continental-hockey": "apps/continental-hockey",
     "continental-hockey-angular": "apps/continental-hockey-angular",
