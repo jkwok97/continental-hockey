@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/salaries-ratings",
+  "sourceRoot": "libs/cha-angular/features/salaries-ratings/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/salaries-ratings"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/salaries-ratings/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/salaries-ratings/src/**/*.ts",
+          "libs/cha-angular/features/salaries-ratings/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

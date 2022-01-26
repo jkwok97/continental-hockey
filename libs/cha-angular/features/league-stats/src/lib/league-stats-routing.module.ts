@@ -10,7 +10,7 @@ const ROUTES: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'teams',
+        redirectTo: 'teams-leaders',
       },
       {
         path: 'teams-leaders',

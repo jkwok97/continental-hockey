@@ -192,20 +192,33 @@ export const mainMenuItems: MenuItem[] = [
         ],
       },
       {
-        label: 'Salaries',
-      },
-      {
         label: 'Trades',
+        routerLink: ['/league/trades'],
       },
       {
-        label: 'Ratings',
+        label: 'Salaries & Ratings',
+        routerLink: ['/league/salaries-ratings'],
       },
       {
         label: 'Waiver Priority',
+        routerLink: ['/league/waivers'],
       },
       {
         label: 'Historic Stats',
-        items: [{ label: 'Teams' }, { label: 'Players' }, { label: 'Goalies' }],
+        items: [
+          {
+            label: 'Teams',
+            routerLink: ['/league/history/teams'],
+          },
+          {
+            label: 'Players',
+            routerLink: ['/league/history/players'],
+          },
+          {
+            label: 'Goalies',
+            routerLink: ['/league/history/goalies'],
+          },
+        ],
       },
     ],
   },
