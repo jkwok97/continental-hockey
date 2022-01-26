@@ -43,7 +43,7 @@ export class LoginCardComponent {
       .pipe(untilDestroyed(this))
       .subscribe(([loggingIn, logInComplete]: [boolean, boolean]) => {
         if (!loggingIn && logInComplete) {
-          this.router.navigate(['home']);
+          this.router.navigate(['']);
         }
         this.loginFormRef?.form.reset();
       });

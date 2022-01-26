@@ -4,47 +4,26 @@ import { MainComponent } from './containers';
 
 const ROUTES: Route[] = [
   {
-    path: 'home',
+    path: '',
     component: MainComponent,
     children: [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'summary',
+        redirectTo: 'home',
       },
       {
-        path: 'summary',
+        path: 'home',
         loadChildren: () =>
-          import('@cha/cha-angular/features/home-summary').then(
-            (mod) => mod.ChaAngularFeaturesHomeSummaryModule
+          import('@cha/cha-angular/features/home').then(
+            (mod) => mod.ChaAngularFeaturesHomeModule
           ),
       },
       {
-        path: 'franchise',
+        path: 'league',
         loadChildren: () =>
-          import('@cha/cha-angular/features/home-franchise').then(
-            (mod) => mod.ChaAngularFeaturesHomeFranchiseModule
-          ),
-      },
-      {
-        path: 'awards',
-        loadChildren: () =>
-          import('@cha/cha-angular/features/home-awards').then(
-            (mod) => mod.ChaAngularFeaturesHomeAwardsModule
-          ),
-      },
-      {
-        path: 'current-goalies',
-        loadChildren: () =>
-          import('@cha/cha-angular/features/home-current-goalies').then(
-            (mod) => mod.ChaAngularFeaturesHomeCurrentGoaliesModule
-          ),
-      },
-      {
-        path: 'current-players',
-        loadChildren: () =>
-          import('@cha/cha-angular/features/home-current-players').then(
-            (mod) => mod.ChaAngularFeaturesHomeCurrentPlayersModule
+          import('@cha/cha-angular/features/main-league').then(
+            (mod) => mod.ChaAngularFeaturesMainLeagueModule
           ),
       },
     ],

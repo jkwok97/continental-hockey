@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   loginSuccess(user: UserDto) {
-    this.router.navigate(['/home']);
+    this.router.navigate(['']);
     this.authFacade.loginSuccess(user);
   }
 }
