@@ -48,6 +48,12 @@
       "@cha/cha-angular/features/league-stats": [
         "libs/cha-angular/features/league-stats/src/index.ts"
       ],
+      "@cha/cha-angular/features/league-stats-goalies": [
+        "libs/cha-angular/features/league-stats-goalies/src/index.ts"
+      ],
+      "@cha/cha-angular/features/league-stats-players": [
+        "libs/cha-angular/features/league-stats-players/src/index.ts"
+      ],
       "@cha/cha-angular/features/league-stats-team": [
         "libs/cha-angular/features/league-stats-team/src/index.ts"
       ],
