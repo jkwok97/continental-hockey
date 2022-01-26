@@ -87,6 +87,12 @@
       "@cha/cha-angular/features/main-league": [
         "libs/cha-angular/features/main-league/src/index.ts"
       ],
+      "@cha/cha-angular/features/teams": [
+        "libs/cha-angular/features/teams/src/index.ts"
+      ],
+      "@cha/cha-angular/features/teams-summary": [
+        "libs/cha-angular/features/teams-summary/src/index.ts"
+      ],
       "@cha/shared/api": ["libs/shared/api/src/index.ts"],
       "@cha/shared/auth/angular/auth-angular": [
         "libs/shared/auth/angular/auth-angular/src/index.ts"

@@ -26,6 +26,13 @@ const ROUTES: Route[] = [
             (mod) => mod.ChaAngularFeaturesGamesModule
           ),
       },
+      {
+        path: 'teams',
+        loadChildren: () =>
+          import('@cha/cha-angular/features/teams').then(
+            (mod) => mod.ChaAngularFeaturesTeamsModule
+          ),
+      },
     ],
   },
 ];

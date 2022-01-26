@@ -25,6 +25,8 @@
     "cha-angular-features-league-stats-team-detailed": "libs/cha-angular/features/league-stats-team-detailed",
     "cha-angular-features-main": "libs/cha-angular/features/main",
     "cha-angular-features-main-league": "libs/cha-angular/features/main-league",
+    "cha-angular-features-teams": "libs/cha-angular/features/teams",
+    "cha-angular-features-teams-summary": "libs/cha-angular/features/teams-summary",
     "continental-hockey": "apps/continental-hockey",
     "continental-hockey-angular": "apps/continental-hockey-angular",
     "continental-hockey-angular-e2e": "apps/continental-hockey-angular-e2e",

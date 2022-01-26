@@ -86,46 +86,107 @@ export const mainMenuItems: MenuItem[] = [
         ],
       },
       {
+        // TODO MAKE THESE DYNAMIC
         label: 'Teams',
         items: [
           {
             label: 'North West Division',
             items: [
-              { label: 'Kelowna Mountaineers' },
-              { label: 'Oakland Assassins' },
-              { label: 'San Francisco Fighting Cocks' },
-              { label: 'Victoria Stellar Jays' },
-              { label: 'Sacremento Storm' },
+              {
+                label: 'Kelowna Mountaineers',
+                routerLink: ['/league/teams/8'],
+              },
+              {
+                label: 'Oakland Assassins',
+                routerLink: ['/league/teams/13'],
+              },
+              {
+                label: 'San Francisco Fighting Cocks',
+                routerLink: ['/league/teams/16'],
+              },
+              {
+                label: 'Victoria Stellar Jays',
+                routerLink: ['/league/teams/53'],
+              },
+              {
+                label: 'Sacremento Storm',
+                routerLink: ['/league/teams/61'],
+              },
             ],
           },
           {
             label: 'South West Division',
             items: [
-              { label: 'Chyenne Desperado' },
-              { label: 'Lone Star Brahmas' },
-              { label: 'Memphis Hound Dogs' },
-              { label: 'Oklahoma City Oil Barons' },
-              { label: 'Wichita Wolfpack' },
+              {
+                label: 'Chyenne Desperado',
+                routerLink: ['/league/teams/4'],
+              },
+              {
+                label: 'Lone Star Brahmas',
+                routerLink: ['/league/teams/9'],
+              },
+              {
+                label: 'Memphis Hound Dogs',
+                routerLink: ['/league/teams/10'],
+              },
+              {
+                label: 'Oklahoma City Oil Barons',
+                routerLink: ['/league/teams/14'],
+              },
+              {
+                label: 'Wichita Wolfpack',
+                routerLink: ['/league/teams/21'],
+              },
             ],
           },
           {
             label: 'North East Division',
             items: [
-              { label: 'Green Bay Glory' },
-              { label: 'Indianapolis Goats' },
-              { label: 'Milwaukee Ice Dragons' },
-              { label: 'Mississauga North Stars' },
-              { label: 'Peoria Prowlers' },
+              {
+                label: 'Green Bay Glory',
+                routerLink: ['/league/teams/6'],
+              },
+              {
+                label: 'Indianapolis Goats',
+                routerLink: ['/league/teams/7'],
+              },
+              {
+                label: 'Milwaukee Ice Dragons',
+                routerLink: ['/league/teams/11'],
+              },
+              {
+                label: 'Mississauga North Stars',
+                routerLink: ['/league/teams/12'],
+              },
+              {
+                label: 'Peoria Prowlers',
+                routerLink: ['/league/teams/15'],
+              },
             ],
           },
           {
             label: 'South East Division',
             items: [
-              { label: 'Atlanta Flashers' },
-              { label: 'Augusta Green Jackets' },
-              { label: 'Cincinnati Cyclones' },
-              { label: 'Staten Island Killer Bees' },
-              { label: 'St.Johns Vikings' },
+              {
+                label: 'Atlanta Flashers',
+                routerLink: ['/league/teams/2'],
+              },
+              {
+                label: 'Augusta Green Jackets',
+                routerLink: ['/league/teams/3'],
+              },
+              {
+                label: 'Cincinnati Cyclones',
+                routerLink: ['/league/teams/5'],
+              },
+              {
+                label: 'Staten Island Killer Bees',
+                routerLink: ['/league/teams/19'],
+              },
+              {
+                label: 'St.Johns Vikings',
+                routerLink: ['/league/teams/60'],
+              },
             ],
           },
         ],
