@@ -15,9 +15,18 @@ export const mainMenuItems: MenuItem[] = [
             label: 'Franchise',
             routerLink: ['/home/franchise'],
           },
-          { label: 'Players' },
-          { label: 'Goalies' },
-          { label: 'Awards' },
+          {
+            label: 'Players',
+            routerLink: ['/home/current-players'],
+          },
+          {
+            label: 'Goalies',
+            routerLink: ['/home/current-goalies'],
+          },
+          {
+            label: 'Awards',
+            routerLink: ['/home/awards'],
+          },
         ],
       },
       { label: 'Logout' },

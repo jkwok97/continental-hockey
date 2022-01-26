@@ -27,6 +27,15 @@
       "@cha/cha-angular/domain/main-title": [
         "libs/cha-angular/domain/main-title/src/index.ts"
       ],
+      "@cha/cha-angular/features/home-awards": [
+        "libs/cha-angular/features/home-awards/src/index.ts"
+      ],
+      "@cha/cha-angular/features/home-current-goalies": [
+        "libs/cha-angular/features/home-current-goalies/src/index.ts"
+      ],
+      "@cha/cha-angular/features/home-current-players": [
+        "libs/cha-angular/features/home-current-players/src/index.ts"
+      ],
       "@cha/cha-angular/features/home-franchise": [
         "libs/cha-angular/features/home-franchise/src/index.ts"
       ],
