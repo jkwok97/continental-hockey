@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/games-playoffs",
+  "sourceRoot": "libs/cha-angular/features/games-playoffs/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/games-playoffs"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/games-playoffs/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/games-playoffs/src/**/*.ts",
+          "libs/cha-angular/features/games-playoffs/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

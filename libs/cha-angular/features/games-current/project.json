@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/games-current",
+  "sourceRoot": "libs/cha-angular/features/games-current/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/games-current"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/games-current/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/games-current/src/**/*.ts",
+          "libs/cha-angular/features/games-current/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

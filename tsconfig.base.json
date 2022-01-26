@@ -27,6 +27,21 @@
       "@cha/cha-angular/domain/main-title": [
         "libs/cha-angular/domain/main-title/src/index.ts"
       ],
+      "@cha/cha-angular/features/games": [
+        "libs/cha-angular/features/games/src/index.ts"
+      ],
+      "@cha/cha-angular/features/games-all": [
+        "libs/cha-angular/features/games-all/src/index.ts"
+      ],
+      "@cha/cha-angular/features/games-current": [
+        "libs/cha-angular/features/games-current/src/index.ts"
+      ],
+      "@cha/cha-angular/features/games-playoffs": [
+        "libs/cha-angular/features/games-playoffs/src/index.ts"
+      ],
+      "@cha/cha-angular/features/games-upcoming": [
+        "libs/cha-angular/features/games-upcoming/src/index.ts"
+      ],
       "@cha/cha-angular/features/home": [
         "libs/cha-angular/features/home/src/index.ts"
       ],

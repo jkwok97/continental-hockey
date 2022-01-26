@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/games-all",
+  "sourceRoot": "libs/cha-angular/features/games-all/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/games-all"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/games-all/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/games-all/src/**/*.ts",
+          "libs/cha-angular/features/games-all/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}
