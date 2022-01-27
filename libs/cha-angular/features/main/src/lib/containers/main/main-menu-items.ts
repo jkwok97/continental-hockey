@@ -241,7 +241,16 @@ export const mainMenuItems: MenuItem[] = [
   },
   {
     label: 'Draft',
-    items: [{ label: 'Current' }, { label: 'History' }],
+    items: [
+      {
+        label: 'Current',
+        routerLink: ['/draft/current'],
+      },
+      {
+        label: 'History',
+        routerLink: ['/draft/history'],
+      },
+    ],
   },
   {
     label: 'Awards',

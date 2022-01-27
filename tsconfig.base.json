@@ -27,6 +27,12 @@
       "@cha/cha-angular/domain/main-title": [
         "libs/cha-angular/domain/main-title/src/index.ts"
       ],
+      "@cha/cha-angular/features/draft-current": [
+        "libs/cha-angular/features/draft-current/src/index.ts"
+      ],
+      "@cha/cha-angular/features/draft-summary": [
+        "libs/cha-angular/features/draft-summary/src/index.ts"
+      ],
       "@cha/cha-angular/features/games": [
         "libs/cha-angular/features/games/src/index.ts"
       ],
@@ -95,6 +101,9 @@
       ],
       "@cha/cha-angular/features/main": [
         "libs/cha-angular/features/main/src/index.ts"
+      ],
+      "@cha/cha-angular/features/main-draft": [
+        "libs/cha-angular/features/main-draft/src/index.ts"
       ],
       "@cha/cha-angular/features/main-league": [
         "libs/cha-angular/features/main-league/src/index.ts"

@@ -33,6 +33,13 @@ const ROUTES: Route[] = [
             (mod) => mod.ChaAngularFeaturesMainNhlModule
           ),
       },
+      {
+        path: 'draft',
+        loadChildren: () =>
+          import('@cha/cha-angular/features/main-draft').then(
+            (mod) => mod.ChaAngularFeaturesMainDraftModule
+          ),
+      },
     ],
   },
 ];
