@@ -135,6 +135,9 @@
       "@cha/cha-angular/features/main-nhl": [
         "libs/cha-angular/features/main-nhl/src/index.ts"
       ],
+      "@cha/cha-angular/features/main-rules": [
+        "libs/cha-angular/features/main-rules/src/index.ts"
+      ],
       "@cha/cha-angular/features/nhl-leaders": [
         "libs/cha-angular/features/nhl-leaders/src/index.ts"
       ],
@@ -143,6 +146,27 @@
       ],
       "@cha/cha-angular/features/nhl-twitter": [
         "libs/cha-angular/features/nhl-twitter/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-egr": [
+        "libs/cha-angular/features/rules-egr/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-equalization": [
+        "libs/cha-angular/features/rules-equalization/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-lottery": [
+        "libs/cha-angular/features/rules-lottery/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-player-protection": [
+        "libs/cha-angular/features/rules-player-protection/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-rosters": [
+        "libs/cha-angular/features/rules-rosters/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-waivers": [
+        "libs/cha-angular/features/rules-waivers/src/index.ts"
+      ],
+      "@cha/cha-angular/features/rules-winnings": [
+        "libs/cha-angular/features/rules-winnings/src/index.ts"
       ],
       "@cha/cha-angular/features/salaries-ratings": [
         "libs/cha-angular/features/salaries-ratings/src/index.ts"

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/rules-equalization",
+  "sourceRoot": "libs/cha-angular/features/rules-equalization/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/rules-equalization"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/rules-equalization/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/rules-equalization/src/**/*.ts",
+          "libs/cha-angular/features/rules-equalization/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/rules-rosters",
+  "sourceRoot": "libs/cha-angular/features/rules-rosters/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/rules-rosters"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/rules-rosters/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/rules-rosters/src/**/*.ts",
+          "libs/cha-angular/features/rules-rosters/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/rules-winnings",
+  "sourceRoot": "libs/cha-angular/features/rules-winnings/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/rules-winnings"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/rules-winnings/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/rules-winnings/src/**/*.ts",
+          "libs/cha-angular/features/rules-winnings/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}

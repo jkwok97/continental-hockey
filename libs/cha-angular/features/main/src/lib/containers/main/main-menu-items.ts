@@ -288,13 +288,34 @@ export const mainMenuItems: MenuItem[] = [
   {
     label: 'Rules & Prizing',
     items: [
-      { label: 'Player Equalization' },
-      { label: 'Draft Lottery' },
-      { label: 'Emergency Goaltender' },
-      { label: 'Player Protection' },
-      { label: 'Rosters' },
-      { label: 'Waivers' },
-      { label: 'Winnings Allocation' },
+      {
+        label: 'Player Equalization',
+        routerLink: ['/rules/equalization'],
+      },
+      {
+        label: 'Draft Lottery',
+        routerLink: ['/rules/lottery'],
+      },
+      {
+        label: 'Emergency Goaltender',
+        routerLink: ['/rules/egr'],
+      },
+      {
+        label: 'Player Protection',
+        routerLink: ['/rules/player-protection'],
+      },
+      {
+        label: 'Rosters',
+        routerLink: ['/rules/rosters'],
+      },
+      {
+        label: 'Waivers',
+        routerLink: ['/rules/waivers'],
+      },
+      {
+        label: 'Winnings Allocation',
+        routerLink: ['/rules/winnings'],
+      },
     ],
   },
 ];

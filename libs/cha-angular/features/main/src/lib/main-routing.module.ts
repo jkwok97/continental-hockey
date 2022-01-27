@@ -47,6 +47,13 @@ const ROUTES: Route[] = [
             (mod) => mod.ChaAngularFeaturesMainAwardsModule
           ),
       },
+      {
+        path: 'rules',
+        loadChildren: () =>
+          import('@cha/cha-angular/features/main-rules').then(
+            (mod) => mod.ChaAngularFeaturesMainRulesModule
+          ),
+      },
     ],
   },
 ];
