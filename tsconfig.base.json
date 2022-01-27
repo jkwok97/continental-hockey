@@ -27,6 +27,27 @@
       "@cha/cha-angular/domain/main-title": [
         "libs/cha-angular/domain/main-title/src/index.ts"
       ],
+      "@cha/cha-angular/features/awards-champions": [
+        "libs/cha-angular/features/awards-champions/src/index.ts"
+      ],
+      "@cha/cha-angular/features/awards-defense": [
+        "libs/cha-angular/features/awards-defense/src/index.ts"
+      ],
+      "@cha/cha-angular/features/awards-gm": [
+        "libs/cha-angular/features/awards-gm/src/index.ts"
+      ],
+      "@cha/cha-angular/features/awards-goalie": [
+        "libs/cha-angular/features/awards-goalie/src/index.ts"
+      ],
+      "@cha/cha-angular/features/awards-rookie": [
+        "libs/cha-angular/features/awards-rookie/src/index.ts"
+      ],
+      "@cha/cha-angular/features/awards-scorer": [
+        "libs/cha-angular/features/awards-scorer/src/index.ts"
+      ],
+      "@cha/cha-angular/features/awards-season": [
+        "libs/cha-angular/features/awards-season/src/index.ts"
+      ],
       "@cha/cha-angular/features/draft-current": [
         "libs/cha-angular/features/draft-current/src/index.ts"
       ],
@@ -101,6 +122,9 @@
       ],
       "@cha/cha-angular/features/main": [
         "libs/cha-angular/features/main/src/index.ts"
+      ],
+      "@cha/cha-angular/features/main-awards": [
+        "libs/cha-angular/features/main-awards/src/index.ts"
       ],
       "@cha/cha-angular/features/main-draft": [
         "libs/cha-angular/features/main-draft/src/index.ts"

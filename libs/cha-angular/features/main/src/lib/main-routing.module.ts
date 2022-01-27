@@ -40,6 +40,13 @@ const ROUTES: Route[] = [
             (mod) => mod.ChaAngularFeaturesMainDraftModule
           ),
       },
+      {
+        path: 'awards',
+        loadChildren: () =>
+          import('@cha/cha-angular/features/main-awards').then(
+            (mod) => mod.ChaAngularFeaturesMainAwardsModule
+          ),
+      },
     ],
   },
 ];

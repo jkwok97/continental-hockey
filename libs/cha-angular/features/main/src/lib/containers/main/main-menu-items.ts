@@ -255,13 +255,34 @@ export const mainMenuItems: MenuItem[] = [
   {
     label: 'Awards',
     items: [
-      { label: 'Champions' },
-      { label: 'Leading Scorer' },
-      { label: 'Best Defenseman' },
-      { label: 'Best Rookie' },
-      { label: 'Best Goalie' },
-      { label: 'Best GM' },
-      { label: 'Best Season' },
+      {
+        label: 'Champions',
+        routerLink: ['/awards/champions'],
+      },
+      {
+        label: 'Leading Scorer',
+        routerLink: ['/awards/scorer'],
+      },
+      {
+        label: 'Best Defenseman',
+        routerLink: ['/awards/defense'],
+      },
+      {
+        label: 'Best Rookie',
+        routerLink: ['/awards/rookie'],
+      },
+      {
+        label: 'Best Goalie',
+        routerLink: ['/awards/goalie'],
+      },
+      {
+        label: 'Best GM',
+        routerLink: ['/awards/gm'],
+      },
+      {
+        label: 'Best Season',
+        routerLink: ['/awards/season'],
+      },
     ],
   },
   {
