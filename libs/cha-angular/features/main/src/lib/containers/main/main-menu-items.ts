@@ -225,9 +225,18 @@ export const mainMenuItems: MenuItem[] = [
   {
     label: 'NHL',
     items: [
-      { label: 'Leaders' },
-      { label: 'Statistics' },
-      { label: 'Twitter Updates' },
+      {
+        label: 'Leaders',
+        routerLink: ['/nhl/leaders'],
+      },
+      {
+        label: 'Statistics',
+        routerLink: ['/nhl/stats'],
+      },
+      {
+        label: 'Twitter Updates',
+        routerLink: ['/nhl/twitter'],
+      },
     ],
   },
   {

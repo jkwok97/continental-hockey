@@ -99,6 +99,18 @@
       "@cha/cha-angular/features/main-league": [
         "libs/cha-angular/features/main-league/src/index.ts"
       ],
+      "@cha/cha-angular/features/main-nhl": [
+        "libs/cha-angular/features/main-nhl/src/index.ts"
+      ],
+      "@cha/cha-angular/features/nhl-leaders": [
+        "libs/cha-angular/features/nhl-leaders/src/index.ts"
+      ],
+      "@cha/cha-angular/features/nhl-stats": [
+        "libs/cha-angular/features/nhl-stats/src/index.ts"
+      ],
+      "@cha/cha-angular/features/nhl-twitter": [
+        "libs/cha-angular/features/nhl-twitter/src/index.ts"
+      ],
       "@cha/cha-angular/features/salaries-ratings": [
         "libs/cha-angular/features/salaries-ratings/src/index.ts"
       ],

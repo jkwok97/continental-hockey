@@ -26,6 +26,13 @@ const ROUTES: Route[] = [
             (mod) => mod.ChaAngularFeaturesMainLeagueModule
           ),
       },
+      {
+        path: 'nhl',
+        loadChildren: () =>
+          import('@cha/cha-angular/features/main-nhl').then(
+            (mod) => mod.ChaAngularFeaturesMainNhlModule
+          ),
+      },
     ],
   },
 ];

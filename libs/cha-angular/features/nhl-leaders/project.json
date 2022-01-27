@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/cha-angular/features/nhl-leaders",
+  "sourceRoot": "libs/cha-angular/features/nhl-leaders/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cha-angular/features/nhl-leaders"],
+      "options": {
+        "jestConfig": "libs/cha-angular/features/nhl-leaders/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/cha-angular/features/nhl-leaders/src/**/*.ts",
+          "libs/cha-angular/features/nhl-leaders/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:feature"]
+}
