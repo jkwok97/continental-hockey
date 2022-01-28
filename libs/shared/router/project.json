@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/router",
+  "sourceRoot": "libs/shared/router/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/router"],
+      "options": {
+        "jestConfig": "libs/shared/router/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/router/src/**/*.ts",
+          "libs/shared/router/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:routing"]
+}

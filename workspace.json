@@ -67,6 +67,7 @@
     "continental-hockey-e2e": "apps/continental-hockey-e2e",
     "shared-api": "libs/shared/api",
     "shared-auth-angular-auth-angular": "libs/shared/auth/angular/auth-angular",
+    "shared-router": "libs/shared/router",
     "shared-ui-angular-button": "libs/shared/ui/angular/button",
     "shared-ui-angular-forms": "libs/shared/ui/angular/forms",
     "shared-ui-angular-layout": "libs/shared/ui/angular/layout",

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { MainComponent } from './containers';
+import { MainResolver } from './resolvers';
 
 const ROUTES: Route[] = [
   {
@@ -10,7 +11,7 @@ const ROUTES: Route[] = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home',
+        resolve: [MainResolver],
       },
       {
         path: 'home',

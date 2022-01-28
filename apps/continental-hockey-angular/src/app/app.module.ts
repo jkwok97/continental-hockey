@@ -22,6 +22,7 @@ import { AppConfigService } from '../services';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-router.module';
 import { MessageService } from 'primeng/api';
+import { SharedRouterModule } from '@cha/shared/router';
 
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {
@@ -48,6 +49,7 @@ const getApiUrl = (appConfig: AppConfigService) => {
     SharedUiAngularFormsModule,
     SharedUiAngularLayoutModule,
     SharedAuthAngularModule,
+    SharedRouterModule,
     ChaAngularDomainMainTitleModule,
     AppRoutingModule,
     ChaAngularDomainCoreModule,

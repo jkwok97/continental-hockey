@@ -6,6 +6,7 @@ import { SharedUiAngularMenuModule } from '@cha/shared/ui/angular/menu';
 import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
 import { SharedUiAngularLogoModule } from '@cha/shared/ui/angular/logo';
 
+import { MainResolver } from './resolvers';
 import { MainRoutingModule } from './main-routing.module';
 
 import { MainComponent } from './containers';
@@ -22,5 +23,6 @@ import { MainComponent } from './containers';
     SharedUiAngularLogoModule,
   ],
   declarations: [MainComponent],
+  providers: [MainResolver],
 })
 export class ChaAngularFeaturesMainModule {}

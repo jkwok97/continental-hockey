@@ -187,6 +187,7 @@
       "@cha/shared/auth/angular/auth-angular": [
         "libs/shared/auth/angular/auth-angular/src/index.ts"
       ],
+      "@cha/shared/router": ["libs/shared/router/src/index.ts"],
       "@cha/shared/ui/angular/button": [
         "libs/shared/ui/angular/button/src/index.ts"
       ],

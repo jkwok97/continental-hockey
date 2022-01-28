@@ -23,7 +23,8 @@
                   "angular:ui",
                   "angular:domain",
                   "angular:auth",
-                  "angular:feature"
+                  "angular:feature",
+                  "angular:routing"
                 ]
               },
               {
