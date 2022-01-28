@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TeamInfoService, UserDto, UserTeamDto } from '@cha/shared/api';
-import { AuthFacade, authActions } from '@cha/shared/auth/angular/auth-angular';
+import { TeamInfoService, UserTeamDto } from '@cha/shared/api';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 import { UserTeamActions } from './user-team.actions';
@@ -9,16 +8,8 @@ import { UserTeamActions } from './user-team.actions';
 export class UserTeamEffects {
   constructor(
     private actions$: Actions,
-    private authFacade: AuthFacade,
     private teamInfoService: TeamInfoService
   ) {}
-
-//   loginSuccess$ = createEffect(() =>
-//     this.actions$.pipe(
-//       ofType(authActions.loginSuccess),
-//       map((action) => UserTeamActions.get({ userId: action.user.id }))
-//     )
-//   );
 
   get$ = createEffect(() =>
     this.actions$.pipe(

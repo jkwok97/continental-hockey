@@ -16,13 +16,13 @@ import { SharedAuthAngularModule } from '@cha/shared/auth/angular/auth-angular';
 import { APP_CONFIG } from '@cha/cha-angular/domain/app-config';
 import { ChaAngularDomainCoreModule } from '@cha/cha-angular/domain/core';
 import { SharedApiModule } from '@cha/shared/api';
+import { SharedRouterModule } from '@cha/shared/router';
 
 import { AppComponent } from './app.component';
 import { AppConfigService } from '../services';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-router.module';
 import { MessageService } from 'primeng/api';
-import { SharedRouterModule } from '@cha/shared/router';
 
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {

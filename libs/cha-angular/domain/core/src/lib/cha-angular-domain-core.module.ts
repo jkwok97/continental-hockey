@@ -7,14 +7,16 @@ import { EffectsModule } from '@ngrx/effects';
 import { coreReducer } from './states';
 import { UserTeamEffects } from './states/user-team/user-team.effects';
 import { UserTeamFacade } from './states/user-team/user-team.facade';
+import { DisplayEffects } from './states/display/display.effects';
+import { DisplayFacade } from '..';
 
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('core', coreReducer),
-    EffectsModule.forFeature([UserTeamEffects]),
+    EffectsModule.forFeature([UserTeamEffects, DisplayEffects]),
   ],
-  providers: [UserTeamEffects, UserTeamFacade],
+  providers: [UserTeamEffects, UserTeamFacade, DisplayFacade, DisplayEffects],
 })
 export class ChaAngularDomainCoreModule {
   constructor(

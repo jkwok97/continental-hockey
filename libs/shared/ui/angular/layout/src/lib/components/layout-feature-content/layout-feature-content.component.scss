@@ -1,0 +1,13 @@
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  margin: 1rem 0;
+  border: 1px solid yellow;
+}
+
+:host {
+  padding: 10px 0;
+}

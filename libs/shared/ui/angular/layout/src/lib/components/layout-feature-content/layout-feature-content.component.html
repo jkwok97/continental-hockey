@@ -1,0 +1,7 @@
+<div class="feature-content">
+  <p-scrollPanel
+    [style]="(isMobile$ | async) ? panelStyleMobile : panelStyleDesktop"
+  >
+    <ng-content></ng-content>
+  </p-scrollPanel>
+</div>

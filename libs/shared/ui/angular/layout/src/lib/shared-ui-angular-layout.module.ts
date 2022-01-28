@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+
 import { LayoutComponent } from './layout/layout.component';
-import { LayoutFeatureComponent } from './components/layout-feature/layout-feature.component';
+
+import {
+  LayoutFeatureComponent,
+  LayoutFeatureContentComponent,
+} from './components';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [LayoutComponent, LayoutFeatureComponent],
-  exports: [LayoutComponent, LayoutFeatureComponent],
+  imports: [CommonModule, ScrollPanelModule],
+  declarations: [
+    LayoutComponent,
+    LayoutFeatureComponent,
+    LayoutFeatureContentComponent,
+  ],
+  exports: [
+    LayoutComponent,
+    LayoutFeatureComponent,
+    LayoutFeatureContentComponent,
+  ],
 })
 export class SharedUiAngularLayoutModule {}

@@ -4,9 +4,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { UserTeamDto } from '../models';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TeamInfoService {
   constructor(
     private _http: HttpClient,
