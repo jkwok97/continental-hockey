@@ -1,4 +1,14 @@
-<cha-ang-layout-feature>
-  <cha-ang-menu [items]="items"></cha-ang-menu>
+<cha-ang-layout-feature *ngIf="currentTeam$ | async">
+  <cha-ang-menu [items]="items" [logo]="teamLogo"></cha-ang-menu>
   <router-outlet></router-outlet>
 </cha-ang-layout-feature>
+
+<ng-template #teamLogo>
+  <ng-container *ngIf="currentTeam$ | async as team">
+    <cha-ang-logo
+      [height]="40"
+      [width]="40"
+      [userTeamLogo]="team.teamlogo"
+    ></cha-ang-logo>
+  </ng-container>
+</ng-template>

@@ -1,6 +1,6 @@
 export enum ChaAngLogoEnum {
-  OAK = 'Assassins.png',
-  LSB = 'Brahams.png',
+  ASSASSINS = 'Assassins.png',
+  BRAHMAS = 'Brahams.png',
   FIGHTING_COCKS = 'Cocks.png',
   CYCLONES = 'Cyclones.png',
   CHY_DESPERADO = 'Desperado.png',

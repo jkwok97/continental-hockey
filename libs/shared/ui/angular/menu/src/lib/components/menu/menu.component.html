@@ -1,8 +1,5 @@
 <p-menubar [model]="items">
-  <div class="menu-img">
-    <img
-      src="https://www.logolynx.com/images/logolynx/ad/ada8f3877ac55d202e8ebc117923053f.jpeg"
-      height="40"
-    />
-  </div>
+  <ng-template pTemplate="start" *ngIf="logo">
+    <ng-container *ngTemplateOutlet="logo"></ng-container>
+  </ng-template>
 </p-menubar>
