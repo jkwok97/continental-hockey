@@ -1,4 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { DisplayFacade } from '@cha/cha-angular/domain/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cha-ang-rules-winnings',
@@ -8,4 +10,10 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class RulesWinningsComponent {
   background = 'assets/images/oilers-old.jpg';
+
+  isMobile$: Observable<boolean>;
+
+  constructor(private displayFacade: DisplayFacade) {
+    this.isMobile$ = this.displayFacade.isMobile$;
+  }
 }

@@ -1,3 +1,39 @@
+@import 'apps/continental-hockey-angular/src/scss/variables';
+
 .rules-winnings {
   padding: 20px 0;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1.5fr 1fr;
+  grid-column-gap: 20px;
+  align-items: center;
+
+  &-mobile {
+    padding: 20px 0;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+  }
+
+  &-card {
+    border: 1px solid $cha-divider-color;
+    display: grid;
+    grid-row-gap: 10px;
+    justify-items: center;
+    padding: 20px;
+    border-radius: $cha-default-radius;
+    box-shadow: $cha-default-box-shadow;
+    width: 325px;
+
+    &-header {
+      font-size: x-large;
+      font-weight: 100;
+    }
+
+    li {
+      font-size: medium;
+      font-weight: 100;
+      margin: 10px 0;
+    }
+  }
 }
