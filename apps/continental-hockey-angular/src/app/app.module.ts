@@ -7,6 +7,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 import { ChaAngularDomainLoginModule } from '@cha/cha-angular/domain/login';
 import { SharedUiAngularFormsModule } from '@cha/shared/ui/angular/forms';
@@ -22,7 +24,6 @@ import { AppComponent } from './app.component';
 import { AppConfigService } from '../services';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-router.module';
-import { MessageService } from 'primeng/api';
 
 const appInitializerFn = (appConfig: AppConfigService) => {
   return () => {
@@ -44,6 +45,8 @@ const getApiUrl = (appConfig: AppConfigService) => {
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+
+    PerfectScrollbarModule,
 
     ChaAngularDomainLoginModule,
     SharedUiAngularFormsModule,

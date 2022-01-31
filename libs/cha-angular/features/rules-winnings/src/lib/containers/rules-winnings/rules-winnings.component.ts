@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { DisplayFacade } from '@cha/cha-angular/domain/core';
+
 import { Observable } from 'rxjs';
+
+import { DisplayFacade } from '@cha/cha-angular/domain/core';
 
 @Component({
   selector: 'cha-ang-rules-winnings',

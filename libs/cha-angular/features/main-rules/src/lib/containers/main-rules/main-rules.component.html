@@ -1,3 +1,7 @@
-<cha-ang-layout-feature-content>
-  <router-outlet></router-outlet>
-</cha-ang-layout-feature-content>
+<perfect-scrollbar
+  [style]="(isMobile$ | async) ? panelStyleMobile : panelStyleDesktop"
+>
+  <cha-ang-layout-feature-content>
+    <router-outlet></router-outlet>
+  </cha-ang-layout-feature-content>
+</perfect-scrollbar>
