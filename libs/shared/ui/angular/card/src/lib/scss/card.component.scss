@@ -1,0 +1,19 @@
+@use 'card.variables' as *;
+
+.cha-card {
+  display: flex;
+  flex-direction: column;
+  color: $cha-card-text-color;
+  box-shadow: $cha-card-box-shadow;
+  border-radius: $cha-card-border-radius;
+
+  &-header {
+    padding: $cha-card-header-padding;
+  }
+  &-body {
+    padding: $cha-card-body-padding;
+  }
+  &-footer {
+    padding: $cha-card-footer-padding;
+  }
+}

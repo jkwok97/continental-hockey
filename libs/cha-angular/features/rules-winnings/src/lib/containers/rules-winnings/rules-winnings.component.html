@@ -7,10 +7,12 @@
   <div *ngIf="(isMobile$ | async) === false">
     <img [src]="background" />
   </div>
-  <div class="rules-winnings-card">
-    <div class="rules-winnings-card-header">CHA Winnings Allotment</div>
 
-    <div class="rules-winnings-card-content">
+  <cha-ang-card class="rules-winnings-card">
+    <cha-ang-card-header class="rules-winnings-card-header"
+      >CHA Winnings Allotment</cha-ang-card-header
+    >
+    <cha-ang-card-body>
       <ul>
         <li>Liberty Cup Champion - $250</li>
         <li>Liberty Cup Runner Up - $100</li>
@@ -25,6 +27,6 @@
         <li>Website Maintenance - $25</li>
         <li>League Administration - $25</li>
       </ul>
-    </div>
-  </div>
+    </cha-ang-card-body>
+  </cha-ang-card>
 </div>

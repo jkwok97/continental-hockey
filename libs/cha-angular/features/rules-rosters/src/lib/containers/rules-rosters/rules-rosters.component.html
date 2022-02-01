@@ -7,10 +7,12 @@
   <div *ngIf="(isMobile$ | async) === false">
     <img [src]="background" />
   </div>
-  <div class="rules-rosters-card">
-    <div class="rules-rosters-card-header">Roster Rules</div>
+  <cha-ang-card class="rules-rosters-card">
+    <cha-ang-card-header class="rules-rosters-card-header"
+      >Roster Rules</cha-ang-card-header
+    >
 
-    <div class="rules-rosters-card-content">
+    <cha-ang-card-body class="rules-rosters-card-content">
       <ul>
         <li>
           CHA rosters may comprise of a
@@ -35,6 +37,6 @@
           necessary transactions by proxy
         </li>
       </ul>
-    </div>
-  </div>
+    </cha-ang-card-body>
+  </cha-ang-card>
 </div>

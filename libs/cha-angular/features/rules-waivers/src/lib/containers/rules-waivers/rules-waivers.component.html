@@ -7,10 +7,12 @@
   <div *ngIf="(isMobile$ | async) === false">
     <img [src]="background" />
   </div>
-  <div class="rules-waivers-card">
-    <div class="rules-waivers-card-header">Waiver Wire</div>
+  <cha-ang-card class="rules-waivers-card">
+    <cha-ang-card-header class="rules-waivers-card-header"
+      >Waiver Wire</cha-ang-card-header
+    >
 
-    <div class="rules-waivers-card-content">
+    <cha-ang-card-body class="rules-waivers-card-content">
       <ul>
         <li>
           Waiver claims will be made Sundays at 2 week intervals throughout the
@@ -61,6 +63,6 @@
         </li>
         <li>Waiver claim positions may not be traded.</li>
       </ul>
-    </div>
-  </div>
+    </cha-ang-card-body>
+  </cha-ang-card>
 </div>

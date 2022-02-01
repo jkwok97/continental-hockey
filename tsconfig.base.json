@@ -191,6 +191,9 @@
       "@cha/shared/ui/angular/button": [
         "libs/shared/ui/angular/button/src/index.ts"
       ],
+      "@cha/shared/ui/angular/card": [
+        "libs/shared/ui/angular/card/src/index.ts"
+      ],
       "@cha/shared/ui/angular/forms": [
         "libs/shared/ui/angular/forms/src/index.ts"
       ],
