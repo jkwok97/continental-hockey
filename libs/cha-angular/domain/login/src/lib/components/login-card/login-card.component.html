@@ -1,13 +1,15 @@
-<div class="login-card">
-  <cha-ang-logo
-    [logo]="ChaLogo.LEAGUE"
-    [width]="200"
-    [height]="160"
-  ></cha-ang-logo>
+<cha-ang-card class="login-card">
+  <cha-ang-card-body>
+    <cha-ang-logo
+      [logo]="ChaLogo.LEAGUE"
+      [width]="200"
+      [height]="160"
+    ></cha-ang-logo>
 
-  <cha-ang-login-form></cha-ang-login-form>
+    <cha-ang-login-form></cha-ang-login-form>
+  </cha-ang-card-body>
 
-  <div class="login-card-buttons">
+  <cha-ang-card-footer class="login-card-buttons">
     <cha-ang-button
       label="Login"
       [hasIcon]="true"
@@ -17,5 +19,5 @@
       [isLoading]="(loggingIn$ | async) ? true : false"
       (click)="onSubmit()"
     ></cha-ang-button>
-  </div>
-</div>
+  </cha-ang-card-footer>
+</cha-ang-card>
