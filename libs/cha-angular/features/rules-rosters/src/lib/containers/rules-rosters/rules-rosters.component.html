@@ -1,1 +1,40 @@
-<p>rules-rosters works!</p>
+<div
+  [ngClass]="{
+    'rules-rosters': (isMobile$ | async) === false,
+    'rules-rosters-mobile': (isMobile$ | async) === true
+  }"
+>
+  <div *ngIf="(isMobile$ | async) === false">
+    <img [src]="background" />
+  </div>
+  <div class="rules-rosters-card">
+    <div class="rules-rosters-card-header">Roster Rules</div>
+
+    <div class="rules-rosters-card-content">
+      <ul>
+        <li>
+          CHA rosters may comprise of a
+          <span class="rules-rosters-card-content-max"
+            ><i>maximum of 30 skaters</i></span
+          >, including at least 2 (but no more than 3) goaltenters (see
+          Emergency Goaltender Rule).
+        </li>
+        <li>
+          CHA rosters must have a
+          <span class="rules-rosters-card-content-min"
+            ><i>minimum of 24 players</i></span
+          >
+          (including goaltenders)
+        </li>
+        <li>
+          Roster maximum and salary cap only apply during the regular season
+        </li>
+        <li>
+          Rosters must be in compliance of the salary cap before each set of
+          regular season games. If this is breached, the league will perform the
+          necessary transactions by proxy
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

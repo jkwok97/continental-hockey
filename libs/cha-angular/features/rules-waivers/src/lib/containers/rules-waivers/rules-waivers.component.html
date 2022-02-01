@@ -1,16 +1,16 @@
 <div
   [ngClass]="{
-    'rules-winnings': (isMobile$ | async) === false,
-    'rules-winnings-mobile': (isMobile$ | async) === true
+    'rules-waivers': (isMobile$ | async) === false,
+    'rules-waivers-mobile': (isMobile$ | async) === true
   }"
 >
   <div *ngIf="(isMobile$ | async) === false">
     <img [src]="background" />
   </div>
-  <div class="rules-winnings-card">
-    <div class="rules-winnings-card-header">Waiver Wire</div>
+  <div class="rules-waivers-card">
+    <div class="rules-waivers-card-header">Waiver Wire</div>
 
-    <div class="rules-winnings-card-content">
+    <div class="rules-waivers-card-content">
       <ul>
         <li>
           Waiver claims will be made Sundays at 2 week intervals throughout the
