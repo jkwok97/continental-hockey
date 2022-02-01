@@ -1,16 +1,21 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+import { Observable } from 'rxjs';
+
+import { DisplayFacade } from '@cha/cha-angular/domain/core';
 
 @Component({
   selector: 'cha-ang-rules-player-protection',
   templateUrl: './rules-player-protection.component.html',
   styleUrls: ['./rules-player-protection.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RulesPlayerProtectionComponent implements OnInit {
+export class RulesPlayerProtectionComponent {
+  background = 'assets/images/bure.jpg';
 
-  constructor() { }
+  isMobile$: Observable<boolean>;
 
-  ngOnInit(): void {
+  constructor(private displayFacade: DisplayFacade) {
+    this.isMobile$ = this.displayFacade.isMobile$;
   }
-
 }
