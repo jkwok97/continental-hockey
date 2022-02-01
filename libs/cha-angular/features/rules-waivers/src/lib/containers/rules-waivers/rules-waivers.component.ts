@@ -1,4 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+
+import { Observable } from 'rxjs';
+
+import { DisplayFacade } from '@cha/cha-angular/domain/core';
 
 @Component({
   selector: 'cha-ang-rules-waivers',
@@ -6,11 +10,14 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./rules-waivers.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RulesWaiversComponent implements OnInit {
+export class RulesWaiversComponent {
 
-  constructor() { }
+  background = 'assets/images/lidstrom.jpg';
 
-  ngOnInit(): void {
+  isMobile$: Observable<boolean>;
+
+  constructor(private displayFacade: DisplayFacade) {
+    this.isMobile$ = this.displayFacade.isMobile$;
   }
 
 }

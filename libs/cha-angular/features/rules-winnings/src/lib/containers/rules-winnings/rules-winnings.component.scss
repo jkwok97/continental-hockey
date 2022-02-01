@@ -24,7 +24,7 @@
     padding: 20px;
     border-radius: $cha-default-radius;
     box-shadow: $cha-default-box-shadow;
-    width: 325px;
+    min-width: 325px;
 
     &-header {
       font-size: x-large;
