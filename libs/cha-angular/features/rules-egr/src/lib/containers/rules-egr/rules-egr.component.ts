@@ -8,10 +8,9 @@ import { DisplayFacade } from '@cha/cha-angular/domain/core';
   selector: 'cha-ang-rules-egr',
   templateUrl: './rules-egr.component.html',
   styleUrls: ['./rules-egr.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RulesEgrComponent {
-
   background = 'assets/images/brodeur.jpg';
 
   isMobile$: Observable<boolean>;
@@ -19,5 +18,4 @@ export class RulesEgrComponent {
   constructor(private displayFacade: DisplayFacade) {
     this.isMobile$ = this.displayFacade.isMobile$;
   }
-
 }
