@@ -19,11 +19,11 @@ export class MainRulesComponent {
 
   panelStyleMobile = {
     width: '100%',
-    height: '78vh',
+    height: '72vh',
   };
 
   panelStyleDesktop = {
     width: '100%',
-    height: '83vh',
+    height: '79vh',
   };
 }
