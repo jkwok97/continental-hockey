@@ -1,0 +1,41 @@
+<div class="award-card" [style.background-color]="getColor(award.teamcolor)">
+  <div class="award-card-header">
+    <div class="award-card-header-avatar">
+      <p-avatar
+        [image]="getString(award.teamlogo)"
+        size="xlarge"
+        shape="sqaure"
+      ></p-avatar>
+    </div>
+
+    <div class="award-card-header-content">
+      <div class="award-card-header-content-title">
+        <ng-container *ngIf="award.awardtypeid === AwardTypeEnum.CHAMPION">
+          {{ award.display_season }} - {{ award.city }} {{ award.nickname }}
+        </ng-container>
+        <ng-container *ngIf="award.awardtypeid !== AwardTypeEnum.CHAMPION">
+          {{ award.display_season }} - {{ award.playerfirst }}
+          {{ award.playerlast }}
+        </ng-container>
+      </div>
+
+      <div class="award-card-header-content-description">
+        <ng-container *ngIf="award.awardtypeid === AwardTypeEnum.CHAMPION">
+          Owner: {{ award.ownerfirst }} {{ award.ownerlast }}
+        </ng-container>
+        <ng-container *ngIf="award.awardtypeid !== AwardTypeEnum.CHAMPION">
+          {{ award.display_season }} - {{ award.playerfirst }}
+          {{ award.playerlast }}
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="award-card-body"
+    *ngIf="award.awardtypeid !== AwardTypeEnum.CHAMPION"
+  >
+    <div class="award-card-body-image"></div>
+    <div class="award-card-body-extras"></div>
+  </div>
+</div>

@@ -68,6 +68,7 @@
     "shared-api": "libs/shared/api",
     "shared-auth-angular-auth-angular": "libs/shared/auth/angular/auth-angular",
     "shared-router": "libs/shared/router",
+    "shared-ui-angular-award-card": "libs/shared/ui/angular/award-card",
     "shared-ui-angular-button": "libs/shared/ui/angular/button",
     "shared-ui-angular-card": "libs/shared/ui/angular/card",
     "shared-ui-angular-forms": "libs/shared/ui/angular/forms",

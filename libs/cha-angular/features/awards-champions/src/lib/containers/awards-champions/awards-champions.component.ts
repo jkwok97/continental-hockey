@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AwardsFacade } from '@cha/cha-angular/domain/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { AwardsFacade, DisplayFacade } from '@cha/cha-angular/domain/core';
 import { AwardDto } from '@cha/shared/api';
 import { Observable } from 'rxjs';
 
@@ -9,12 +9,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./awards-champions.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AwardsChampionsComponent implements OnInit {
+export class AwardsChampionsComponent {
   champions$: Observable<AwardDto[]>;
-  
-  constructor(private awardsFacade: AwardsFacade) {
+  isMobile$: Observable<boolean>;
+  constructor(
+    private awardsFacade: AwardsFacade,
+    private displayFacade: DisplayFacade
+  ) {
     this.champions$ = this.awardsFacade.champions$;
+    this.isMobile$ = this.displayFacade.isMobile$;
   }
-
-  ngOnInit(): void {}
 }

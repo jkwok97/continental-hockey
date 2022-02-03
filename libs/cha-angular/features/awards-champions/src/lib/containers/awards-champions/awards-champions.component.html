@@ -1,3 +1,9 @@
-<ng-container *ngFor="let champion of champions$ | async">
-  <p>{{ champion.nickname }}</p>
-</ng-container>
+<!-- <div [ngClass]="{
+    'awards-champions': (isMobile$ | async) === false,
+    'awards-champions-mobile': (isMobile$ | async) === true
+  }"> -->
+<div class="awards-champions">
+  <ng-container *ngFor="let champion of champions$ | async">
+    <cha-ang-award-card [award]="champion"></cha-ang-award-card>
+  </ng-container>
+</div>
