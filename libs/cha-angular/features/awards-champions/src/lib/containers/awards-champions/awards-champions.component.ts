@@ -1,16 +1,20 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { AwardsFacade } from '@cha/cha-angular/domain/core';
+import { AwardDto } from '@cha/shared/api';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cha-ang-awards-champions',
   templateUrl: './awards-champions.component.html',
   styleUrls: ['./awards-champions.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AwardsChampionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  champions$: Observable<AwardDto[]>;
+  
+  constructor(private awardsFacade: AwardsFacade) {
+    this.champions$ = this.awardsFacade.champions$;
   }
 
+  ngOnInit(): void {}
 }

@@ -1,4 +1,4 @@
-import { Inject, Injectable, ɵɵsetComponentScope } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';

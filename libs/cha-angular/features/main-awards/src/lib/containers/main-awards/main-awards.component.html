@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<ng-container *ngIf="isLoaded$ | async">
+  <perfect-scrollbar
+    [style]="(isMobile$ | async) ? panelStyleMobile : panelStyleDesktop"
+  >
+    <cha-ang-layout-feature-content>
+      <router-outlet></router-outlet>
+    </cha-ang-layout-feature-content>
+  </perfect-scrollbar>
+</ng-container>
+
+<ng-container *ngIf="isLoading$ | async">
+  <cha-ang-layout-feature-content
+    ><p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+    ></p-progressBar
+  ></cha-ang-layout-feature-content>
+</ng-container>
