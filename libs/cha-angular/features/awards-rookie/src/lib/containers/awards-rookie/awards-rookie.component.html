@@ -1,1 +1,3 @@
-<p>awards-rookie works!</p>
+<ng-container *ngFor="let champion of rookies$ | async">
+  <p>{{ champion.nickname }}</p>
+</ng-container>
