@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
@@ -14,7 +13,6 @@ import { MainAwardsComponent } from './containers';
   imports: [
     CommonModule,
 
-    ProgressSpinnerModule,
     ProgressBarModule,
     PerfectScrollbarModule,
 
