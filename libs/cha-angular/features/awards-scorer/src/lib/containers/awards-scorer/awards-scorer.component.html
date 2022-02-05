@@ -1,3 +1,5 @@
-<ng-container *ngFor="let champion of scorers$ | async">
-  <p>{{ champion.nickname }}</p>
-</ng-container>
+<div class="awards-scorer">
+  <ng-container *ngFor="let scorer of scorers$ | async">
+    <cha-ang-award-card [award]="scorer"></cha-ang-award-card>
+  </ng-container>
+</div>

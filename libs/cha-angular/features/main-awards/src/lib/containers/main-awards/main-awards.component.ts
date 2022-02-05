@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { AwardsFacade, DisplayFacade } from '@cha/cha-angular/domain/core';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./main-awards.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainAwardsComponent implements OnInit {
+export class MainAwardsComponent {
   panelStyleMobile = {
     width: '100%',
     height: '72vh',
@@ -30,9 +30,5 @@ export class MainAwardsComponent implements OnInit {
     this.isLoading$ = this.awardsFacade.isLoading$;
     this.isLoaded$ = this.awardsFacade.isLoaded$;
     this.isMobile$ = this.displayFacade.isMobile$;
-  }
-
-  ngOnInit(): void {
-    this.awardsFacade.get();
   }
 }

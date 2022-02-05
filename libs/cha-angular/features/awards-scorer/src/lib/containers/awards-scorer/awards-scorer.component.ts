@@ -15,5 +15,7 @@ export class AwardsScorerComponent implements OnInit {
   constructor(private awardsFacade: AwardsFacade) {
     this.scorers$ = this.awardsFacade.scorers$;
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.awardsFacade.getScorers();
+  }
 }

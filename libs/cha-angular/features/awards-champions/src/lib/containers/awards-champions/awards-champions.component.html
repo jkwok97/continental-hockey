@@ -1,7 +1,12 @@
-<!-- <div [ngClass]="{
-    'awards-champions': (isMobile$ | async) === false,
-    'awards-champions-mobile': (isMobile$ | async) === true
-  }"> -->
+<ng-container *ngIf="isLoading$ | async">
+  <cha-ang-layout-feature-content
+    ><p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+    ></p-progressBar
+  ></cha-ang-layout-feature-content>
+</ng-container>
+
 <div class="awards-champions">
   <ng-container *ngFor="let champion of champions$ | async">
     <cha-ang-award-card [award]="champion"></cha-ang-award-card>

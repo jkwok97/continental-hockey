@@ -48,7 +48,11 @@ export class AwardsFacade {
 
   constructor(private store: Store<State>) {}
 
-  get() {
-    this.store.dispatch(AwardActions.get());
+  getChampions() {
+    this.store.dispatch(AwardActions.getChampions());
+  }
+
+  getScorers() {
+    this.store.dispatch(AwardActions.getScorers());
   }
 }

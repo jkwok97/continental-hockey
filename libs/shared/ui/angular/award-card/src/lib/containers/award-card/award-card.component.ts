@@ -13,8 +13,6 @@ export class AwardCardComponent {
 
   AwardTypeEnum = AwardTypeEnum;
 
-  constructor() {}
-
   // TODO TEMP WILL NEED TO ADJUST USER TEAM LOGO STRING WHEN READY
   getString(urlString: string) {
     const temp = urlString.split('/');
@@ -23,5 +21,9 @@ export class AwardCardComponent {
 
   getColor(color: string) {
     return `${color}95`;
+  }
+
+  getPlayerPicture(id: number) {
+    return `https://cms.nhl.bamgrid.com/images/headshots/current/168x168/${id}@2x.jpg`;
   }
 }

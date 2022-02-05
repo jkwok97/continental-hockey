@@ -1,21 +1,23 @@
 import { AwardTypeEnum } from './awardType.enum';
 
 export interface AwardDto {
-  awardtypeid: AwardTypeEnum;
+  id: number;
+  awardTypeId: AwardTypeEnum;
   cha_season: string;
   city: string;
   display_name: string;
   display_season: string;
-  id: number;
-  nhl_id: string;
+  ownerFirst: string;
+  ownerLast: string;
   nickname: string;
-  ownerfirst: string;
-  ownerid: number;
-  ownerlast: string;
-  playerfirst: string;
-  playerid: string;
-  playerlast: string;
   teamcolor: string;
-  teamid: number;
   teamlogo: string;
+  playerFirst?: string;
+  playerLast?: string;
+  nhl_id?: number;
+  player_id?: number;
+  games_played?: string;
+  goals?: string;
+  assists?: string;
+  points?: string;
 }

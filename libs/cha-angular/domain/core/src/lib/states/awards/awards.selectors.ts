@@ -12,32 +12,28 @@ const selectState = createSelector(
 
 const selectAwards = createSelector(selectState, AwardReducer.getAwards);
 
-const selectChampions = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 3)
-);
+const selectChampions = createSelector(selectState, AwardReducer.getChampions);
 
 const selectGMs = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 2)
+  awards.filter((award: AwardDto) => award.awardTypeId === 2)
 );
 
 const selectSeason = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 4)
+  awards.filter((award: AwardDto) => award.awardTypeId === 4)
 );
 
 const selectRookies = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 5)
+  awards.filter((award: AwardDto) => award.awardTypeId === 5)
 );
 
-const selectScorers = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 6)
-);
+const selectScorers = createSelector(selectState, AwardReducer.getScorers);
 
 const selectGoalies = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 7)
+  awards.filter((award: AwardDto) => award.awardTypeId === 7)
 );
 
 const selectDefenseman = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardtypeid === 8)
+  awards.filter((award: AwardDto) => award.awardTypeId === 8)
 );
 
 const selectLoading = createSelector(selectState, AwardReducer.getLoading);
