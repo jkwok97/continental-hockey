@@ -4,7 +4,7 @@
     'rules-winnings-mobile': (isMobile$ | async) === true
   }"
 >
-  <div *ngIf="(isMobile$ | async) === false">
+  <div *ngIf="(isMobile$ | async) === false" class="rules-winnings-image">
     <img [src]="background" />
   </div>
 

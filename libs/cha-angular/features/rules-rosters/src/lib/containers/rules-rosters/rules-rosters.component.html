@@ -4,7 +4,7 @@
     'rules-rosters-mobile': (isMobile$ | async) === true
   }"
 >
-  <div *ngIf="(isMobile$ | async) === false">
+  <div *ngIf="(isMobile$ | async) === false" class="rules-rosters-image">
     <img [src]="background" />
   </div>
   <cha-ang-card class="rules-rosters-card">

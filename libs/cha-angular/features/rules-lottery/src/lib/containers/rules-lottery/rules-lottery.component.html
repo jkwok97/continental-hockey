@@ -4,7 +4,7 @@
     'rules-lottery-mobile': (isMobile$ | async) === true
   }"
 >
-  <div *ngIf="(isMobile$ | async) === false">
+  <div *ngIf="(isMobile$ | async) === false" class="rules-lottery-image">
     <img [src]="background" />
   </div>
   <cha-ang-card class="rules-lottery-card">

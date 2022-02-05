@@ -6,8 +6,15 @@
   justify-items: center;
   grid-template-columns: 1.5fr 1fr;
   grid-column-gap: 20px;
-  align-items: center;
   height: 100%;
+
+  &-image {
+    width: 100%;
+    img {
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
 
   &-mobile {
     padding: 20px 0;

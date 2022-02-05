@@ -4,7 +4,7 @@
     'rules-waivers-mobile': (isMobile$ | async) === true
   }"
 >
-  <div *ngIf="(isMobile$ | async) === false">
+  <div *ngIf="(isMobile$ | async) === false" class="rules-waivers-image">
     <img [src]="background" />
   </div>
   <cha-ang-card class="rules-waivers-card">
