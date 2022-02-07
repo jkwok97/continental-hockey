@@ -1,14 +1,11 @@
-<ng-container *ngIf="isLoading$ | async">
-  <cha-ang-layout-feature-content
-    ><p-progressBar
-      mode="indeterminate"
-      [style]="{ height: '6px' }"
-    ></p-progressBar
-  ></cha-ang-layout-feature-content>
-</ng-container>
-
 <cha-ang-layout-feature-content>
   <div class="awards-champions">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+      *ngIf="isLoading$ | async"
+    ></p-progressBar>
+
     <ng-container *ngFor="let champion of champions$ | async">
       <cha-ang-award-card [award]="champion"></cha-ang-award-card>
     </ng-container>

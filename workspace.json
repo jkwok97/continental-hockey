@@ -71,6 +71,7 @@
     "shared-ui-angular-award-card": "libs/shared/ui/angular/award-card",
     "shared-ui-angular-button": "libs/shared/ui/angular/button",
     "shared-ui-angular-card": "libs/shared/ui/angular/card",
+    "shared-ui-angular-divider": "libs/shared/ui/angular/divider",
     "shared-ui-angular-forms": "libs/shared/ui/angular/forms",
     "shared-ui-angular-layout": "libs/shared/ui/angular/layout",
     "shared-ui-angular-logo": "libs/shared/ui/angular/logo",

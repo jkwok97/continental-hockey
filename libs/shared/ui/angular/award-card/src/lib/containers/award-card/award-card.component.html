@@ -39,6 +39,11 @@
         {{ award.city }} {{ award.nickname }}
       </div>
 
+      <div
+        class="award-card-header-content-divider"
+        *ngIf="award.awardTypeId !== AwardTypeEnum.CHAMPION"
+      ></div>
+
       <div class="award-card-header-content-description">
         <ng-container *ngIf="award.awardTypeId === AwardTypeEnum.CHAMPION">
           Owner: {{ award.ownerFirst }} {{ award.ownerLast }}

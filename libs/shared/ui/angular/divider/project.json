@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/angular/divider",
+  "sourceRoot": "libs/shared/ui/angular/divider/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/angular/divider"],
+      "options": {
+        "jestConfig": "libs/shared/ui/angular/divider/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/angular/divider/src/**/*.ts",
+          "libs/shared/ui/angular/divider/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:ui"]
+}

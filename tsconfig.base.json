@@ -197,6 +197,9 @@
       "@cha/shared/ui/angular/card": [
         "libs/shared/ui/angular/card/src/index.ts"
       ],
+      "@cha/shared/ui/angular/divider": [
+        "libs/shared/ui/angular/divider/src/index.ts"
+      ],
       "@cha/shared/ui/angular/forms": [
         "libs/shared/ui/angular/forms/src/index.ts"
       ],
