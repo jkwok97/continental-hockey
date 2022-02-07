@@ -79,4 +79,16 @@ export class AwardEffects {
       )
     )
   );
+
+  getSeason$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AwardActions.getSeason),
+      exhaustMap((action) =>
+        this.awardService.getSeason().pipe(
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
+          catchError(() => of(AwardActions.error()))
+        )
+      )
+    )
+  );
 }

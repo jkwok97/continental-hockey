@@ -23,4 +23,6 @@ export interface AwardDto {
   wins?: string;
   save_pct?: string;
   goals_against_avg?: string;
+  goals_for?: string;
+  goals_against?: string;
 }

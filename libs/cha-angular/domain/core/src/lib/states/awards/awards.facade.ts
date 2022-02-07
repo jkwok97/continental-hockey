@@ -45,4 +45,8 @@ export class AwardsFacade {
   getGm() {
     this.store.dispatch(AwardActions.getGm());
   }
+
+  getSeason() {
+    this.store.dispatch(AwardActions.getSeason());
+  }
 }

@@ -11,10 +11,16 @@ import { Observable } from 'rxjs';
 })
 export class AwardsSeasonComponent implements OnInit {
   season$: Observable<AwardDto[]>;
+  isLoading$: Observable<boolean>;
+  isLoaded$: Observable<boolean>;
 
   constructor(private awardsFacade: AwardsFacade) {
     this.season$ = this.awardsFacade.awards$;
+    this.isLoading$ = this.awardsFacade.isLoading$;
+    this.isLoaded$ = this.awardsFacade.isLoaded$;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.awardsFacade.getSeason();
+  }
 }

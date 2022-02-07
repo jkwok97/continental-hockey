@@ -24,6 +24,7 @@ const r = createReducer(
     AwardActions.getRookies,
     AwardActions.getGoalies,
     AwardActions.getGm,
+    AwardActions.getSeason,
     (state) => ({
       ...state,
       loading: true,
