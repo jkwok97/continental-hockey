@@ -34,4 +34,4 @@ const ROUTES: Route[] = [
   imports: [RouterModule.forChild(ROUTES)],
   exports: [RouterModule],
 })
-export class MainDraftModule {}
+export class MainDraftRoutingModule {}

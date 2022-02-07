@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { UserTeamDto } from '../models';
+import { TeamDto } from '../models';
 
 @Injectable()
 export class TeamInfoService {
@@ -11,13 +11,13 @@ export class TeamInfoService {
     @Inject('apiUrl') private apiUrl: string
   ) {}
 
-  getTeams(): Observable<UserTeamDto[]> {
+  getTeams(): Observable<TeamDto[]> {
     return this._http
       .get(`${this.apiUrl}/v2/teams`)
       .pipe(map((result: any) => result['result']));
   }
 
-  getUserTeams(id: number): Observable<UserTeamDto[]> {
+  getUserTeams(id: number): Observable<TeamDto[]> {
     return this._http
       .get(`${this.apiUrl}/v2/teams/user/${id}`)
       .pipe(map((result: any) => result['result']));
@@ -29,7 +29,7 @@ export class TeamInfoService {
       .pipe(map((result: any) => result['result']));
   }
 
-  getAllCurrentTeams(bool: boolean): Observable<UserTeamDto[]> {
+  getAllCurrentTeams(bool: boolean): Observable<TeamDto[]> {
     const options = {
       params: new HttpParams().set('isactive', bool.toString()),
     };
@@ -39,13 +39,13 @@ export class TeamInfoService {
       .pipe(map((result: any) => result['result']));
   }
 
-  getTeambyId(id: number): Observable<UserTeamDto> {
+  getTeambyId(id: number): Observable<TeamDto> {
     return this._http
       .get(`${this.apiUrl}/v2/teams/${id}`)
       .pipe(map((result: any) => result['result'][0]));
   }
 
-  getTeamsByActive(bool: string): Observable<UserTeamDto[]> {
+  getTeamsByActive(bool: string): Observable<TeamDto[]> {
     const options = { params: new HttpParams().set('isactive', bool) };
 
     return this._http

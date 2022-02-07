@@ -1,16 +1,34 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { AwardsFacade, DisplayFacade } from '@cha/cha-angular/domain/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cha-ang-main-draft',
   templateUrl: './main-draft.component.html',
   styleUrls: ['./main-draft.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainDraftComponent implements OnInit {
+export class MainDraftComponent {
+  panelStyleMobile = {
+    width: '100%',
+    height: '75vh',
+  };
 
-  constructor() { }
+  panelStyleDesktop = {
+    width: '100%',
+    height: '81vh',
+  };
 
-  ngOnInit(): void {
+  isLoading$: Observable<boolean>;
+  isLoaded$: Observable<boolean>;
+  isMobile$: Observable<boolean>;
+
+  constructor(
+    private awardsFacade: AwardsFacade,
+    private displayFacade: DisplayFacade
+  ) {
+    this.isLoading$ = this.awardsFacade.isLoading$;
+    this.isLoaded$ = this.awardsFacade.isLoaded$;
+    this.isMobile$ = this.displayFacade.isMobile$;
   }
-
 }

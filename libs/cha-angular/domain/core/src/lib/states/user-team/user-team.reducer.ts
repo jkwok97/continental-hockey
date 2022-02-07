@@ -1,9 +1,9 @@
-import { UserTeamDto } from '@cha/shared/api';
+import { TeamDto } from '@cha/shared/api';
 import { Action, createReducer, on } from '@ngrx/store';
 import { UserTeamActions } from './user-team.actions';
 
 export interface State {
-  teams: UserTeamDto[];
+  teams: TeamDto[];
   loading: boolean;
   loaded: boolean;
 }

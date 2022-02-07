@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { UserDto, UserTeamDto } from '@cha/shared/api';
+import { TeamDto, UserDto } from '@cha/shared/api';
 import { AuthFacade } from '@cha/shared/auth/angular/auth-angular';
 import { UserTeamFacade } from '@cha/cha-angular/domain/core';
 import { filter, first, Observable } from 'rxjs';
@@ -14,7 +14,7 @@ import { mainMenuItems } from './main-menu-items';
 })
 export class MainComponent implements OnInit {
   isLoading$: Observable<boolean>;
-  currentTeam$: Observable<UserTeamDto | undefined>;
+  currentTeam$: Observable<TeamDto | undefined>;
   currentUser$: Observable<UserDto | null>;
 
   items: MenuItem[] = mainMenuItems;

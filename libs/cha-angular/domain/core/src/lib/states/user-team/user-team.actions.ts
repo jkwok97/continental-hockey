@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { UserTeamDto } from '@cha/shared/api';
+import { TeamDto } from '@cha/shared/api';
 
 const NAMESPACE = '[User Team]';
 
@@ -8,7 +8,7 @@ const get = createAction(`${NAMESPACE} Get`, props<{ userId: number }>());
 
 const getSuccess = createAction(
   `${NAMESPACE} Get Success`,
-  props<{ userTeams: UserTeamDto[] }>()
+  props<{ userTeams: TeamDto[] }>()
 );
 
 const error = createAction(`${NAMESPACE} Error`);

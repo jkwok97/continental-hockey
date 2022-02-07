@@ -8,17 +8,32 @@ import { coreReducer } from './states';
 import { UserTeamEffects } from './states/user-team/user-team.effects';
 import { UserTeamFacade } from './states/user-team/user-team.facade';
 import { DisplayEffects } from './states/display/display.effects';
-import { DisplayFacade } from '..';
+import { DisplayFacade, LeagueDraftFacade } from '..';
 import { AwardEffects } from './states/awards/awards.effects';
 import { AwardsFacade } from './states/awards/awards.facade';
+import { LeagueDraftEffects } from './states/league-draft/league-draft.effects';
 
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('core', coreReducer),
-    EffectsModule.forFeature([UserTeamEffects, DisplayEffects, AwardEffects]),
+    EffectsModule.forFeature([
+      UserTeamEffects,
+      DisplayEffects,
+      AwardEffects,
+      LeagueDraftEffects,
+    ]),
   ],
-  providers: [UserTeamEffects, UserTeamFacade, DisplayFacade, DisplayEffects, AwardsFacade, AwardEffects],
+  providers: [
+    UserTeamEffects,
+    UserTeamFacade,
+    DisplayFacade,
+    DisplayEffects,
+    AwardsFacade,
+    AwardEffects,
+    LeagueDraftFacade,
+    LeagueDraftEffects,
+  ],
 })
 export class ChaAngularDomainCoreModule {
   constructor(

@@ -1,4 +1,4 @@
-import { UserTeamDto } from '@cha/shared/api';
+import { TeamDto } from '@cha/shared/api';
 import { createSelector } from '@ngrx/store';
 import { AppState, selectFeatureState } from '../index';
 
@@ -11,8 +11,8 @@ const selectState = createSelector(
 
 const selectTeams = createSelector(selectState, UserTeamReducer.getTeams);
 
-const selectActiveTeam = createSelector(selectTeams, (teams: UserTeamDto[]) =>
-  teams.find((team: UserTeamDto) => team.isactive)
+const selectActiveTeam = createSelector(selectTeams, (teams: TeamDto[]) =>
+  teams.find((team: TeamDto) => team.isactive)
 );
 
 const selectLoading = createSelector(selectState, UserTeamReducer.getLoading);

@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MainDraftModule } from './main-draft-routing.module';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+
+import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
+
+import { MainDraftRoutingModule } from './main-draft-routing.module';
 
 import { MainDraftComponent } from './containers';
 
 @NgModule({
-  imports: [CommonModule, MainDraftModule],
+  imports: [
+    CommonModule,
+    MainDraftRoutingModule,
+
+    PerfectScrollbarModule,
+
+    SharedUiAngularLayoutModule,
+  ],
   declarations: [MainDraftComponent],
 })
 export class ChaAngularFeaturesMainDraftModule {}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserTeamDto } from '@cha/shared/api';
+import { TeamDto } from '@cha/shared/api';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { UserTeamActions } from './user-team.actions';
@@ -16,11 +16,11 @@ export class UserTeamFacade {
     UserTeamSelectors.selectLoaded
   );
 
-  userTeams$: Observable<UserTeamDto[]> = this.store.select(
+  userTeams$: Observable<TeamDto[]> = this.store.select(
     UserTeamSelectors.selectTeams
   );
 
-  currentUserTeam$: Observable<UserTeamDto | undefined> = this.store.select(
+  currentUserTeam$: Observable<TeamDto | undefined> = this.store.select(
     UserTeamSelectors.selectActiveTeam
   );
 

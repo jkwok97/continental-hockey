@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { TeamInfoService, UserTeamDto } from '@cha/shared/api';
+import { TeamDto, TeamInfoService } from '@cha/shared/api';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 import { UserTeamActions } from './user-team.actions';
@@ -16,7 +16,7 @@ export class UserTeamEffects {
       ofType(UserTeamActions.get),
       exhaustMap((action) =>
         this.teamInfoService.getUserTeams(action.userId).pipe(
-          map((userTeams: UserTeamDto[]) =>
+          map((userTeams: TeamDto[]) =>
             UserTeamActions.getSuccess({ userTeams })
           ),
           catchError(() => of(UserTeamActions.error()))

@@ -1,5 +1,7 @@
-export interface UserTeamDto {
-  id: number;
+import { TeamsEnum } from './Team.enum';
+
+export interface TeamDto {
+  id: TeamsEnum;
   shortname: string;
   city: string;
   nickname: string;
