@@ -1,3 +1,14 @@
-<ng-container *ngFor="let champion of goalies$ | async">
-  <p>{{ champion.nickname }}</p>
-</ng-container>
+<cha-ang-layout-feature-content>
+  <div class="awards-goalie">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+      *ngIf="isLoading$ | async"
+    ></p-progressBar>
+    <ng-container *ngIf="isLoaded$ | async">
+      <ng-container *ngFor="let scorer of goalies$ | async">
+        <cha-ang-award-card [award]="scorer"></cha-ang-award-card>
+      </ng-container>
+    </ng-container>
+  </div>
+</cha-ang-layout-feature-content>

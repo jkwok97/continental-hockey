@@ -52,7 +52,11 @@
 
       <div
         class="award-card-header-content-description"
-        *ngIf="award.awardTypeId !== AwardTypeEnum.CHAMPION && award.nhl_id"
+        *ngIf="
+          award.awardTypeId !== AwardTypeEnum.CHAMPION &&
+          award.awardTypeId !== AwardTypeEnum.GOALIE &&
+          award.nhl_id
+        "
       >
         <p>
           Games Played:
@@ -76,6 +80,40 @@
           Points:
           <span class="award-card-header-content-description-stat-highlight">{{
             award.points
+          }}</span>
+        </p>
+      </div>
+
+      <div
+        class="award-card-header-content-description"
+        *ngIf="
+          award.awardTypeId !== AwardTypeEnum.CHAMPION &&
+          award.awardTypeId === AwardTypeEnum.GOALIE &&
+          award.nhl_id
+        "
+      >
+        <p>
+          Games Played:
+          <span class="award-card-header-content-description-stat">{{
+            award.games_played
+          }}</span>
+        </p>
+        <p>
+          Wins:
+          <span class="award-card-header-content-description-stat">{{
+            award.wins
+          }}</span>
+        </p>
+        <p>
+          GAA:
+          <span class="award-card-header-content-description-stat">{{
+            award.goals_against_avg
+          }}</span>
+        </p>
+        <p>
+          Save %:
+          <span class="award-card-header-content-description-stat">{{
+            award.save_pct
           }}</span>
         </p>
       </div>

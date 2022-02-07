@@ -12,10 +12,12 @@ import { Observable } from 'rxjs';
 export class AwardsDefenseComponent implements OnInit {
   defense$: Observable<AwardDto[]>;
   isLoading$: Observable<boolean>;
+  isLoaded$: Observable<boolean>;
 
   constructor(private awardsFacade: AwardsFacade) {
-    this.defense$ = this.awardsFacade.defenseman$;
+    this.defense$ = this.awardsFacade.awards$;
     this.isLoading$ = this.awardsFacade.isLoading$;
+    this.isLoaded$ = this.awardsFacade.isLoaded$;
   }
 
   ngOnInit(): void {

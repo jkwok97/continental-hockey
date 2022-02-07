@@ -5,8 +5,10 @@
       [style]="{ height: '6px' }"
       *ngIf="isLoading$ | async"
     ></p-progressBar>
-    <ng-container *ngFor="let scorer of rookies$ | async">
-      <cha-ang-award-card [award]="scorer"></cha-ang-award-card>
+    <ng-container *ngIf="isLoaded$ | async">
+      <ng-container *ngFor="let scorer of rookies$ | async">
+        <cha-ang-award-card [award]="scorer"></cha-ang-award-card>
+      </ng-container>
     </ng-container>
   </div>
 </cha-ang-layout-feature-content>

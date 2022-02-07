@@ -20,4 +20,7 @@ export interface AwardDto {
   goals?: string;
   assists?: string;
   points?: string;
+  wins?: string;
+  save_pct?: string;
+  goals_against_avg?: string;
 }

@@ -8,28 +8,12 @@ import { AwardActions } from './awards.action';
 export class AwardEffects {
   constructor(private actions$: Actions, private awardService: AwardsService) {}
 
-  // get$ = createEffect(() =>
-  //   this.actions$.pipe(
-  //     ofType(AwardActions.getChampions),
-  //     exhaustMap((action) =>
-  //       this.awardService.getAll().pipe(
-  //         map((awards: AwardDto[]) =>
-  //           AwardActions.getChampionsSuccess({ awards })
-  //         ),
-  //         catchError(() => of(AwardActions.error()))
-  //       )
-  //     )
-  //   )
-  // );
-
   getChampions$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AwardActions.getChampions),
       exhaustMap((action) =>
         this.awardService.getChampions().pipe(
-          map((awards: AwardDto[]) =>
-            AwardActions.getChampionsSuccess({ awards })
-          ),
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
           catchError(() => of(AwardActions.error()))
         )
       )
@@ -41,9 +25,7 @@ export class AwardEffects {
       ofType(AwardActions.getScorers),
       exhaustMap((action) =>
         this.awardService.getScorers().pipe(
-          map((awards: AwardDto[]) =>
-            AwardActions.getScorersSuccess({ awards })
-          ),
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
           catchError(() => of(AwardActions.error()))
         )
       )
@@ -55,9 +37,7 @@ export class AwardEffects {
       ofType(AwardActions.getDefense),
       exhaustMap((action) =>
         this.awardService.getDefense().pipe(
-          map((awards: AwardDto[]) =>
-            AwardActions.getDefenseSuccess({ awards })
-          ),
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
           catchError(() => of(AwardActions.error()))
         )
       )
@@ -69,9 +49,19 @@ export class AwardEffects {
       ofType(AwardActions.getRookies),
       exhaustMap((action) =>
         this.awardService.getRookies().pipe(
-          map((awards: AwardDto[]) =>
-            AwardActions.getRookiesSuccess({ awards })
-          ),
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
+          catchError(() => of(AwardActions.error()))
+        )
+      )
+    )
+  );
+
+  getGoalies$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AwardActions.getGoalies),
+      exhaustMap((action) =>
+        this.awardService.getGoalies().pipe(
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
           catchError(() => of(AwardActions.error()))
         )
       )

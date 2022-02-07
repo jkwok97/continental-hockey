@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { AwardsFacade, DisplayFacade } from '@cha/cha-angular/domain/core';
+import { AwardsFacade } from '@cha/cha-angular/domain/core';
 import { AwardDto } from '@cha/shared/api';
 
 import { Observable } from 'rxjs';
@@ -12,16 +12,13 @@ import { Observable } from 'rxjs';
 })
 export class AwardsChampionsComponent implements OnInit {
   champions$: Observable<AwardDto[]>;
-  isMobile$: Observable<boolean>;
   isLoading$: Observable<boolean>;
+  isLoaded$: Observable<boolean>;
 
-  constructor(
-    private awardsFacade: AwardsFacade,
-    private displayFacade: DisplayFacade
-  ) {
-    this.champions$ = this.awardsFacade.champions$;
-    this.isMobile$ = this.displayFacade.isMobile$;
+  constructor(private awardsFacade: AwardsFacade) {
+    this.champions$ = this.awardsFacade.awards$;
     this.isLoading$ = this.awardsFacade.isLoading$;
+    this.isLoaded$ = this.awardsFacade.isLoaded$;
   }
 
   ngOnInit(): void {

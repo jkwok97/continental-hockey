@@ -20,32 +20,6 @@ export class AwardsFacade {
     AwardsSelectors.selectAwards
   );
 
-  champions$: Observable<AwardDto[]> = this.store.select(
-    AwardsSelectors.selectChampions
-  );
-
-  defenseman$: Observable<AwardDto[]> = this.store.select(
-    AwardsSelectors.selectDefenseman
-  );
-
-  gms$: Observable<AwardDto[]> = this.store.select(AwardsSelectors.selectGMs);
-
-  goalies$: Observable<AwardDto[]> = this.store.select(
-    AwardsSelectors.selectGoalies
-  );
-
-  rookies$: Observable<AwardDto[]> = this.store.select(
-    AwardsSelectors.selectRookies
-  );
-
-  scorers$: Observable<AwardDto[]> = this.store.select(
-    AwardsSelectors.selectScorers
-  );
-
-  season$: Observable<AwardDto[]> = this.store.select(
-    AwardsSelectors.selectSeason
-  );
-
   constructor(private store: Store<State>) {}
 
   getChampions() {
@@ -62,5 +36,9 @@ export class AwardsFacade {
 
   getRookies() {
     this.store.dispatch(AwardActions.getRookies());
+  }
+
+  getGoalies() {
+    this.store.dispatch(AwardActions.getGoalies());
   }
 }

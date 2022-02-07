@@ -6,8 +6,10 @@
       *ngIf="isLoading$ | async"
     ></p-progressBar>
 
-    <ng-container *ngFor="let champion of champions$ | async">
-      <cha-ang-award-card [award]="champion"></cha-ang-award-card>
+    <ng-container *ngIf="isLoaded$ | async">
+      <ng-container *ngFor="let champion of champions$ | async">
+        <cha-ang-award-card [award]="champion"></cha-ang-award-card>
+      </ng-container>
     </ng-container>
   </div>
 </cha-ang-layout-feature-content>

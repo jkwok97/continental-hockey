@@ -13,7 +13,7 @@ export class AwardsSeasonComponent implements OnInit {
   season$: Observable<AwardDto[]>;
 
   constructor(private awardsFacade: AwardsFacade) {
-    this.season$ = this.awardsFacade.season$;
+    this.season$ = this.awardsFacade.awards$;
   }
 
   ngOnInit(): void {}
