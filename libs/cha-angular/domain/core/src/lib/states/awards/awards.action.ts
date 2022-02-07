@@ -14,6 +14,8 @@ const getRookies = createAction(`${NAMESPACE} Get Rookies`);
 
 const getGoalies = createAction(`${NAMESPACE} Get Goalies`);
 
+const getGm = createAction(`${NAMESPACE} Get Gm`);
+
 const getAwardSuccess = createAction(
   `${NAMESPACE} Get Award Success`,
   props<{ awards: AwardDto[] }>()
@@ -27,6 +29,7 @@ export const AwardActions = {
   getDefense,
   getRookies,
   getGoalies,
+  getGm,
   getAwardSuccess,
   error,
 };

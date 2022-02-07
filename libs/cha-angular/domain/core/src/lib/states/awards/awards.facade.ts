@@ -41,4 +41,8 @@ export class AwardsFacade {
   getGoalies() {
     this.store.dispatch(AwardActions.getGoalies());
   }
+
+  getGm() {
+    this.store.dispatch(AwardActions.getGm());
+  }
 }

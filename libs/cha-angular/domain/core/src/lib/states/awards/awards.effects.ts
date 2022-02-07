@@ -67,4 +67,16 @@ export class AwardEffects {
       )
     )
   );
+
+  getGm$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AwardActions.getGm),
+      exhaustMap((action) =>
+        this.awardService.getGm().pipe(
+          map((awards: AwardDto[]) => AwardActions.getAwardSuccess({ awards })),
+          catchError(() => of(AwardActions.error()))
+        )
+      )
+    )
+  );
 }

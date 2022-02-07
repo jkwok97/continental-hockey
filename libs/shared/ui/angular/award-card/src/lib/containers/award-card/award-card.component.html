@@ -1,7 +1,12 @@
 <div class="award-card" [style.background-color]="getColor(award.teamcolor)">
   <div class="award-card-header">
     <div class="award-card-header-avatar">
-      <ng-container *ngIf="award.awardTypeId === AwardTypeEnum.CHAMPION">
+      <ng-container
+        *ngIf="
+          award.awardTypeId === AwardTypeEnum.CHAMPION ||
+          award.awardTypeId === AwardTypeEnum.GM
+        "
+      >
         <p-avatar
           [image]="getString(award.teamlogo)"
           size="xlarge"
@@ -23,10 +28,20 @@
 
     <div class="award-card-header-content">
       <div class="award-card-header-content-title">
-        <ng-container *ngIf="award.awardTypeId === AwardTypeEnum.CHAMPION">
+        <ng-container
+          *ngIf="
+            award.awardTypeId === AwardTypeEnum.CHAMPION ||
+            award.awardTypeId === AwardTypeEnum.GM
+          "
+        >
           {{ award.display_season }} - {{ award.city }} {{ award.nickname }}
         </ng-container>
-        <ng-container *ngIf="award.awardTypeId !== AwardTypeEnum.CHAMPION">
+        <ng-container
+          *ngIf="
+            award.awardTypeId !== AwardTypeEnum.CHAMPION &&
+            award.awardTypeId !== AwardTypeEnum.GM
+          "
+        >
           {{ award.display_season }} - {{ award.playerFirst }}
           {{ award.playerLast }}
         </ng-container>
@@ -34,18 +49,29 @@
 
       <div
         class="award-card-header-content-description"
-        *ngIf="award.awardTypeId !== AwardTypeEnum.CHAMPION"
+        *ngIf="
+          award.awardTypeId !== AwardTypeEnum.CHAMPION &&
+          award.awardTypeId !== AwardTypeEnum.GM
+        "
       >
         {{ award.city }} {{ award.nickname }}
       </div>
 
       <div
         class="award-card-header-content-divider"
-        *ngIf="award.awardTypeId !== AwardTypeEnum.CHAMPION"
+        *ngIf="
+          award.awardTypeId !== AwardTypeEnum.CHAMPION &&
+          award.awardTypeId !== AwardTypeEnum.GM
+        "
       ></div>
 
       <div class="award-card-header-content-description">
-        <ng-container *ngIf="award.awardTypeId === AwardTypeEnum.CHAMPION">
+        <ng-container
+          *ngIf="
+            award.awardTypeId === AwardTypeEnum.CHAMPION ||
+            award.awardTypeId === AwardTypeEnum.GM
+          "
+        >
           Owner: {{ award.ownerFirst }} {{ award.ownerLast }}
         </ng-container>
       </div>
