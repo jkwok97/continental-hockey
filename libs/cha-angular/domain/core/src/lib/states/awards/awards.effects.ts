@@ -63,4 +63,18 @@ export class AwardEffects {
       )
     )
   );
+
+  getRookies$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AwardActions.getRookies),
+      exhaustMap((action) =>
+        this.awardService.getRookies().pipe(
+          map((awards: AwardDto[]) =>
+            AwardActions.getRookiesSuccess({ awards })
+          ),
+          catchError(() => of(AwardActions.error()))
+        )
+      )
+    )
+  );
 }

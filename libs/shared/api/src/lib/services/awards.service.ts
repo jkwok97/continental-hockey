@@ -34,4 +34,10 @@ export class AwardsService {
       .get(`${this.apiUrl}/v2/awards/defense`)
       .pipe(map((result: any) => result['result']));
   }
+
+  getRookies(): Observable<AwardDto[]> {
+    return this._http
+      .get(`${this.apiUrl}/v2/awards/rookies`)
+      .pipe(map((result: any) => result['result']));
+  }
 }

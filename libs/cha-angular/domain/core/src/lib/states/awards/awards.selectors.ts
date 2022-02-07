@@ -16,16 +16,14 @@ const selectChampions = createSelector(selectState, AwardReducer.getChampions);
 
 const selectDefenseman = createSelector(selectState, AwardReducer.getDefense);
 
+const selectRookies = createSelector(selectState, AwardReducer.getRookies);
+
 const selectGMs = createSelector(selectAwards, (awards: AwardDto[]) =>
   awards.filter((award: AwardDto) => award.awardTypeId === 2)
 );
 
 const selectSeason = createSelector(selectAwards, (awards: AwardDto[]) =>
   awards.filter((award: AwardDto) => award.awardTypeId === 4)
-);
-
-const selectRookies = createSelector(selectAwards, (awards: AwardDto[]) =>
-  awards.filter((award: AwardDto) => award.awardTypeId === 5)
 );
 
 const selectScorers = createSelector(selectState, AwardReducer.getScorers);
