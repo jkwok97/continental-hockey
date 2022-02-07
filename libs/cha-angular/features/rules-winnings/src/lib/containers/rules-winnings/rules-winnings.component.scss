@@ -31,6 +31,7 @@
     padding: 20px;
     border-radius: $cha-default-radius;
     box-shadow: $cha-default-box-shadow;
+    max-width: calc(100% - 2rem);
     min-width: 325px;
 
     &-header {

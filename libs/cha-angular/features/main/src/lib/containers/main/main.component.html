@@ -1,5 +1,7 @@
 <section *ngIf="currentTeam$ | async">
-  <cha-ang-menu [items]="items" [logo]="teamLogo"></cha-ang-menu>
+  <div class="main-menu">
+    <cha-ang-menu [items]="items" [logo]="teamLogo"></cha-ang-menu>
+  </div>
 
   <cha-ang-layout-feature>
     <router-outlet></router-outlet>

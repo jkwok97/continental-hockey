@@ -1,41 +1,43 @@
-<div
-  [ngClass]="{
-    'rules-protection': (isMobile$ | async) === false,
-    'rules-protection-mobile': (isMobile$ | async) === true
-  }"
->
-  <div *ngIf="(isMobile$ | async) === false" class="rules-protection-image">
-    <img [src]="background" />
-  </div>
-  <cha-ang-card class="rules-protection-card">
-    <cha-ang-card-header class="rules-protection-card-header"
-      >Player Protection</cha-ang-card-header
-    >
+<cha-ang-layout-feature-content>
+  <div
+    [ngClass]="{
+      'rules-protection': (isMobile$ | async) === false,
+      'rules-protection-mobile': (isMobile$ | async) === true
+    }"
+  >
+    <div *ngIf="(isMobile$ | async) === false" class="rules-protection-image">
+      <img [src]="background" />
+    </div>
+    <cha-ang-card class="rules-protection-card">
+      <cha-ang-card-header class="rules-protection-card-header"
+        >Player Protection</cha-ang-card-header
+      >
 
-    <cha-ang-card-body class="rules-protection-card-content">
-      <p>
-        If a CHA player does not play in the minimum required NHL games to
-        qualify for CHA game disk eligibility, they are subject to the Player
-        Protection Rule. The G.M. with the player's rights has 3 options:
-      </p>
-      <ol>
-        <li>
-          Pay a $10 retainer fee (due with the following years dues) and not
-          have the player count towards his/her roster maximum or salary cap
-        </li>
-        <li>
-          Do not pay the $10 retainer fee. Instead, keep the player as a roster
-          player counting towards the team's salary cap and roster maximum. This
-          option is only available if the player has an NHL salary for that
-          season. If the player in in another leafue for that season, the G.M.
-          can select option 3.
-        </li>
-        <li>
-          Do neither. The player would be released and considered elegible for
-          the CHA entry draft when/if the player is eligible for the CHA game
-          disk.
-        </li>
-      </ol>
-    </cha-ang-card-body>
-  </cha-ang-card>
-</div>
+      <cha-ang-card-body class="rules-protection-card-content">
+        <p>
+          If a CHA player does not play in the minimum required NHL games to
+          qualify for CHA game disk eligibility, they are subject to the Player
+          Protection Rule. The G.M. with the player's rights has 3 options:
+        </p>
+        <ol>
+          <li>
+            Pay a $10 retainer fee (due with the following years dues) and not
+            have the player count towards his/her roster maximum or salary cap
+          </li>
+          <li>
+            Do not pay the $10 retainer fee. Instead, keep the player as a
+            roster player counting towards the team's salary cap and roster
+            maximum. This option is only available if the player has an NHL
+            salary for that season. If the player in in another leafue for that
+            season, the G.M. can select option 3.
+          </li>
+          <li>
+            Do neither. The player would be released and considered elegible for
+            the CHA entry draft when/if the player is eligible for the CHA game
+            disk.
+          </li>
+        </ol>
+      </cha-ang-card-body>
+    </cha-ang-card>
+  </div>
+</cha-ang-layout-feature-content>

@@ -1,32 +1,34 @@
-<div
-  [ngClass]="{
-    'rules-winnings': (isMobile$ | async) === false,
-    'rules-winnings-mobile': (isMobile$ | async) === true
-  }"
->
-  <div *ngIf="(isMobile$ | async) === false" class="rules-winnings-image">
-    <img [src]="background" />
-  </div>
+<cha-ang-layout-feature-content>
+  <div
+    [ngClass]="{
+      'rules-winnings': (isMobile$ | async) === false,
+      'rules-winnings-mobile': (isMobile$ | async) === true
+    }"
+  >
+    <div *ngIf="(isMobile$ | async) === false" class="rules-winnings-image">
+      <img [src]="background" />
+    </div>
 
-  <cha-ang-card class="rules-winnings-card">
-    <cha-ang-card-header class="rules-winnings-card-header"
-      >CHA Winnings Allotment</cha-ang-card-header
-    >
-    <cha-ang-card-body>
-      <ul>
-        <li>Liberty Cup Champion - $250</li>
-        <li>Liberty Cup Runner Up - $100</li>
-        <li>Conference Finalists - $100</li>
-        <li>Regular Season Winner - $50</li>
-        <li>Division Champion - $50/ea.</li>
-        <li>CHA Leading Scorer - $50</li>
-        <li>CHA Top Defenseman - $50</li>
-        <li>CHA Top Goalie - $50</li>
-        <li>CHA Top Rookie - $250</li>
-        <li>CHA Top G.M. - $50</li>
-        <li>Website Maintenance - $25</li>
-        <li>League Administration - $25</li>
-      </ul>
-    </cha-ang-card-body>
-  </cha-ang-card>
-</div>
+    <cha-ang-card class="rules-winnings-card">
+      <cha-ang-card-header class="rules-winnings-card-header"
+        >CHA Winnings Allotment</cha-ang-card-header
+      >
+      <cha-ang-card-body>
+        <ul>
+          <li>Liberty Cup Champion - $250</li>
+          <li>Liberty Cup Runner Up - $100</li>
+          <li>Conference Finalists - $100</li>
+          <li>Regular Season Winner - $50</li>
+          <li>Division Champion - $50/ea.</li>
+          <li>CHA Leading Scorer - $50</li>
+          <li>CHA Top Defenseman - $50</li>
+          <li>CHA Top Goalie - $50</li>
+          <li>CHA Top Rookie - $250</li>
+          <li>CHA Top G.M. - $50</li>
+          <li>Website Maintenance - $25</li>
+          <li>League Administration - $25</li>
+        </ul>
+      </cha-ang-card-body>
+    </cha-ang-card>
+  </div>
+</cha-ang-layout-feature-content>

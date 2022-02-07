@@ -7,8 +7,10 @@
   ></cha-ang-layout-feature-content>
 </ng-container>
 
-<div class="awards-champions">
-  <ng-container *ngFor="let champion of champions$ | async">
-    <cha-ang-award-card [award]="champion"></cha-ang-award-card>
-  </ng-container>
-</div>
+<cha-ang-layout-feature-content>
+  <div class="awards-champions">
+    <ng-container *ngFor="let champion of champions$ | async">
+      <cha-ang-award-card [award]="champion"></cha-ang-award-card>
+    </ng-container>
+  </div>
+</cha-ang-layout-feature-content>
