@@ -6,6 +6,7 @@ export interface State {
   awards: AwardDto[];
   champions: AwardDto[];
   scorers: AwardDto[];
+  defense: AwardDto[];
   loading: boolean;
   loaded: boolean;
 }
@@ -14,6 +15,7 @@ const initialState: State = {
   awards: [],
   champions: [],
   scorers: [],
+  defense: [],
   loading: false,
   loaded: false,
 };
@@ -21,11 +23,16 @@ const initialState: State = {
 const r = createReducer(
   initialState,
 
-  on(AwardActions.getChampions, AwardActions.getScorers, (state) => ({
-    ...state,
-    loading: true,
-    loaded: false,
-  })),
+  on(
+    AwardActions.getChampions,
+    AwardActions.getScorers,
+    AwardActions.getDefense,
+    (state) => ({
+      ...state,
+      loading: true,
+      loaded: false,
+    })
+  ),
 
   on(AwardActions.getChampionsSuccess, (state, action) => ({
     ...state,
@@ -37,6 +44,13 @@ const r = createReducer(
   on(AwardActions.getScorersSuccess, (state, action) => ({
     ...state,
     scorers: action.awards,
+    loading: false,
+    loaded: true,
+  })),
+
+  on(AwardActions.getDefenseSuccess, (state, action) => ({
+    ...state,
+    defense: action.awards,
     loading: false,
     loaded: true,
   })),
@@ -53,6 +67,8 @@ export const getAwards = (state: State) => state.awards;
 export const getChampions = (state: State) => state.champions;
 
 export const getScorers = (state: State) => state.scorers;
+
+export const getDefense = (state: State) => state.defense;
 
 export const getLoading = (state: State) => state.loading;
 

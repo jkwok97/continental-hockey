@@ -18,6 +18,13 @@ const getScorersSuccess = createAction(
   props<{ awards: AwardDto[] }>()
 );
 
+const getDefense = createAction(`${NAMESPACE} Get Defense`);
+
+const getDefenseSuccess = createAction(
+  `${NAMESPACE} Get Defense Success`,
+  props<{ awards: AwardDto[] }>()
+);
+
 const error = createAction(`${NAMESPACE} Error`);
 
 export const AwardActions = {
@@ -25,5 +32,7 @@ export const AwardActions = {
   getChampionsSuccess,
   getScorers,
   getScorersSuccess,
+  getDefense,
+  getDefenseSuccess,
   error,
 };

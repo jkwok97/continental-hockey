@@ -49,4 +49,18 @@ export class AwardEffects {
       )
     )
   );
+
+  getDefense$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AwardActions.getDefense),
+      exhaustMap((action) =>
+        this.awardService.getDefense().pipe(
+          map((awards: AwardDto[]) =>
+            AwardActions.getDefenseSuccess({ awards })
+          ),
+          catchError(() => of(AwardActions.error()))
+        )
+      )
+    )
+  );
 }

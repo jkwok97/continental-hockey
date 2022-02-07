@@ -55,4 +55,8 @@ export class AwardsFacade {
   getScorers() {
     this.store.dispatch(AwardActions.getScorers());
   }
+
+  getDefense() {
+    this.store.dispatch(AwardActions.getDefense());
+  }
 }
