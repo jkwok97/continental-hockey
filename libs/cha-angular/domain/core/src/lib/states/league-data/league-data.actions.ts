@@ -1,14 +1,21 @@
 import { createAction, props } from '@ngrx/store';
 
-import { LeagueDataDto } from '@cha/shared/api';
+import { LeagueDataDto, TeamDto } from '@cha/shared/api';
 
 const NAMESPACE = '[League Data]';
 
-const getLeagueData = createAction(`${NAMESPACE} Get`);
+const getLeagueData = createAction(`${NAMESPACE} Get Data`);
 
 const getLeagueDataSuccess = createAction(
-  `${NAMESPACE} Get Success`,
+  `${NAMESPACE} Get Data Success`,
   props<{ data: LeagueDataDto }>()
+);
+
+const getTeams = createAction(`${NAMESPACE} Get Teams`);
+
+const getTeamsSuccess = createAction(
+  `${NAMESPACE} Get Teams Success`,
+  props<{ teams: TeamDto[] }>()
 );
 
 const error = createAction(`${NAMESPACE} Error`);
@@ -16,5 +23,7 @@ const error = createAction(`${NAMESPACE} Error`);
 export const LeagueDataActions = {
   getLeagueData,
   getLeagueDataSuccess,
+  getTeams,
+  getTeamsSuccess,
   error,
 };

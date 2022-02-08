@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LeagueDataDto, LeagueDataService } from '@cha/shared/api';
+import { LeagueDataDto, LeagueDataService, TeamDto } from '@cha/shared/api';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, exhaustMap, map, of } from 'rxjs';
 import { LeagueDataActions } from './league-data.actions';
@@ -18,6 +18,20 @@ export class LeagueDataEffects {
         this.leagueDataService.getLeagueData().pipe(
           map((data: LeagueDataDto) =>
             LeagueDataActions.getLeagueDataSuccess({ data })
+          ),
+          catchError(() => of(LeagueDataActions.error()))
+        )
+      )
+    )
+  );
+
+  getTeams$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(LeagueDataActions.getTeams),
+      exhaustMap((action) =>
+        this.leagueDataService.getTeams().pipe(
+          map((teams: TeamDto[]) =>
+            LeagueDataActions.getTeamsSuccess({ teams })
           ),
           catchError(() => of(LeagueDataActions.error()))
         )

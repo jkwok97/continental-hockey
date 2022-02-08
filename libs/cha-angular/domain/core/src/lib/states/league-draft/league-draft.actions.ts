@@ -5,8 +5,7 @@ import { DraftPickDto, DraftTableDto } from '@cha/shared/api';
 const NAMESPACE = '[Draft]';
 
 const getDraftTable = createAction(
-  `${NAMESPACE} Get Draft Lottery`,
-  props<{ draftYear: number, playingYear: string, seasonType: string }>()
+  `${NAMESPACE} Get Draft Lottery`
 );
 
 const getDraftTableSuccess = createAction(

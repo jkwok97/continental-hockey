@@ -20,9 +20,6 @@ export class DraftService {
     playingYear: string,
     seasonType: string
   ): Observable<DraftTableDto[]> {
-    console.log(draftYear);
-    console.log(playingYear);
-    console.log(seasonType);
     const httpParams: HttpParamsOptions = {
       fromObject: {
         draft_year: draftYear.toString(),

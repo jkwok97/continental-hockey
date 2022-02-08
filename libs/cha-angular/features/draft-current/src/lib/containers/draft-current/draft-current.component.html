@@ -6,8 +6,16 @@
       *ngIf="isLoading$ | async"
     ></p-progressBar>
     <ng-container *ngIf="isLoaded$ | async">
-      <ng-container *ngFor="let draftTableItem of draftTableItems$ | async">
-        <p>{{ draftTableItem.nickname }}</p>
+      <ng-container *ngIf="draftTableItems$ | async as items">
+        <ng-container *ngIf="teams$ | async as teams"
+          ><cha-ang-table
+            [layout]="'stack'"
+            [data]="mapItems(items)"
+            [tableColumns]="tableColumns"
+            [teams]="teams"
+            [filteringOptions]="filteringOptions"
+          ></cha-ang-table
+        ></ng-container>
       </ng-container>
     </ng-container>
   </div>

@@ -1,9 +1,10 @@
-import { LeagueDataDto } from '@cha/shared/api';
+import { LeagueDataDto, TeamDto } from '@cha/shared/api';
 import { Action, createReducer, on } from '@ngrx/store';
 import { LeagueDataActions } from './league-data.actions';
 
 export interface State {
   currentData: LeagueDataDto;
+  teams: TeamDto[];
   loading: boolean;
   loaded: boolean;
 }
@@ -22,6 +23,7 @@ const initialState: State = {
     min_games: 10,
     offseason: false,
   },
+  teams: [],
   loading: false,
   loaded: false,
 };
@@ -29,7 +31,7 @@ const initialState: State = {
 const r = createReducer(
   initialState,
 
-  on(LeagueDataActions.getLeagueData, (state) => ({
+  on(LeagueDataActions.getLeagueData, LeagueDataActions.getTeams, (state) => ({
     ...state,
     loading: true,
     loaded: false,
@@ -42,6 +44,13 @@ const r = createReducer(
     loaded: true,
   })),
 
+  on(LeagueDataActions.getTeamsSuccess, (state, action) => ({
+    ...state,
+    teams: action.teams,
+    loading: false,
+    loaded: true,
+  })),
+
   on(LeagueDataActions.error, (state) => initialState)
 );
 
@@ -50,6 +59,8 @@ export function reducer(state: State | undefined, action: Action) {
 }
 
 export const getLeagueData = (state: State) => state.currentData;
+
+export const getTeams = (state: State) => state.teams;
 
 export const getLoading = (state: State) => state.loading;
 

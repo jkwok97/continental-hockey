@@ -26,10 +26,8 @@ export class LeagueDraftFacade {
 
   constructor(private store: Store<State>) {}
 
-  getDraftTable(draftYear: number, playingYear: string, seasonType: string) {
-    this.store.dispatch(
-      LeagueDraftActions.getDraftTable({ draftYear, playingYear, seasonType })
-    );
+  getDraftTable() {
+    this.store.dispatch(LeagueDraftActions.getDraftTable());
   }
 
   getDraftPicks() {

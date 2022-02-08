@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/angular/table",
+  "sourceRoot": "libs/shared/ui/angular/table/src",
+  "prefix": "cha-ang",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/angular/table"],
+      "options": {
+        "jestConfig": "libs/shared/ui/angular/table/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/angular/table/src/**/*.ts",
+          "libs/shared/ui/angular/table/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular:ui"]
+}

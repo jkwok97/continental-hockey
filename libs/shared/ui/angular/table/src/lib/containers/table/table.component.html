@@ -1,0 +1,73 @@
+<p-table
+  [responsiveLayout]="layout"
+  [value]="data"
+  styleClass="p-datatable-sm p-datatable-striped"
+  class="table"
+  [globalFilterFields]="filteringOptions"
+  #dt
+>
+  <!-- <ng-template
+    [ngTemplateOutlet]="captionTemplate"
+    pTemplate="caption"
+    *ngIf="captionTemplate"
+  ></ng-template> -->
+
+  <ng-template pTemplate="caption">
+    <div class="header-flex">
+      <button
+        pButton
+        label="Clear"
+        class="p-button-outlined"
+        icon="pi pi-filter-slash"
+        (click)="clear(dt)"
+      ></button>
+      <span class="p-input-icon-left ml-auto">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          (input)="applyFilterGlobal($event, 'contains')"
+          placeholder="Search keyword"
+        />
+      </span>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let column of tableColumns">{{ column.header }}</th>
+    </tr>
+  </ng-template>
+
+  <ng-template
+    pTemplate="body"
+    let-rowData
+    let-columns="columns"
+    let-rowIndex="rowIndex"
+  >
+    <tr>
+      <td *ngFor="let column of tableColumns">
+        <span class="p-column-title">{{ column.header }}</span>
+        <div class="table-body-cell">
+          <img
+            [src]="rowData.teamImg"
+            height="30px"
+            *ngIf="column.field === 'team'"
+          />
+          {{
+            !column.field.includes('round')
+              ? rowData[column.field]
+                ? rowData[column.field]
+                : rowIndex + 1
+              : ''
+          }}
+          <img
+            [src]="getLogo(rowData[column.field])"
+            height="30px"
+            *ngIf="column.field.includes('round')"
+          />
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

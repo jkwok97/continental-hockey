@@ -47,6 +47,8 @@ const selectCurrentDraftSeason = createSelector(
   }
 );
 
+const selectTeams = createSelector(selectState, LeagueDataReducer.getTeams);
+
 const selectLoading = createSelector(selectState, LeagueDataReducer.getLoading);
 
 const selectLoaded = createSelector(selectState, LeagueDataReducer.getLoaded);
@@ -56,6 +58,7 @@ export const LeagueDataSelectors = {
   selectCurrentSeason,
   selectCurrentDraftSeason,
   selectCurrentSeasonType,
+  selectTeams,
   selectLoaded,
   selectLoading,
 };

@@ -13,5 +13,6 @@ export class AppComponent {
   ) {
     this.displayFacade.get();
     this.leagueDataFacade.getLeagueData();
+    this.leagueDataFacade.getLeagueTeams();
   }
 }
