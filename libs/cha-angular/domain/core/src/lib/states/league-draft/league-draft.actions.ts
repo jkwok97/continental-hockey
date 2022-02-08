@@ -6,7 +6,7 @@ const NAMESPACE = '[Draft]';
 
 const getDraftTable = createAction(
   `${NAMESPACE} Get Draft Lottery`,
-  props<{ draftYear: number }>()
+  props<{ draftYear: number, playingYear: string, seasonType: string }>()
 );
 
 const getDraftTableSuccess = createAction(

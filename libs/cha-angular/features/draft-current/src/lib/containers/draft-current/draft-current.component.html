@@ -6,7 +6,9 @@
       *ngIf="isLoading$ | async"
     ></p-progressBar>
     <ng-container *ngIf="isLoaded$ | async">
-      <p>draft-current works!</p>
+      <ng-container *ngFor="let draftTableItem of draftTableItems$ | async">
+        <p>{{ draftTableItem.nickname }}</p>
+      </ng-container>
     </ng-container>
   </div>
 </cha-ang-layout-feature-content>

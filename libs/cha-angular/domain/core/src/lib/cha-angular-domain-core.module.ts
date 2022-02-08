@@ -12,6 +12,8 @@ import { DisplayFacade, LeagueDraftFacade } from '..';
 import { AwardEffects } from './states/awards/awards.effects';
 import { AwardsFacade } from './states/awards/awards.facade';
 import { LeagueDraftEffects } from './states/league-draft/league-draft.effects';
+import { LeagueDataEffects } from './states/league-data/league-data.effects';
+import { LeagueDataFacade } from './states/league-data/league-data.facade';
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ import { LeagueDraftEffects } from './states/league-draft/league-draft.effects';
       DisplayEffects,
       AwardEffects,
       LeagueDraftEffects,
+      LeagueDataEffects,
     ]),
   ],
   providers: [
@@ -33,6 +36,8 @@ import { LeagueDraftEffects } from './states/league-draft/league-draft.effects';
     AwardEffects,
     LeagueDraftFacade,
     LeagueDraftEffects,
+    LeagueDataFacade,
+    LeagueDataEffects,
   ],
 })
 export class ChaAngularDomainCoreModule {

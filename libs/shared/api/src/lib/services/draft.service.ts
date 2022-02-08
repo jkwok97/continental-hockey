@@ -15,10 +15,19 @@ export class DraftService {
     @Inject('apiUrl') private apiUrl: string
   ) {}
 
-  getDraftTable(draftYear: number): Observable<DraftTableDto[]> {
+  getDraftTable(
+    draftYear: number,
+    playingYear: string,
+    seasonType: string
+  ): Observable<DraftTableDto[]> {
+    console.log(draftYear);
+    console.log(playingYear);
+    console.log(seasonType);
     const httpParams: HttpParamsOptions = {
       fromObject: {
         draft_year: draftYear.toString(),
+        playing_year: playingYear.toString(),
+        season_type: seasonType.toString(),
       },
     };
 
@@ -27,7 +36,7 @@ export class DraftService {
     };
 
     return this._http
-      .get(`${this.apiUrl}/v2/draft-table`, options)
+      .get(`${this.apiUrl}/v2/draft-table/season/standings`, options)
       .pipe(map((result: any) => result['result']));
   }
 

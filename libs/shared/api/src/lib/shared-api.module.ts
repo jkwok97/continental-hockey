@@ -5,12 +5,19 @@ import {
   AwardsService,
   DisplayService,
   DraftService,
+  LeagueDataService,
   TeamInfoService,
 } from './services';
 
 @NgModule({
   imports: [HttpClientModule],
-  providers: [TeamInfoService, DisplayService, AwardsService, DraftService],
+  providers: [
+    TeamInfoService,
+    DisplayService,
+    AwardsService,
+    DraftService,
+    LeagueDataService,
+  ],
 })
 export class SharedApiModule {
   constructor(
