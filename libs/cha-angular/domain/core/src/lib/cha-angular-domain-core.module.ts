@@ -8,10 +8,9 @@ import { coreReducer } from './states';
 import { UserTeamEffects } from './states/user-team/user-team.effects';
 import { UserTeamFacade } from './states/user-team/user-team.facade';
 import { DisplayEffects } from './states/display/display.effects';
-import { DisplayFacade, LeagueDraftFacade } from '..';
+import { DisplayFacade } from '..';
 import { AwardEffects } from './states/awards/awards.effects';
 import { AwardsFacade } from './states/awards/awards.facade';
-import { LeagueDraftEffects } from './states/league-draft/league-draft.effects';
 import { LeagueDataEffects } from './states/league-data/league-data.effects';
 import { LeagueDataFacade } from './states/league-data/league-data.facade';
 
@@ -23,7 +22,6 @@ import { LeagueDataFacade } from './states/league-data/league-data.facade';
       UserTeamEffects,
       DisplayEffects,
       AwardEffects,
-      LeagueDraftEffects,
       LeagueDataEffects,
     ]),
   ],
@@ -34,8 +32,6 @@ import { LeagueDataFacade } from './states/league-data/league-data.facade';
     DisplayEffects,
     AwardsFacade,
     AwardEffects,
-    LeagueDraftFacade,
-    LeagueDraftEffects,
     LeagueDataFacade,
     LeagueDataEffects,
   ],

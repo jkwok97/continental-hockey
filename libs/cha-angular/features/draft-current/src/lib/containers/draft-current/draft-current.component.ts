@@ -2,11 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { first, Observable } from 'rxjs';
 
-import {
-  LeagueDataFacade,
-  LeagueDraftFacade,
-} from '@cha/cha-angular/domain/core';
+import { LeagueDataFacade } from '@cha/cha-angular/domain/core';
 import { DraftTableDto, TeamDto } from '@cha/shared/api';
+import { DraftCurrentFacade } from '../../+state/draft-current.facade';
 
 @Component({
   selector: 'cha-ang-draft-current',
@@ -42,16 +40,16 @@ export class DraftCurrentComponent implements OnInit {
   ];
 
   constructor(
-    private leagueDraftFacade: LeagueDraftFacade,
-    private leagueDataFacade: LeagueDataFacade
+    private leagueDataFacade: LeagueDataFacade,
+    private draftCurrentFacade: DraftCurrentFacade
   ) {
-    this.isLoading$ = this.leagueDraftFacade.isLoading$;
-    this.isLoaded$ = this.leagueDraftFacade.isLoaded$;
-    this.draftTableItems$ = this.leagueDraftFacade.draftTable$;
+    this.isLoading$ = this.draftCurrentFacade.isLoading$;
+    this.isLoaded$ = this.draftCurrentFacade.isLoaded$;
+    this.draftTableItems$ = this.draftCurrentFacade.draftTable$;
     this.teams$ = this.leagueDataFacade.leagueTeams$;
   }
   ngOnInit(): void {
-    this.leagueDraftFacade.getDraftTable();
+    this.draftCurrentFacade.getDraftTable();
     this.teams$
       .pipe(first())
       .subscribe((teams: TeamDto[]) => (this.teams = teams));

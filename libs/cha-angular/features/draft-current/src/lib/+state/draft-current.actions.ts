@@ -22,7 +22,7 @@ const getDraftPicksSuccess = createAction(
 
 const error = createAction(`${NAMESPACE} Error`);
 
-export const LeagueDraftActions = {
+export const DraftCurrentActions = {
   getDraftTable,
   getDraftTableSuccess,
   getDraftPicks,

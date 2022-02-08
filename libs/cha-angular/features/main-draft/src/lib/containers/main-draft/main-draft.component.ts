@@ -11,12 +11,12 @@ import { Observable } from 'rxjs';
 export class MainDraftComponent {
   panelStyleMobile = {
     width: '100%',
-    height: '75vh',
+    height: '77vh',
   };
 
   panelStyleDesktop = {
     width: '100%',
-    height: '81vh',
+    height: '83vh',
   };
 
   isLoading$: Observable<boolean>;

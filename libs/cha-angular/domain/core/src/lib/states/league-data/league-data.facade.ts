@@ -5,7 +5,6 @@ import { State } from './league-data.reducer';
 import { LeagueDataDto, TeamDto } from '@cha/shared/api';
 import { LeagueDataActions } from './league-data.actions';
 import { LeagueDataSelectors } from './league-data.selectors';
-import { LeagueDraftActions } from '../league-draft/league-draft.actions';
 
 @Injectable()
 export class LeagueDataFacade {

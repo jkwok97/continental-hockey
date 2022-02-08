@@ -2,7 +2,6 @@ import {
   Component,
   ChangeDetectionStrategy,
   Input,
-  TemplateRef,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -19,9 +18,6 @@ export class TableComponent implements OnInit {
   @Input() data: any;
   @Input() layout = 'scroll';
   @Input() tableColumns: any[] = [];
-  @Input() captionTemplate: TemplateRef<any> | null = null;
-  @Input() headerTemplate: TemplateRef<any> | null = null;
-  @Input() bodyTemplate: TemplateRef<any> | null = null;
   @Input() tableType = 'draft';
   @Input() teams: TeamDto[] = [];
   @Input() filteringOptions: any[] = [];

@@ -5,18 +5,31 @@
       [style]="{ height: '6px' }"
       *ngIf="isLoading$ | async"
     ></p-progressBar>
-    <ng-container *ngIf="isLoaded$ | async">
-      <ng-container *ngIf="draftTableItems$ | async as items">
-        <ng-container *ngIf="teams$ | async as teams"
-          ><cha-ang-table
-            [layout]="'stack'"
-            [data]="mapItems(items)"
-            [tableColumns]="tableColumns"
-            [teams]="teams"
-            [filteringOptions]="filteringOptions"
-          ></cha-ang-table
-        ></ng-container>
-      </ng-container>
-    </ng-container>
+    <div class="draft-current-header">
+      <div class="draft-current-header-title">CHA Draft Lottery</div>
+      <div class="draft-current-header-subtitle">
+        Order Based On Regular Season Standings
+      </div>
+    </div>
+
+    <!-- <cha-ang-divider></cha-ang-divider> -->
+
+    <cha-ang-card>
+      <cha-ang-card-body>
+        <ng-container *ngIf="isLoaded$ | async">
+          <ng-container *ngIf="draftTableItems$ | async as items">
+            <ng-container *ngIf="teams$ | async as teams"
+              ><cha-ang-table
+                [layout]="'stack'"
+                [data]="mapItems(items)"
+                [tableColumns]="tableColumns"
+                [teams]="teams"
+                [filteringOptions]="filteringOptions"
+              ></cha-ang-table
+            ></ng-container>
+          </ng-container>
+        </ng-container>
+      </cha-ang-card-body>
+    </cha-ang-card>
   </div>
 </cha-ang-layout-feature-content>
