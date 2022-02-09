@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
+import { NhlGoalieDto, NhlLeadersDto, NhlPlayerDto } from '@cha/shared/api';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { NhlLeadersActions } from './nhl-leaders.actions';
 import { State } from './nhl-leaders.reducer';
 import { NhlLeadersSelectors } from './nhl-leaders.selectors';
-
 
 @Injectable()
 export class NhlLeadersFacade {
@@ -16,8 +16,56 @@ export class NhlLeadersFacade {
     NhlLeadersSelectors.selectLoaded
   );
 
-  leaders$: Observable<any> = this.store.select(
+  leaders$: Observable<NhlLeadersDto> = this.store.select(
     NhlLeadersSelectors.selectLeaders
+  );
+
+  goals$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectGoalsLeaders
+  );
+
+  assists$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectAssistsLeaders
+  );
+
+  points$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectPointsLeaders
+  );
+
+  rookieGoals$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectRookieGoalsLeaders
+  );
+
+  rookieAssists$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectRookieAssistsLeaders
+  );
+
+  rookiePoints$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectRookiePointsLeaders
+  );
+
+  defenseGoals$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectDefenseGoalsLeaders
+  );
+
+  defenseAssists$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectDefenseAssistsLeaders
+  );
+
+  defensePoints$: Observable<NhlPlayerDto[]> = this.store.select(
+    NhlLeadersSelectors.selectDefensePointsLeaders
+  );
+
+  gaa$: Observable<NhlGoalieDto[]> = this.store.select(
+    NhlLeadersSelectors.selectGaaLeaders
+  );
+
+  savePct$: Observable<NhlGoalieDto[]> = this.store.select(
+    NhlLeadersSelectors.selectSavePctLeaders
+  );
+
+  shutouts$: Observable<NhlGoalieDto[]> = this.store.select(
+    NhlLeadersSelectors.selectShutoutLeaders
   );
 
   constructor(private store: Store<State>) {}
