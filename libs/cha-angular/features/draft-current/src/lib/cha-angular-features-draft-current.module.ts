@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProgressBarModule } from 'primeng/progressbar';
-import { TableModule } from 'primeng/table';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -23,7 +22,6 @@ import { DraftCurrentComponent } from './containers';
   imports: [
     CommonModule,
     ProgressBarModule,
-    TableModule,
     SharedUiAngularTableModule,
     SharedUiAngularDividerModule,
     SharedUiAngularCardModule,

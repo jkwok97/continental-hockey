@@ -59,6 +59,7 @@ const QUE = './thundercats.png';
 const VIC = './Vipers.png';
 const LOU = './voodoo.png';
 const WAS = './whiskeyjacks.png';
+const RDR = './rustlers.png';
 
 export {
   OAK,
@@ -116,4 +117,5 @@ export {
   LOU,
   WAS,
   LEAGUE,
+  RDR,
 };

@@ -1,0 +1,12 @@
+.draft-summary {
+  &-header {
+    display: grid;
+    justify-items: center;
+    padding-top: 10px;
+
+    &-title {
+      font-size: large;
+      font-weight: 100;
+    }
+  }
+}

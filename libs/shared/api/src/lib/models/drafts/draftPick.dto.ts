@@ -12,4 +12,5 @@ export interface DraftPickDto {
   player_id: number;
   team_id: TeamsEnum;
   teamlogo: string;
+  nhl_id: number;
 }

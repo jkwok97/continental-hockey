@@ -25,8 +25,4 @@ export class DraftCurrentFacade {
   getDraftTable() {
     this.store.dispatch(DraftCurrentActions.getDraftTable());
   }
-
-  getDraftPicks() {
-    this.store.dispatch(DraftCurrentActions.getDraftPicks());
-  }
 }

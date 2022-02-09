@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TeamDto } from '@cha/shared/api';
+import { LazyLoadEvent } from 'primeng/api';
 import { Table } from 'primeng/table';
 
 @Component({

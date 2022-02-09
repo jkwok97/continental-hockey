@@ -4,6 +4,11 @@
   styleClass="p-datatable-sm p-datatable-striped"
   class="table"
   [globalFilterFields]="filteringOptions"
+  [rows]="20"
+  [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[10, 20, 25, 50]"
+  [paginator]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
   #dt
 >
   <ng-template pTemplate="caption">
@@ -26,10 +31,16 @@
     </div>
   </ng-template>
 
-  <ng-template pTemplate="header" let-columns>
+  <ng-template pTemplate="header" let-columns let-rowData>
     <tr>
       <th *ngFor="let column of tableColumns">{{ column.header }}</th>
     </tr>
+    <!-- TODO THIS DOES NOT WORK FOR PAGINATION -->
+    <!-- <tr *ngIf="tableType === 'draft-summary'">
+      <th *ngFor="let column of tableColumns">
+        <p-columnFilter type="text" [field]="column.field"></p-columnFilter>
+      </th>
+    </tr> -->
   </ng-template>
 
   <ng-template
@@ -40,26 +51,44 @@
   >
     <tr>
       <td *ngFor="let column of tableColumns">
-        <span class="p-column-title">{{ column.header }}</span>
-        <div class="table-body-cell">
-          <img
-            [src]="rowData.teamImg"
-            height="30px"
-            *ngIf="column.field === 'team'"
-          />
-          {{
-            !column.field.includes('round')
-              ? rowData[column.field]
+        <ng-container *ngIf="tableType === 'draft'"
+          ><span class="p-column-title">{{ column.header }}</span>
+          <div class="table-body-cell">
+            <img
+              [src]="rowData.teamImg"
+              height="30px"
+              *ngIf="column.field === 'team'"
+            />
+            {{
+              !column.field.includes('round')
                 ? rowData[column.field]
-                : rowIndex + 1
-              : ''
-          }}
-          <img
-            [src]="getLogo(rowData[column.field])"
-            height="30px"
-            *ngIf="column.field.includes('round')"
-          />
-        </div>
+                  ? rowData[column.field]
+                  : rowIndex + 1
+                : ''
+            }}
+            <img
+              [src]="getLogo(rowData[column.field])"
+              height="30px"
+              *ngIf="column.field.includes('round')"
+            /></div
+        ></ng-container>
+
+        <ng-container *ngIf="tableType === 'draft-summary'">
+          <span class="p-column-title">{{ column.header }}</span>
+          <div class="table-body-cell">
+            <img
+              [src]="rowData.teamImg"
+              height="30px"
+              *ngIf="column.field === 'team'"
+            />
+            <p-avatar
+              [image]="rowData.playerImg"
+              shape="circle"
+              *ngIf="column.field === 'player' && rowData.playerImg"
+            ></p-avatar>
+            {{ rowData[column.field] }}
+          </div>
+        </ng-container>
       </td>
     </tr>
   </ng-template>
