@@ -1,6 +1,7 @@
 <p-table
   [responsiveLayout]="layout"
   [value]="data"
+  [columns]="tableColumns"
   styleClass="p-datatable-sm p-datatable-striped"
   class="table"
   [globalFilterFields]="filteringOptions"
@@ -9,6 +10,9 @@
   [rowsPerPageOptions]="[10, 20, 25, 50]"
   [paginator]="true"
   currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  sortMode="multiple"
+  [scrollable]="true"
+  [filterDelay]="0"
   #dt
 >
   <ng-template pTemplate="caption">
@@ -31,21 +35,32 @@
     </div>
   </ng-template>
 
-  <ng-template pTemplate="header" let-columns let-rowData>
+  <ng-template pTemplate="header" let-columns let-data>
     <tr>
-      <th *ngFor="let column of tableColumns">{{ column.header }}</th>
+      <th *ngFor="let column of tableColumns" [pSortableColumn]="column.field">
+        {{ column.header }}
+        <p-sortIcon [field]="column.field"></p-sortIcon>
+      </th>
     </tr>
     <!-- TODO THIS DOES NOT WORK FOR PAGINATION -->
     <!-- <tr *ngIf="tableType === 'draft-summary'">
-      <th *ngFor="let column of tableColumns">
-        <p-columnFilter type="text" [field]="column.field"></p-columnFilter>
+      <th *ngFor="let column of tableColumns" [pSortableColumn]="column.field">
+        <div class="header-flex">
+          {{ column.header }}
+          <p-sortIcon [field]="column.field"></p-sortIcon>
+          <p-columnFilter
+            type="text"
+            [field]="column.field"
+            display="menu"
+          ></p-columnFilter>
+        </div>
       </th>
     </tr> -->
   </ng-template>
 
   <ng-template
     pTemplate="body"
-    let-rowData
+    let-data
     let-columns="columns"
     let-rowIndex="rowIndex"
   >
@@ -55,19 +70,19 @@
           ><span class="p-column-title">{{ column.header }}</span>
           <div class="table-body-cell">
             <img
-              [src]="rowData.teamImg"
+              [src]="data.teamImg"
               height="30px"
               *ngIf="column.field === 'team'"
             />
             {{
               !column.field.includes('round')
-                ? rowData[column.field]
-                  ? rowData[column.field]
+                ? data[column.field]
+                  ? data[column.field]
                   : rowIndex + 1
                 : ''
             }}
             <img
-              [src]="getLogo(rowData[column.field])"
+              [src]="getLogo(data[column.field])"
               height="30px"
               *ngIf="column.field.includes('round')"
             /></div
@@ -77,16 +92,16 @@
           <span class="p-column-title">{{ column.header }}</span>
           <div class="table-body-cell">
             <img
-              [src]="rowData.teamImg"
+              [src]="data.teamImg"
               height="30px"
               *ngIf="column.field === 'team'"
             />
             <p-avatar
-              [image]="rowData.playerImg"
+              [image]="data.playerImg"
               shape="circle"
-              *ngIf="column.field === 'player' && rowData.playerImg"
+              *ngIf="column.field === 'player' && data.playerImg"
             ></p-avatar>
-            {{ rowData[column.field] }}
+            {{ data[column.field] }}
           </div>
         </ng-container>
       </td>

@@ -6,14 +6,13 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TeamDto } from '@cha/shared/api';
-import { LazyLoadEvent } from 'primeng/api';
 import { Table } from 'primeng/table';
 
 @Component({
   selector: 'cha-ang-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TableComponent implements OnInit {
   @Input() data: any;
@@ -24,6 +23,8 @@ export class TableComponent implements OnInit {
   @Input() filteringOptions: any[] = [];
 
   @ViewChild('dt') dt: Table | undefined;
+
+  loadedData!: any[];
 
   ngOnInit(): void {
     console.log(this.data);
