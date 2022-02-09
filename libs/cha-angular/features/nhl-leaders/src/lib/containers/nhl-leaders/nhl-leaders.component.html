@@ -1,1 +1,12 @@
-<p>nhl-leaders works!</p>
+<cha-ang-layout-feature-content>
+  <div class="awards-gm">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+      *ngIf="isLoading$ | async"
+    ></p-progressBar>
+    <ng-container *ngIf="isLoaded$ | async">
+        
+    </ng-container>
+  </div>
+</cha-ang-layout-feature-content>

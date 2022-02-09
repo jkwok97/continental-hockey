@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { AwardsFacade, DisplayFacade } from '@cha/cha-angular/domain/core';
+import { DisplayFacade } from '@cha/cha-angular/domain/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -19,16 +19,9 @@ export class MainDraftComponent {
     height: '83vh',
   };
 
-  isLoading$: Observable<boolean>;
-  isLoaded$: Observable<boolean>;
   isMobile$: Observable<boolean>;
 
-  constructor(
-    private awardsFacade: AwardsFacade,
-    private displayFacade: DisplayFacade
-  ) {
-    this.isLoading$ = this.awardsFacade.isLoading$;
-    this.isLoaded$ = this.awardsFacade.isLoaded$;
+  constructor(private displayFacade: DisplayFacade) {
     this.isMobile$ = this.displayFacade.isMobile$;
   }
 }
