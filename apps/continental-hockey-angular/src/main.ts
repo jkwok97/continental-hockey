@@ -1,4 +1,5 @@
 import { enableProdMode } from '@angular/core';
+import './services/twitterWidget.js';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
