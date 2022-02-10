@@ -44,7 +44,7 @@ const selectGaaLeaders = createSelector(
 
 const selectSavePctLeaders = createSelector(
   selectLeaders,
-  (leaders) => leaders.savePctg
+  (leaders) => leaders.savePct
 );
 
 const selectShutoutLeaders = createSelector(

@@ -10,6 +10,7 @@ import { NhlLeadersEffects } from './+state/nhl-leaders.effects';
 import { NhlLeadersFacade } from './+state/nhl-leaders.facade';
 
 import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
+import { SharedUiAngularLeaderCardModule } from '@cha/shared/ui/angular/leader-card';
 
 import { NhlLeadersRoutingModule } from './nhl-leaders-routing.module';
 
@@ -21,6 +22,7 @@ import { NhlLeadersComponent } from './containers';
     ProgressBarModule,
     NhlLeadersRoutingModule,
     SharedUiAngularLayoutModule,
+    SharedUiAngularLeaderCardModule,
     StoreModule.forFeature('nhl-leaders', reducer),
     EffectsModule.forFeature([NhlLeadersEffects]),
   ],

@@ -206,6 +206,9 @@
       "@cha/shared/ui/angular/layout": [
         "libs/shared/ui/angular/layout/src/index.ts"
       ],
+      "@cha/shared/ui/angular/leader-card": [
+        "libs/shared/ui/angular/leader-card/src/index.ts"
+      ],
       "@cha/shared/ui/angular/logo": [
         "libs/shared/ui/angular/logo/src/index.ts"
       ],
