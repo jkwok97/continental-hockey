@@ -1,1 +1,9 @@
-<p>nhl-stats works!</p>
+<cha-ang-layout-feature-content>
+    <div class="nhl-stats">
+        <p-progressBar
+        mode="indeterminate"
+        [style]="{ height: '6px' }"
+        *ngIf="isLoading$ | async"
+      ></p-progressBar>
+    </div>
+</cha-ang-layout-feature-content>

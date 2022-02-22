@@ -94,4 +94,26 @@ export class NhlService {
     };
     return this._http.get(`${this.apiUrl}/nhl-defense-leaders/`, options);
   }
+
+  getNHLsummary(
+    season: string,
+    player: string,
+    statsType: string,
+    sort: string,
+    start: number,
+    pageSize: number
+  ) {
+    const options = {
+      params: new HttpParams()
+        .set('season', season)
+        .set('playerType', player)
+        .set('statsType', statsType)
+        .set('sort', sort)
+        .set('start', start)
+        .set('pageSize', pageSize),
+    };
+    return this._http
+      .get(`${this.apiUrl}/nhl-leaders/summary`, options)
+      .pipe(map((result: any) => result['data']));
+  }
 }
