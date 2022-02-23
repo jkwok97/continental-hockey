@@ -6,8 +6,9 @@
       *ngIf="isLoading$ | async"
     ></p-progressBar>
 
-    <div class="draft-current-header">
-      <div class="draft-current-header-title">NHL Detailed Stats</div>
+    <div class="nhl-stats-header">
+      <div class="nhl-stats-header-title">NHL Detailed Stats</div>
+      <cha-ang-select-button [options]="selectOptions" (optionChanged)="onOptionChanged($event)"></cha-ang-select-button>
     </div>
   </div>
 </cha-ang-layout-feature-content>

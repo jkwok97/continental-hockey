@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NhlStatsFacade } from '../../+state/nhl-stats.facade';
 
@@ -8,16 +8,35 @@ import { NhlStatsFacade } from '../../+state/nhl-stats.facade';
   styleUrls: ['./nhl-stats.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NhlStatsComponent implements OnInit {
+export class NhlStatsComponent {
   isLoading$: Observable<boolean>;
   isLoaded$: Observable<boolean>;
+
+  selectOptions = [
+    { label: 'Skaters', value: 'skater' },
+    { label: 'Goalies', value: 'goalie' },
+    { label: 'Rookies', value: 'rookie' },
+  ];
 
   constructor(private nhlStatsFacade: NhlStatsFacade) {
     this.isLoaded$ = this.nhlStatsFacade.isLoaded$;
     this.isLoading$ = this.nhlStatsFacade.isLoading$;
   }
 
-  ngOnInit(): void {
-    this.nhlStatsFacade.getGoalieStats('goalie', 'wins', 'DESC', 0, 25);
+  onOptionChanged(option: string) {
+    console.log(option);
+    switch (option) {
+      case 'skater':
+        this.nhlStatsFacade.getStats(option, 'points', 'DESC', 0, 25);
+        break;
+      case 'goalie':
+        this.nhlStatsFacade.getGoalieStats(option, 'wins', 'DESC', 0, 25);
+        break;
+      case 'rookie':
+        this.nhlStatsFacade.getRookieStats('skater', 'points', 'DESC', 0, 25);
+        break;
+      default:
+        return;
+    }
   }
 }

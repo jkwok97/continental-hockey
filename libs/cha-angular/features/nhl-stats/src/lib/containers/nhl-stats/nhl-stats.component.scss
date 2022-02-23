@@ -1,0 +1,13 @@
+.nhl-stats {
+  &-header {
+    display: grid;
+    justify-items: center;
+    row-gap: 10px;
+    padding-top: 10px;
+
+    &-title {
+      font-size: large;
+      font-weight: 100;
+    }
+  }
+}

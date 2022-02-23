@@ -6,6 +6,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
+import { SharedUiAngularSelectButtonModule } from '@cha/shared/ui/angular/select-button';
 
 import { NhlStatsRoutingModule } from './nhl-stats-routing.module';
 
@@ -21,6 +22,7 @@ import { NhlStatsComponent } from './containers';
     ProgressBarModule,
     NhlStatsRoutingModule,
     SharedUiAngularLayoutModule,
+    SharedUiAngularSelectButtonModule,
     StoreModule.forFeature('nhl-stats', reducer),
     EffectsModule.forFeature([NhlStatsEffects]),
   ],
