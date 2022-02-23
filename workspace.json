@@ -77,6 +77,7 @@
     "shared-ui-angular-leader-card": "libs/shared/ui/angular/leader-card",
     "shared-ui-angular-logo": "libs/shared/ui/angular/logo",
     "shared-ui-angular-menu": "libs/shared/ui/angular/menu",
+    "shared-ui-angular-select-button": "libs/shared/ui/angular/select-button",
     "shared-ui-angular-table": "libs/shared/ui/angular/table",
     "shared-ui-react-button": "libs/shared/ui/react/button",
     "shared-ui-react-forms": "libs/shared/ui/react/forms",

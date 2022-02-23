@@ -222,7 +222,10 @@
       "@cha/shared/ui/react/button": [
         "libs/shared/ui/react/button/src/index.ts"
       ],
-      "@cha/shared/ui/react/forms": ["libs/shared/ui/react/forms/src/index.ts"]
+      "@cha/shared/ui/react/forms": ["libs/shared/ui/react/forms/src/index.ts"],
+      "@shared/ui/angular/select-button": [
+        "libs/shared/ui/angular/select-button/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

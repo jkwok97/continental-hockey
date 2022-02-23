@@ -1,9 +1,13 @@
 <cha-ang-layout-feature-content>
-    <div class="nhl-stats">
-        <p-progressBar
-        mode="indeterminate"
-        [style]="{ height: '6px' }"
-        *ngIf="isLoading$ | async"
-      ></p-progressBar>
+  <div class="nhl-stats">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+      *ngIf="isLoading$ | async"
+    ></p-progressBar>
+
+    <div class="draft-current-header">
+      <div class="draft-current-header-title">NHL Detailed Stats</div>
     </div>
+  </div>
 </cha-ang-layout-feature-content>
