@@ -18,6 +18,6 @@ export class NhlStatsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.nhlStatsFacade.getStats('skater', 'points', 'DESC', 0, 25);
+    this.nhlStatsFacade.getRookieStats('skater', 'points', 'DESC', 0, 25);
   }
 }

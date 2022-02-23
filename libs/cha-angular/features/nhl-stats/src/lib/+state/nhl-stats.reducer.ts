@@ -16,18 +16,22 @@ const initialState: State = {
 const r = createReducer(
   initialState,
 
-  on(NhlStatsActions.getStats, (state) => ({
+  on(NhlStatsActions.getStats, NhlStatsActions.getRookieStats, (state) => ({
     ...state,
     loading: true,
     loaded: false,
   })),
 
-  on(NhlStatsActions.getStatsSuccess, (state, action) => ({
-    ...state,
-    stats: action.stats,
-    loading: false,
-    loaded: true,
-  })),
+  on(
+    NhlStatsActions.getStatsSuccess,
+    NhlStatsActions.getRookieStatsSuccess,
+    (state, action) => ({
+      ...state,
+      stats: action.stats,
+      loading: false,
+      loaded: true,
+    })
+  ),
 
   on(NhlStatsActions.error, (state) => initialState)
 );
@@ -35,6 +39,8 @@ const r = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return r(state, action);
 }
+
+export const getStats = (state: State) => state.stats;
 
 export const getLoading = (state: State) => state.loading;
 

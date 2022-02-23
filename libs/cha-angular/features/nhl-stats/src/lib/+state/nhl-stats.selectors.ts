@@ -1,15 +1,18 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import * as NhlLeadersReducer from './nhl-stats.reducer';
+import * as NhlStatsReducer from './nhl-stats.reducer';
 
 export const selectState =
-  createFeatureSelector<NhlLeadersReducer.State>('nhl-leaders');
+  createFeatureSelector<NhlStatsReducer.State>('nhl-stats');
 
-const selectLoading = createSelector(selectState, NhlLeadersReducer.getLoading);
+const selectStats = createSelector(selectState, NhlStatsReducer.getStats);
 
-const selectLoaded = createSelector(selectState, NhlLeadersReducer.getLoaded);
+const selectLoading = createSelector(selectState, NhlStatsReducer.getLoading);
+
+const selectLoaded = createSelector(selectState, NhlStatsReducer.getLoaded);
 
 export const NhlStatsSelectors = {
+  selectStats,
   selectLoaded,
   selectLoading,
 };

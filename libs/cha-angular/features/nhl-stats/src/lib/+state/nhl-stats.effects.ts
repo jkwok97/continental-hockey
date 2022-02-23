@@ -13,7 +13,7 @@ export class NhlStatsEffects {
     private leagueDataFacade: LeagueDataFacade
   ) {}
 
-  getSkaters$ = createEffect(() =>
+  getStats$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NhlStatsActions.getStats),
       withLatestFrom(this.leagueDataFacade.leagueData$),
@@ -29,6 +29,28 @@ export class NhlStatsEffects {
           )
           .pipe(
             map((stats) => NhlStatsActions.getStatsSuccess({ stats })),
+            catchError(() => of(NhlStatsActions.error()))
+          )
+      )
+    )
+  );
+
+  getRookieStats$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(NhlStatsActions.getRookieStats),
+      withLatestFrom(this.leagueDataFacade.leagueData$),
+      exhaustMap(([action, data]) =>
+        this.nhlService
+          .getNHLRookiesummary(
+            data.nhl_year,
+            action.statType,
+            action.sortType,
+            action.sortOrder,
+            action.start,
+            action.pageSize
+          )
+          .pipe(
+            map((stats) => NhlStatsActions.getRookieStatsSuccess({ stats })),
             catchError(() => of(NhlStatsActions.error()))
           )
       )

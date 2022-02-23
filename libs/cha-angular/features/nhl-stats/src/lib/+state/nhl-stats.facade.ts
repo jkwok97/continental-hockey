@@ -34,4 +34,22 @@ export class NhlStatsFacade {
       })
     );
   }
+
+  getRookieStats(
+    statType: string,
+    sortType: string,
+    sortOrder: string,
+    start: number,
+    pageSize: number
+  ) {
+    this.store.dispatch(
+      NhlStatsActions.getRookieStats({
+        statType,
+        sortType,
+        sortOrder,
+        start,
+        pageSize,
+      })
+    );
+  }
 }
