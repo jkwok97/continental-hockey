@@ -35,6 +35,28 @@ export class NhlStatsEffects {
     )
   );
 
+  getGoalieStats$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(NhlStatsActions.getGoalieStats),
+      withLatestFrom(this.leagueDataFacade.leagueData$),
+      exhaustMap(([action, data]) =>
+        this.nhlService
+          .getNHLGoaliesummary(
+            data.nhl_year,
+            action.statType,
+            action.sortType,
+            action.sortOrder,
+            action.start,
+            action.pageSize
+          )
+          .pipe(
+            map((stats) => NhlStatsActions.getGoalieStatsSuccess({ stats })),
+            catchError(() => of(NhlStatsActions.error()))
+          )
+      )
+    )
+  );
+
   getRookieStats$ = createEffect(() =>
     this.actions$.pipe(
       ofType(NhlStatsActions.getRookieStats),

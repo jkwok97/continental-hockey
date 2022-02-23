@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
+import { NhlGoalieStatDto, NhlPlayerStatDto } from '../models';
 
 @Injectable()
 export class NhlService {
@@ -102,7 +103,29 @@ export class NhlService {
     sort: string,
     start: number,
     pageSize: number
-  ) {
+  ): Observable<NhlPlayerStatDto[]> {
+    const options = {
+      params: new HttpParams()
+        .set('season', season)
+        .set('playerType', player)
+        .set('statsType', statsType)
+        .set('sort', sort)
+        .set('start', start)
+        .set('pageSize', pageSize),
+    };
+    return this._http
+      .get(`${this.apiUrl}/nhl-leaders/summary`, options)
+      .pipe(map((result: any) => result['data']));
+  }
+
+  getNHLGoaliesummary(
+    season: string,
+    player: string,
+    statsType: string,
+    sort: string,
+    start: number,
+    pageSize: number
+  ): Observable<NhlGoalieStatDto[]> {
     const options = {
       params: new HttpParams()
         .set('season', season)
@@ -124,7 +147,7 @@ export class NhlService {
     sort: string,
     start: number,
     pageSize: number
-  ) {
+  ): Observable<NhlPlayerStatDto[]> {
     const options = {
       params: new HttpParams()
         .set('season', season)

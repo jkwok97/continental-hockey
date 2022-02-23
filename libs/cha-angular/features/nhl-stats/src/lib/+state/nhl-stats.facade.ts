@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NhlGoalieStatDto, NhlPlayerStatDto } from '@cha/shared/api';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { NhlStatsActions } from './nhl-stats.actions';
@@ -15,6 +16,9 @@ export class NhlStatsFacade {
     NhlStatsSelectors.selectLoaded
   );
 
+  stats$: Observable<NhlPlayerStatDto[] | NhlGoalieStatDto[]> =
+    this.store.select(NhlStatsSelectors.selectStats);
+
   constructor(private store: Store<State>) {}
 
   getStats(
@@ -26,6 +30,24 @@ export class NhlStatsFacade {
   ) {
     this.store.dispatch(
       NhlStatsActions.getStats({
+        statType,
+        sortType,
+        sortOrder,
+        start,
+        pageSize,
+      })
+    );
+  }
+
+  getGoalieStats(
+    statType: string,
+    sortType: string,
+    sortOrder: string,
+    start: number,
+    pageSize: number
+  ) {
+    this.store.dispatch(
+      NhlStatsActions.getGoalieStats({
         statType,
         sortType,
         sortOrder,

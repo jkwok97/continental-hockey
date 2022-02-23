@@ -1,14 +1,15 @@
+import { NhlGoalieStatDto, NhlPlayerStatDto } from '@cha/shared/api';
 import { Action, createReducer, on } from '@ngrx/store';
 import { NhlStatsActions } from './nhl-stats.actions';
 
 export interface State {
-  stats: any;
+  stats: NhlPlayerStatDto[] | NhlGoalieStatDto[];
   loading: boolean;
   loaded: boolean;
 }
 
 const initialState: State = {
-  stats: {},
+  stats: [],
   loading: false,
   loaded: false,
 };
@@ -16,15 +17,21 @@ const initialState: State = {
 const r = createReducer(
   initialState,
 
-  on(NhlStatsActions.getStats, NhlStatsActions.getRookieStats, (state) => ({
-    ...state,
-    loading: true,
-    loaded: false,
-  })),
+  on(
+    NhlStatsActions.getStats,
+    NhlStatsActions.getRookieStats,
+    NhlStatsActions.getGoalieStats,
+    (state) => ({
+      ...state,
+      loading: true,
+      loaded: false,
+    })
+  ),
 
   on(
     NhlStatsActions.getStatsSuccess,
     NhlStatsActions.getRookieStatsSuccess,
+    NhlStatsActions.getGoalieStatsSuccess,
     (state, action) => ({
       ...state,
       stats: action.stats,
