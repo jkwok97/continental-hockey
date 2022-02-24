@@ -35,7 +35,9 @@
 
   <ng-template pTemplate="header" let-columns let-data>
     <tr>
-      <ng-container *ngIf="tableType === 'draft-summary'">
+      <ng-container
+        *ngIf="tableType === 'draft-summary' || tableType === 'nhl-stats'"
+      >
         <th
           *ngFor="let column of tableColumns"
           [pSortableColumn]="column.field"
@@ -44,7 +46,9 @@
           <p-sortIcon [field]="column.field"></p-sortIcon>
         </th>
       </ng-container>
-      <ng-container *ngIf="tableType !== 'draft-summary'">
+      <ng-container
+        *ngIf="tableType !== 'draft-summary' && tableType !== 'nhl-stats'"
+      >
         <th *ngFor="let column of tableColumns">
           {{ column.header }}
         </th>
@@ -117,7 +121,7 @@
           <span class="p-column-title">{{ column.header }}</span>
           <div class="table-body-cell">
             <img
-              [src]="data.chaTeam"
+              [src]="data.chaTeam ? data.chaTeam : 'assets/free_agent.png'"
               height="30px"
               *ngIf="column.field === 'chaTeam'"
             />
@@ -126,8 +130,15 @@
               shape="circle"
               *ngIf="column.field.includes('Name') && data.playerImg"
             ></p-avatar>
-            <ng-container *ngIf="column.field === 'pointsPerGame'"
+            <ng-container
+              *ngIf="
+                column.field === 'pointsPerGame' ||
+                column.field === 'goalsAgainstAverage'
+              "
               >{{ data[column.field].toFixed(2) }}
+            </ng-container>
+            <ng-container *ngIf="column.field === 'savePct'"
+              >{{ data[column.field].toFixed(3) }}
             </ng-container>
             <ng-container
               *ngIf="
@@ -140,7 +151,9 @@
               *ngIf="
                 column.field !== 'shootingPct' &&
                 column.field !== 'pointsPerGame' &&
-                column.field !== 'faceoffWinPct'
+                column.field !== 'faceoffWinPct' &&
+                column.field !== 'savePct' &&
+                column.field !== 'goalsAgainstAverage'
               "
               >{{
                 column.field !== 'chaTeam' ? data[column.field] : ''

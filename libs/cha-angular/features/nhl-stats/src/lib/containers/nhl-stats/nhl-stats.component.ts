@@ -44,21 +44,22 @@ export class NhlStatsComponent {
   ];
 
   goalieTableColumns = [
-    { field: 'draft_year', header: 'CHA Team' },
-    { field: 'draft_round', header: 'Name' },
-    { field: 'player', header: 'GP' },
-    { field: 'player', header: 'GAA' },
-    { field: 'player', header: 'W' },
-    { field: 'player', header: 'L' },
-    { field: 'player', header: 'SO' },
-    { field: 'player', header: 'GA' },
-    { field: 'player', header: 'Sv' },
-    { field: 'player', header: 'SF' },
-    { field: 'player', header: 'Sv%' },
-    { field: 'player', header: 'G' },
-    { field: 'player', header: 'A' },
-    { field: 'player', header: 'Pts' },
-    { field: 'player', header: 'PIM' },
+    { field: 'chaTeam', header: 'CHA Team' },
+    { field: 'goalieFullName', header: 'Name' },
+    { field: 'gamesPlayed', header: 'GP' },
+    { field: 'goalsAgainstAverage', header: 'GAA' },
+    { field: 'wins', header: 'W' },
+    { field: 'losses', header: 'L' },
+    { field: 'otLosses', header: 'OTL' },
+    { field: 'shutouts', header: 'SO' },
+    { field: 'goalsAgainst', header: 'GA' },
+    { field: 'saves', header: 'Sv' },
+    { field: 'shotsAgainst', header: 'SF' },
+    { field: 'savePct', header: 'Sv%' },
+    { field: 'goals', header: 'G' },
+    { field: 'assists', header: 'A' },
+    { field: 'points', header: 'Pts' },
+    { field: 'penaltyMinutes', header: 'PIM' },
   ];
 
   filteringOptions = [

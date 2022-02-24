@@ -1,7 +1,14 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { debounceTime, delay, first, map, tap } from 'rxjs/operators';
-import { combineLatest, Observable, switchMap } from 'rxjs';
+import {
+  catchError,
+  debounceTime,
+  delay,
+  first,
+  map,
+  tap,
+} from 'rxjs/operators';
+import { combineLatest, Observable, of, switchMap } from 'rxjs';
 import { NhlGoalieStatDto, NhlPlayerStatDto } from '../models';
 
 @Injectable()
@@ -150,7 +157,7 @@ export class NhlService {
         );
         return result['data'];
       }),
-      delay(500)
+      delay(1000)
     );
   }
 
@@ -206,7 +213,10 @@ export class NhlService {
 
   getGoalieStatsWithChaLogo(stat: NhlGoalieStatDto): NhlGoalieStatDto {
     this.getGoalieTeamLogo(stat.playerId)
-      .pipe(first())
+      .pipe(
+        first(),
+        catchError(() => of(null))
+      )
       .subscribe((logo) => {
         if (logo && logo.teamlogo) {
           stat.chaTeam = logo.teamlogo;
