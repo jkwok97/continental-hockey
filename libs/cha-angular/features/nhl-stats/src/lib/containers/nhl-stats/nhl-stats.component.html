@@ -8,7 +8,31 @@
 
     <div class="nhl-stats-header">
       <div class="nhl-stats-header-title">NHL Detailed Stats</div>
-      <cha-ang-select-button [options]="selectOptions" (optionChanged)="onOptionChanged($event)"></cha-ang-select-button>
+      <cha-ang-select-button
+        [options]="selectOptions"
+        (optionChanged)="onOptionChanged($event)"
+      ></cha-ang-select-button>
     </div>
+
+    <cha-ang-divider></cha-ang-divider>
+
+    <cha-ang-card>
+      <cha-ang-card-body>
+        <ng-container *ngIf="isLoaded$ | async">
+          <ng-container *ngIf="stats$ | async as stats">
+            <ng-container *ngIf="teams$ | async as teams"
+              ><cha-ang-table
+                [layout]="'stack'"
+                [data]="mapItems(stats)"
+                [tableColumns]="tableColumns"
+                [teams]="teams"
+                [filteringOptions]="filteringOptions"
+                [tableType]="'nhl-stats'"
+              ></cha-ang-table
+            ></ng-container>
+          </ng-container>
+        </ng-container>
+      </cha-ang-card-body>
+    </cha-ang-card>
   </div>
 </cha-ang-layout-feature-content>

@@ -22,4 +22,5 @@ export interface NhlGoalieStatDto {
   ties: null;
   timeOnIce: number;
   wins: number;
+  chaTeam?: string;
 }

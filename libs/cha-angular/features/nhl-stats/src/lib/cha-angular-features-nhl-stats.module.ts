@@ -7,6 +7,9 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
 import { SharedUiAngularSelectButtonModule } from '@cha/shared/ui/angular/select-button';
+import { SharedUiAngularTableModule } from '@cha/shared/ui/angular/table';
+import { SharedUiAngularDividerModule } from '@cha/shared/ui/angular/divider';
+import { SharedUiAngularCardModule } from '@cha/shared/ui/angular/card';
 
 import { NhlStatsRoutingModule } from './nhl-stats-routing.module';
 
@@ -23,6 +26,9 @@ import { NhlStatsComponent } from './containers';
     NhlStatsRoutingModule,
     SharedUiAngularLayoutModule,
     SharedUiAngularSelectButtonModule,
+    SharedUiAngularTableModule,
+    SharedUiAngularDividerModule,
+    SharedUiAngularCardModule,
     StoreModule.forFeature('nhl-stats', reducer),
     EffectsModule.forFeature([NhlStatsEffects]),
   ],

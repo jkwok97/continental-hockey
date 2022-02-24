@@ -25,4 +25,5 @@ export interface NhlPlayerStatDto {
   skaterFullName: string;
   tamAbbrevs: string;
   timeOnIcePerGame: number;
+  chaTeam?: string;
 }

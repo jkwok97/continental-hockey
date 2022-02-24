@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { combineLatest, Observable } from 'rxjs';
+import { first, map } from 'rxjs/operators';
+import { combineLatest, Observable, switchMap } from 'rxjs';
 import { NhlGoalieStatDto, NhlPlayerStatDto } from '../models';
 
 @Injectable()
@@ -115,7 +115,14 @@ export class NhlService {
     };
     return this._http
       .get(`${this.apiUrl}/nhl-leaders/summary`, options)
-      .pipe(map((result: any) => result['data']));
+      .pipe(
+        map((result: any) =>
+          result['data'].forEach(
+            (stat: NhlPlayerStatDto) =>
+              (stat = this.getPlayerStatsWithChaLogo(stat))
+          )
+        )
+      );
   }
 
   getNHLGoaliesummary(
@@ -137,7 +144,14 @@ export class NhlService {
     };
     return this._http
       .get(`${this.apiUrl}/nhl-leaders/summary`, options)
-      .pipe(map((result: any) => result['data']));
+      .pipe(
+        map((result: any) =>
+          result['data'].forEach(
+            (stat: NhlGoalieStatDto) =>
+              (stat = this.getGoalieStatsWithChaLogo(stat))
+          )
+        )
+      );
   }
 
   getNHLRookiesummary(
@@ -159,6 +173,51 @@ export class NhlService {
     };
     return this._http
       .get(`${this.apiUrl}/nhl-rookie-leaders/summary`, options)
-      .pipe(map((result: any) => result['data']));
+      .pipe(
+        map((result: any) =>
+          result['data'].forEach(
+            (stat: NhlPlayerStatDto) =>
+              (stat = this.getPlayerStatsWithChaLogo(stat))
+          )
+        )
+      );
+  }
+
+  getPlayerStatsWithChaLogo(stat: NhlPlayerStatDto): NhlPlayerStatDto {
+    this.getPlayerTeamLogo(stat.playerId)
+      .pipe(first())
+      .subscribe((logo) => {
+        if (logo && logo.teamlogo) {
+          stat.chaTeam = logo.teamlogo;
+        } else {
+          stat.chaTeam = '';
+        }
+      });
+    return stat;
+  }
+
+  getPlayerTeamLogo(nhlId: number): Observable<{ teamlogo: string }> {
+    return this._http
+      .get(`${this.apiUrl}/v2/players/nhl/${nhlId}`)
+      .pipe(map((result: any) => result['result']));
+  }
+
+  getGoalieStatsWithChaLogo(stat: NhlGoalieStatDto): NhlGoalieStatDto {
+    this.getGoalieTeamLogo(stat.playerId)
+      .pipe(first())
+      .subscribe((logo) => {
+        if (logo && logo.teamlogo) {
+          stat.chaTeam = logo.teamlogo;
+        } else {
+          stat.chaTeam = '';
+        }
+      });
+    return stat;
+  }
+
+  getGoalieTeamLogo(nhlId: number): Observable<{ teamlogo: string }> {
+    return this._http
+      .get(`${this.apiUrl}/v2/goalies/nhl/${nhlId}`)
+      .pipe(map((result: any) => result['result']));
   }
 }
