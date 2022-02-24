@@ -21,6 +21,7 @@ export class TableComponent implements OnInit {
   @Input() tableType = 'draft';
   @Input() teams: TeamDto[] = [];
   @Input() filteringOptions: any[] = [];
+  @Input() rows = 20;
 
   @ViewChild('dt') dt: Table | undefined;
 
@@ -28,6 +29,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.data);
+    
   }
 
   getLogo(item: any) {

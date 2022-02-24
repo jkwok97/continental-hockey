@@ -25,21 +25,22 @@ export class NhlStatsComponent {
   tableColumns: any[] = [];
 
   playerTableColumns = [
-    { field: 'draft_year', header: 'CHA Team' },
-    { field: 'draft_round', header: 'Name' },
-    { field: 'draft_overall', header: 'Position' },
-    { field: 'player', header: 'GP' },
-    { field: 'player', header: 'G' },
-    { field: 'team', header: 'A' },
-    { field: 'team', header: 'Pts' },
-    { field: 'team', header: '+/-' },
-    { field: 'team', header: 'PIM' },
-    { field: 'team', header: 'PPP' },
-    { field: 'team', header: 'SHP' },
-    { field: 'team', header: 'GWG' },
-    { field: 'team', header: 'SOG' },
-    { field: 'team', header: 'Sh%' },
-    { field: 'team', header: 'FO%' },
+    { field: 'chaTeam', header: 'CHA Team' },
+    { field: 'skaterFullName', header: 'Name' },
+    { field: 'positionCode', header: 'Position' },
+    { field: 'gamesPlayed', header: 'GP' },
+    { field: 'goals', header: 'G' },
+    { field: 'assists', header: 'A' },
+    { field: 'points', header: 'Pts' },
+    { field: 'pointsPerGame', header: 'PPG' },
+    { field: 'plusMinus', header: '+/-' },
+    { field: 'penaltyMinutes', header: 'PIM' },
+    { field: 'ppPoints', header: 'PPP' },
+    { field: 'shPoints', header: 'SHP' },
+    { field: 'gameWinningGoals', header: 'GWG' },
+    { field: 'shots', header: 'SOG' },
+    { field: 'shootingPct', header: 'Sh%' },
+    { field: 'faceoffWinPct', header: 'FO%' },
   ];
 
   goalieTableColumns = [
@@ -73,7 +74,6 @@ export class NhlStatsComponent {
   }
 
   onOptionChanged(option: string) {
-    console.log(option);
     switch (option) {
       case 'skater':
         this.setSkaters(option);
@@ -107,7 +107,7 @@ export class NhlStatsComponent {
   mapItems(stats: NhlPlayerStatDto[] | NhlGoalieStatDto[]) {
     return stats.map((stat: NhlPlayerStatDto | NhlGoalieStatDto) => ({
       ...stat,
-      cha_team: `${stat.chaTeam}`,
+      chaTeam: `${stat.chaTeam ? this.getString(stat.chaTeam) : ''}`,
       playerImg: this.getPlayerPicture(stat.playerId),
     }));
   }
@@ -125,6 +125,4 @@ export class NhlStatsComponent {
       return;
     }
   }
-
-  getPlayerLogo(id: number) {}
 }

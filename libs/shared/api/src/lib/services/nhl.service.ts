@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { first, map } from 'rxjs/operators';
+import { debounceTime, delay, first, map, tap } from 'rxjs/operators';
 import { combineLatest, Observable, switchMap } from 'rxjs';
 import { NhlGoalieStatDto, NhlPlayerStatDto } from '../models';
 
@@ -113,16 +113,16 @@ export class NhlService {
         .set('start', start)
         .set('pageSize', pageSize),
     };
-    return this._http
-      .get(`${this.apiUrl}/nhl-leaders/summary`, options)
-      .pipe(
-        map((result: any) =>
-          result['data'].forEach(
-            (stat: NhlPlayerStatDto) =>
-              (stat = this.getPlayerStatsWithChaLogo(stat))
-          )
-        )
-      );
+    return this._http.get(`${this.apiUrl}/nhl-leaders/summary`, options).pipe(
+      map((result: any) => {
+        result['data'].forEach(
+          (stat: NhlPlayerStatDto) =>
+            (stat = this.getPlayerStatsWithChaLogo(stat))
+        );
+        return result['data'];
+      }),
+      delay(500)
+    );
   }
 
   getNHLGoaliesummary(
@@ -142,16 +142,16 @@ export class NhlService {
         .set('start', start)
         .set('pageSize', pageSize),
     };
-    return this._http
-      .get(`${this.apiUrl}/nhl-leaders/summary`, options)
-      .pipe(
-        map((result: any) =>
-          result['data'].forEach(
-            (stat: NhlGoalieStatDto) =>
-              (stat = this.getGoalieStatsWithChaLogo(stat))
-          )
-        )
-      );
+    return this._http.get(`${this.apiUrl}/nhl-leaders/summary`, options).pipe(
+      map((result: any) => {
+        result['data'].forEach(
+          (stat: NhlGoalieStatDto) =>
+            (stat = this.getGoalieStatsWithChaLogo(stat))
+        );
+        return result['data'];
+      }),
+      delay(500)
+    );
   }
 
   getNHLRookiesummary(
@@ -174,12 +174,14 @@ export class NhlService {
     return this._http
       .get(`${this.apiUrl}/nhl-rookie-leaders/summary`, options)
       .pipe(
-        map((result: any) =>
+        map((result: any) => {
           result['data'].forEach(
             (stat: NhlPlayerStatDto) =>
               (stat = this.getPlayerStatsWithChaLogo(stat))
-          )
-        )
+          );
+          return result['data'];
+        }),
+        delay(500)
       );
   }
 
