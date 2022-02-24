@@ -61,7 +61,12 @@ export class NhlStatsComponent {
     { field: 'player', header: 'PIM' },
   ];
 
-  filteringOptions = ['name', 'cha team', 'position'];
+  filteringOptions = [
+    'skaterFullName',
+    'goalieFullName',
+    'chaTeam',
+    'position',
+  ];
 
   constructor(
     private nhlStatsFacade: NhlStatsFacade,
