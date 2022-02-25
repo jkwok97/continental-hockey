@@ -8,7 +8,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 
-import { TableComponent } from './containers';
+import { TableComponent, LazyLoadTableComponent } from './containers';
 
 @NgModule({
   imports: [
@@ -20,7 +20,7 @@ import { TableComponent } from './containers';
     MultiSelectModule,
     DropdownModule,
   ],
-  declarations: [TableComponent],
-  exports: [TableComponent],
+  declarations: [TableComponent, LazyLoadTableComponent],
+  exports: [TableComponent, LazyLoadTableComponent],
 })
 export class SharedUiAngularTableModule {}

@@ -19,6 +19,8 @@ export class NhlStatsFacade {
   stats$: Observable<NhlPlayerStatDto[] | NhlGoalieStatDto[]> =
     this.store.select(NhlStatsSelectors.selectStats);
 
+  total$: Observable<number> = this.store.select(NhlStatsSelectors.selectTotal);
+
   constructor(private store: Store<State>) {}
 
   getStats(

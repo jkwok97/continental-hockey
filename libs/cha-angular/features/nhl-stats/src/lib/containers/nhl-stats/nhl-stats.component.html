@@ -19,18 +19,21 @@
     <cha-ang-card>
       <cha-ang-card-body>
         <ng-container *ngIf="isLoaded$ | async">
-          <ng-container *ngIf="stats$ | async as stats">
-            <ng-container *ngIf="teams$ | async as teams"
-              ><cha-ang-table
-                [layout]="'stack'"
-                [data]="mapItems(stats)"
-                [tableColumns]="tableColumns"
-                [teams]="teams"
-                [filteringOptions]="filteringOptions"
-                [tableType]="'nhl-stats'"
-                [rows]="25"
-              ></cha-ang-table
-            ></ng-container>
+          <ng-container *ngIf="total$ | async as totalRecords">
+            <ng-container *ngIf="stats$ | async as stats">
+              <ng-container *ngIf="teams$ | async as teams"
+                ><cha-ang-lazy-load-table
+                  [layout]="'stack'"
+                  [data]="mapItems(stats)"
+                  [tableColumns]="tableColumns"
+                  [teams]="teams"
+                  [filteringOptions]="filteringOptions"
+                  [tableType]="'nhl-stats'"
+                  [rows]="25"
+                  [totalRecords]="totalRecords"
+                ></cha-ang-lazy-load-table
+              ></ng-container>
+            </ng-container>
           </ng-container>
         </ng-container>
       </cha-ang-card-body>

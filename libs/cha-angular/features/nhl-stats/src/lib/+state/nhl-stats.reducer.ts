@@ -6,12 +6,14 @@ export interface State {
   stats: NhlPlayerStatDto[] | NhlGoalieStatDto[];
   loading: boolean;
   loaded: boolean;
+  total: number;
 }
 
 const initialState: State = {
   stats: [],
   loading: false,
   loaded: false,
+  total: 0
 };
 
 const r = createReducer(
@@ -37,6 +39,7 @@ const r = createReducer(
       stats: action.stats,
       loading: false,
       loaded: true,
+      total: action.total
     })
   ),
 
@@ -46,6 +49,8 @@ const r = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return r(state, action);
 }
+
+export const getTotal = (state: State) => state.total;
 
 export const getStats = (state: State) => state.stats;
 

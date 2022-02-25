@@ -110,7 +110,7 @@ export class NhlService {
     sort: string,
     start: number,
     pageSize: number
-  ): Observable<NhlPlayerStatDto[]> {
+  ): Observable<{ stats: NhlPlayerStatDto[]; total: number }> {
     const options = {
       params: new HttpParams()
         .set('season', season)
@@ -126,7 +126,8 @@ export class NhlService {
           (stat: NhlPlayerStatDto) =>
             (stat = this.getPlayerStatsWithChaLogo(stat))
         );
-        return result['data'];
+        return { stats: result['data'], total: result['total'] };
+        // return result['data'];
       }),
       delay(500)
     );
@@ -139,7 +140,7 @@ export class NhlService {
     sort: string,
     start: number,
     pageSize: number
-  ): Observable<NhlGoalieStatDto[]> {
+  ): Observable<{ stats: NhlGoalieStatDto[]; total: number }> {
     const options = {
       params: new HttpParams()
         .set('season', season)
@@ -155,7 +156,7 @@ export class NhlService {
           (stat: NhlGoalieStatDto) =>
             (stat = this.getGoalieStatsWithChaLogo(stat))
         );
-        return result['data'];
+        return { stats: result['data'], total: result['total'] };
       }),
       delay(1000)
     );
@@ -168,7 +169,7 @@ export class NhlService {
     sort: string,
     start: number,
     pageSize: number
-  ): Observable<NhlPlayerStatDto[]> {
+  ): Observable<{ stats: NhlPlayerStatDto[]; total: number }> {
     const options = {
       params: new HttpParams()
         .set('season', season)
@@ -186,7 +187,7 @@ export class NhlService {
             (stat: NhlPlayerStatDto) =>
               (stat = this.getPlayerStatsWithChaLogo(stat))
           );
-          return result['data'];
+          return { stats: result['data'], total: result['total'] };
         }),
         delay(500)
       );

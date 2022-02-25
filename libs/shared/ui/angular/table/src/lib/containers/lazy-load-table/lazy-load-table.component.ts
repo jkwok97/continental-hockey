@@ -1,20 +1,20 @@
 import {
   Component,
+  OnInit,
   ChangeDetectionStrategy,
   Input,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { TeamDto } from '@cha/shared/api';
 import { Table } from 'primeng/table';
 
 @Component({
-  selector: 'cha-ang-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
+  selector: 'cha-ang-lazy-load-table',
+  templateUrl: './lazy-load-table.component.html',
+  styleUrls: ['./lazy-load-table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableComponent implements OnInit {
+export class LazyLoadTableComponent implements OnInit {
   @Input() data: any;
   @Input() layout = 'scroll';
   @Input() tableColumns: any[] = [];

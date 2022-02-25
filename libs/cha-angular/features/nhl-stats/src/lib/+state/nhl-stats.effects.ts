@@ -28,7 +28,7 @@ export class NhlStatsEffects {
             action.pageSize
           )
           .pipe(
-            map((stats) => NhlStatsActions.getStatsSuccess({ stats })),
+            map(({stats, total}) => NhlStatsActions.getStatsSuccess({ stats, total })),
             catchError(() => of(NhlStatsActions.error()))
           )
       )
@@ -50,7 +50,7 @@ export class NhlStatsEffects {
             action.pageSize
           )
           .pipe(
-            map((stats) => NhlStatsActions.getGoalieStatsSuccess({ stats })),
+            map(({stats, total}) => NhlStatsActions.getGoalieStatsSuccess({ stats, total })),
             catchError(() => of(NhlStatsActions.error()))
           )
       )
@@ -72,7 +72,7 @@ export class NhlStatsEffects {
             action.pageSize
           )
           .pipe(
-            map((stats) => NhlStatsActions.getRookieStatsSuccess({ stats })),
+            map(({stats, total}) => NhlStatsActions.getRookieStatsSuccess({ stats, total })),
             catchError(() => of(NhlStatsActions.error()))
           )
       )

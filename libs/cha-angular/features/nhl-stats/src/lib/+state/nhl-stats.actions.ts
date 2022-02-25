@@ -16,7 +16,7 @@ const getStats = createAction(
 
 const getStatsSuccess = createAction(
   `${NAMESPACE} Get Stats Success`,
-  props<{ stats: NhlPlayerStatDto[] }>()
+  props<{ stats: NhlPlayerStatDto[], total: number }>()
 );
 
 const getGoalieStats = createAction(
@@ -32,7 +32,7 @@ const getGoalieStats = createAction(
 
 const getGoalieStatsSuccess = createAction(
   `${NAMESPACE} Get Goalie Stats Success`,
-  props<{ stats: NhlGoalieStatDto[] }>()
+  props<{ stats: NhlGoalieStatDto[], total: number }>()
 );
 
 const getRookieStats = createAction(
@@ -48,7 +48,7 @@ const getRookieStats = createAction(
 
 const getRookieStatsSuccess = createAction(
   `${NAMESPACE} Get Rookie Stats Success`,
-  props<{ stats: NhlPlayerStatDto[] }>()
+  props<{ stats: NhlPlayerStatDto[], total: number }>()
 );
 
 const error = createAction(`${NAMESPACE} Error`);

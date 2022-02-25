@@ -7,12 +7,15 @@ export const selectState =
 
 const selectStats = createSelector(selectState, NhlStatsReducer.getStats);
 
+const selectTotal = createSelector(selectState, NhlStatsReducer.getTotal);
+
 const selectLoading = createSelector(selectState, NhlStatsReducer.getLoading);
 
 const selectLoaded = createSelector(selectState, NhlStatsReducer.getLoaded);
 
 export const NhlStatsSelectors = {
   selectStats,
+  selectTotal,
   selectLoaded,
   selectLoading,
 };

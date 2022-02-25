@@ -15,6 +15,7 @@ export class NhlStatsComponent {
   isLoaded$: Observable<boolean>;
   teams$: Observable<TeamDto[]>;
   stats$: Observable<NhlPlayerStatDto[] | NhlGoalieStatDto[]>;
+  total$: Observable<number>;
 
   selectOptions = [
     { label: 'Skaters', value: 'skater' },
@@ -77,6 +78,7 @@ export class NhlStatsComponent {
     this.isLoading$ = this.nhlStatsFacade.isLoading$;
     this.teams$ = this.leagueDataFacade.leagueTeams$;
     this.stats$ = this.nhlStatsFacade.stats$;
+    this.total$ = this.nhlStatsFacade.total$;
   }
 
   onOptionChanged(option: string) {
