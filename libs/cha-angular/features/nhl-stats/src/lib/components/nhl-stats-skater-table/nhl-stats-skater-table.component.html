@@ -1,0 +1,84 @@
+<p-table
+  [responsiveLayout]="'scroll'"
+  [value]="stats"
+  [columns]="playerTableColumns"
+  styleClass="p-datatable-sm p-datatable-striped"
+  class="table"
+  [rows]="rows"
+  [showCurrentPageReport]="true"
+  [rowsPerPageOptions]="[10, 20, 25, 50]"
+  [paginator]="true"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [totalRecords]="totalRecords"
+  (onLazyLoad)="loadSkaterStats($event)"
+  [lazy]="true"
+  [sortField]="sortField"
+  [sortOrder]="-1"
+  [loading]="loading"
+  #dt
+>
+  <ng-template pTemplate="header" let-columns let-data>
+    <tr>
+      <th
+        *ngFor="let column of playerTableColumns"
+        [pSortableColumn]="column.field"
+      >
+        {{ column.header }}
+        <p-sortIcon [field]="column.field"></p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template
+    pTemplate="body"
+    let-data
+    let-columns="columns"
+    let-rowIndex="rowIndex"
+  >
+    <tr>
+      <td *ngFor="let column of playerTableColumns">
+        <span class="p-column-title">{{ column.header }}</span>
+        <div class="table-body-cell">
+          <img
+            [src]="data.chaTeam ? data.chaTeam : 'assets/free_agent.png'"
+            height="30px"
+            *ngIf="column.field === 'chaTeam'"
+          />
+          <p-avatar
+            [image]="data.playerImg"
+            shape="circle"
+            *ngIf="column.field.includes('Name') && data.playerImg"
+          ></p-avatar>
+          <ng-container
+            *ngIf="
+              column.field === 'pointsPerGame' ||
+              column.field === 'goalsAgainstAverage'
+            "
+            >{{ data[column.field].toFixed(2) }}
+          </ng-container>
+          <ng-container *ngIf="column.field === 'savePct'"
+            >{{ data[column.field].toFixed(3) }}
+          </ng-container>
+          <ng-container
+            *ngIf="
+              column.field === 'shootingPct' || column.field === 'faceoffWinPct'
+            "
+            >{{ (data[column.field] * 100).toFixed(1) }}
+          </ng-container>
+          <ng-container
+            *ngIf="
+              column.field !== 'shootingPct' &&
+              column.field !== 'pointsPerGame' &&
+              column.field !== 'faceoffWinPct' &&
+              column.field !== 'savePct' &&
+              column.field !== 'goalsAgainstAverage'
+            "
+            >{{
+              column.field !== 'chaTeam' ? data[column.field] : ''
+            }}</ng-container
+          >
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

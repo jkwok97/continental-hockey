@@ -2,6 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProgressBarModule } from 'primeng/progressbar';
+import { TableModule } from 'primeng/table';
+import { AvatarModule } from 'primeng/avatar';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { DropdownModule } from 'primeng/dropdown';
+
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -18,12 +25,19 @@ import { NhlStatsEffects } from './+state/nhl-stats.effects';
 import { NhlStatsFacade } from './+state/nhl-stats.facade';
 
 import { NhlStatsComponent } from './containers';
+import { NhlStatsSkaterTableComponent } from './components';
 
 @NgModule({
   imports: [
     CommonModule,
     ProgressBarModule,
     NhlStatsRoutingModule,
+    TableModule,
+    AvatarModule,
+    ButtonModule,
+    InputTextModule,
+    MultiSelectModule,
+    DropdownModule,
     SharedUiAngularLayoutModule,
     SharedUiAngularSelectButtonModule,
     SharedUiAngularTableModule,
@@ -32,7 +46,7 @@ import { NhlStatsComponent } from './containers';
     StoreModule.forFeature('nhl-stats', reducer),
     EffectsModule.forFeature([NhlStatsEffects]),
   ],
-  declarations: [NhlStatsComponent],
+  declarations: [NhlStatsComponent, NhlStatsSkaterTableComponent],
   providers: [NhlStatsEffects, NhlStatsFacade],
 })
 export class ChaAngularFeaturesNhlStatsModule {}

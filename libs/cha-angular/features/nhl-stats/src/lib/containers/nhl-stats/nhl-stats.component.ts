@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LeagueDataFacade } from '@cha/cha-angular/domain/core';
 import { NhlGoalieStatDto, NhlPlayerStatDto, TeamDto } from '@cha/shared/api';
+import { LazyLoadEvent } from 'primeng/api';
 import { Observable } from 'rxjs';
 import { NhlStatsFacade } from '../../+state/nhl-stats.facade';
 
@@ -70,6 +71,9 @@ export class NhlStatsComponent {
     'position',
   ];
 
+  showSkaters = true;
+  showGoalies = false;
+
   constructor(
     private nhlStatsFacade: NhlStatsFacade,
     private leagueDataFacade: LeagueDataFacade
@@ -98,18 +102,22 @@ export class NhlStatsComponent {
   }
 
   setSkaters(option: string) {
+    this.showSkaters = true;
+    this.showGoalies = false;
     this.tableColumns = this.playerTableColumns;
-    this.nhlStatsFacade.getStats(option, 'points', 'DESC', 0, 25);
+    // this.nhlStatsFacade.getStats(option, 'points', 'DESC', 0, 25);
   }
 
   setGoalies(option: string) {
+    this.showSkaters = false;
     this.tableColumns = this.goalieTableColumns;
-    this.nhlStatsFacade.getGoalieStats(option, 'wins', 'DESC', 0, 25);
+    // this.nhlStatsFacade.getGoalieStats(option, 'wins', 'DESC', 0, 25);
   }
 
   setRookies(option: string) {
+    this.showSkaters = true;
     this.tableColumns = this.playerTableColumns;
-    this.nhlStatsFacade.getRookieStats('skater', 'points', 'DESC', 0, 25);
+    // this.nhlStatsFacade.getRookieStats('skater', 'points', 'DESC', 0, 25);
   }
 
   mapItems(stats: NhlPlayerStatDto[] | NhlGoalieStatDto[]) {
@@ -132,5 +140,14 @@ export class NhlStatsComponent {
     } else {
       return;
     }
+  }
+
+  onUpdateData(event: LazyLoadEvent) {
+    console.log(event);
+    const sortOrder = event.sortOrder === 1 ? 'DESC' : 'ASC';
+    const sortField = event.sortField ? event.sortField : 'points';
+    const first = event.first ? event.first : 0;
+    const rows = event.rows ? event.rows : 25;
+    this.nhlStatsFacade.getStats('skater', sortField, sortOrder, first, rows);
   }
 }

@@ -12,6 +12,10 @@
   currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
   [filterDelay]="0"
   [totalRecords]="totalRecords"
+  (onLazyLoad)="loadData($event)"
+  [lazy]="true"
+  [sortField]="sortField"
+  [loading]="loading"
   #dt
 >
   <ng-template pTemplate="caption">

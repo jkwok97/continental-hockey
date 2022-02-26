@@ -4,8 +4,11 @@ import {
   ChangeDetectionStrategy,
   Input,
   ViewChild,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 import { TeamDto } from '@cha/shared/api';
+import { LazyLoadEvent } from 'primeng/api';
 import { Table } from 'primeng/table';
 
 @Component({
@@ -23,10 +26,15 @@ export class LazyLoadTableComponent implements OnInit {
   @Input() filteringOptions: any[] = [];
   @Input() rows = 20;
   @Input() totalRecords = 0;
+  @Input() sortField!: string;
+
+  @Output() updateData = new EventEmitter<LazyLoadEvent>();
 
   @ViewChild('dt') dt: Table | undefined;
 
   loadedData!: any[];
+
+  loading = false;
 
   ngOnInit(): void {
     console.log(this.data);
@@ -64,5 +72,18 @@ export class LazyLoadTableComponent implements OnInit {
 
   clear(table: Table) {
     table.clear();
+  }
+
+  onSelectionChange(event: any) {
+    console.log(event);
+  }
+
+  loadData(event: LazyLoadEvent) {
+    this.loading = true;
+
+    setTimeout(() => {
+      this.updateData.emit(event);
+      this.loading = false;
+    }, 1000);
   }
 }
