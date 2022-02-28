@@ -1,25 +1,17 @@
-import {
-  Component,
-  ChangeDetectionStrategy,
-  ViewChild,
-  OnInit,
-} from '@angular/core';
+import { Component, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { LeagueDataFacade } from '@cha/cha-angular/domain/core';
 import { NhlGoalieStatDto, NhlPlayerStatDto, TeamDto } from '@cha/shared/api';
 import { LazyLoadEvent } from 'primeng/api';
 import { Table } from 'primeng/table';
-import { combineLatest, delay, Observable } from 'rxjs';
+import { combineLatest, delay, Observable, first, filter } from 'rxjs';
 import { NhlStatsFacade } from '../../+state/nhl-stats.facade';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
-@UntilDestroy()
 @Component({
   selector: 'cha-ang-nhl-stats-skater-table',
   templateUrl: './nhl-stats-skater-table.component.html',
   styleUrls: ['./nhl-stats-skater-table.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NhlStatsSkaterTableComponent implements OnInit {
+export class NhlStatsSkaterTableComponent {
   teams$: Observable<TeamDto[]>;
   total$: Observable<number>;
   stats$: Observable<NhlPlayerStatDto[] | NhlGoalieStatDto[]>;
@@ -46,10 +38,11 @@ export class NhlStatsSkaterTableComponent implements OnInit {
     { field: 'faceoffWinPct', header: 'FO%' },
   ];
 
+  first = 0;
   rows = 25;
   totalRecords = 0;
   sortField = 'points';
-  stats: NhlPlayerStatDto[] | NhlGoalieStatDto[] = [];
+  stats!: NhlPlayerStatDto[] | NhlGoalieStatDto[];
 
   loading = false;
 
@@ -61,26 +54,6 @@ export class NhlStatsSkaterTableComponent implements OnInit {
     this.total$ = this.nhlStatsFacade.total$;
     this.stats$ = this.nhlStatsFacade.stats$;
     this.isLoading$ = this.nhlStatsFacade.isLoading$;
-  }
-
-  ngOnInit(): void {
-    this.loading = true;
-
-    this.nhlStatsFacade.getStats('skater', 'points', 'DESC', 0, 25);
-
-    combineLatest([this.total$, this.stats$, this.isLoading$])
-      .pipe(delay(1000), untilDestroyed(this))
-      .subscribe(
-        ([total, stats, isLoading]: [
-          number,
-          NhlPlayerStatDto[] | NhlGoalieStatDto[],
-          boolean
-        ]) => {
-          this.totalRecords = total;
-          this.stats = this.mapItems(stats);
-          this.loading = isLoading;
-        }
-      );
   }
 
   mapItems(stats: NhlPlayerStatDto[] | NhlGoalieStatDto[]) {
@@ -110,9 +83,42 @@ export class NhlStatsSkaterTableComponent implements OnInit {
 
     const sortOrder = event.sortOrder === 1 ? 'ASC' : 'DESC';
     const sortField = event.sortField ? event.sortField : 'points';
-    const first = event.first && event.rows ? event.first + event.rows : 0;
+    const firstNum = event.first ? event.first : 0;
     const rows = event.rows ? event.rows : 25;
 
-    this.nhlStatsFacade.getStats('skater', sortField, sortOrder, first, rows);
+    this.nhlStatsFacade.getStats(
+      'skater',
+      sortField,
+      sortOrder,
+      firstNum,
+      rows
+    );
+
+    setTimeout(() => {
+      combineLatest([this.total$, this.stats$])
+        .pipe(
+          filter(([total, stats]) => total !== 0 && stats.length > 0),
+          first()
+        )
+        .subscribe(
+          ([total, stats]: [
+            number,
+            NhlPlayerStatDto[] | NhlGoalieStatDto[]
+          ]) => {
+            this.totalRecords = total;
+            this.stats = this.mapItems(stats);
+            this.loading = false;
+            if (this.dt) {
+              this.dt.value = this.stats;
+              this.dt.totalRecords = this.totalRecords;
+              this.dt.loading = this.loading;
+            }
+
+            console.log(this.stats);
+            console.log(this.dt?.value);
+            console.log(this.dt);
+          }
+        );
+    }, 1000);
   }
 }

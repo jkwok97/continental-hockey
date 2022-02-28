@@ -12,9 +12,9 @@
   [totalRecords]="totalRecords"
   (onLazyLoad)="loadSkaterStats($event)"
   [lazy]="true"
+  [loading]="loading"
   [sortField]="sortField"
   [sortOrder]="-1"
-  [loading]="loading"
   #dt
 >
   <ng-template pTemplate="header" let-columns let-data>

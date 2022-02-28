@@ -141,13 +141,4 @@ export class NhlStatsComponent {
       return;
     }
   }
-
-  onUpdateData(event: LazyLoadEvent) {
-    console.log(event);
-    const sortOrder = event.sortOrder === 1 ? 'DESC' : 'ASC';
-    const sortField = event.sortField ? event.sortField : 'points';
-    const first = event.first ? event.first : 0;
-    const rows = event.rows ? event.rows : 25;
-    this.nhlStatsFacade.getStats('skater', sortField, sortOrder, first, rows);
-  }
 }
