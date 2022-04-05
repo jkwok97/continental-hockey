@@ -43,7 +43,7 @@ const r = createReducer(
 
   on(NhlStatsActions.getRookieStatsSuccess, (state, action) => ({
     ...state,
-    stats: action.stats,
+    rookieStats: action.stats,
     loading: false,
     loaded: true,
     total: action.total,

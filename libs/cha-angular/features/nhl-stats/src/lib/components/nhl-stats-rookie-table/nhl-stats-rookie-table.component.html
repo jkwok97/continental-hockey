@@ -40,11 +40,22 @@
             shape="circle"
             *ngIf="column.field.includes('Name') && data.playerImg"
           ></p-avatar>
-          <ng-container *ngIf="column.field === 'skaterFullName'"
-            >{{ data.first_name + ' ' + data.last_name }}
+          <ng-container *ngIf="column.field === 'pointsPerGame'"
+            >{{ data[column.field].toFixed(2) }}
+          </ng-container>
+          <ng-container
+            *ngIf="
+              column.field === 'shootingPct' || column.field === 'faceoffWinPct'
+            "
+            >{{ (data[column.field] * 100).toFixed(1) }}
           </ng-container>
           <ng-container>{{
-            column.field !== 'chaTeam' ? data[column.field] : ''
+            column.field !== 'chaTeam' &&
+            column.field !== 'shootingPct' &&
+            column.field !== 'faceoffWinPct' &&
+            column.field !== 'pointsPerGame'
+              ? data[column.field]
+              : ''
           }}</ng-container>
         </div>
       </td>

@@ -28,6 +28,7 @@ import { NhlStatsComponent } from './containers';
 import {
   NhlStatsSkaterTableComponent,
   NhlStatsGoalieTableComponent,
+  NhlStatsRookieTableComponent,
 } from './components';
 
 @NgModule({
@@ -53,6 +54,7 @@ import {
     NhlStatsComponent,
     NhlStatsSkaterTableComponent,
     NhlStatsGoalieTableComponent,
+    NhlStatsRookieTableComponent,
   ],
   providers: [NhlStatsEffects, NhlStatsFacade],
 })

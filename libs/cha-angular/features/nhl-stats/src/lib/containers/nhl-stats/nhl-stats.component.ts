@@ -1,6 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { LeagueDataFacade } from '@cha/cha-angular/domain/core';
-import { TeamDto } from '@cha/shared/api';
 import { Observable } from 'rxjs';
 import { NhlStatsFacade } from '../../+state/nhl-stats.facade';
 
@@ -22,10 +20,13 @@ export class NhlStatsComponent {
 
   showSkaters = true;
   showGoalies = false;
+  showRookies = false;
 
   constructor(private nhlStatsFacade: NhlStatsFacade) {
     this.isLoaded$ = this.nhlStatsFacade.isLoaded$;
     this.isLoading$ = this.nhlStatsFacade.isLoading$;
+    this.nhlStatsFacade.getSportsnetStats('2021', 'reg');
+    this.nhlStatsFacade.getRookieStats('skater', 'points', 'DESC', 0, 100);
   }
 
   onOptionChanged(option: string) {
@@ -47,16 +48,18 @@ export class NhlStatsComponent {
   setSkaters(option: string) {
     this.showSkaters = true;
     this.showGoalies = false;
-    this.nhlStatsFacade.getSportsnetStats('2021', 'reg');
+    this.showRookies = false;
   }
 
   setGoalies(option: string) {
     this.showSkaters = false;
+    this.showRookies = false;
     this.showGoalies = true;
   }
 
   setRookies(option: string) {
-    this.showSkaters = true;
-    // this.nhlStatsFacade.getRookieStats('skater', 'points', 'DESC', 0, 25);
+    this.showRookies = true;
+    this.showGoalies = false;
+    this.showSkaters = false;
   }
 }
