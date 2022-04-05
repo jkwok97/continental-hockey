@@ -26,13 +26,6 @@ const ROUTES: Route[] = [
             (mod) => mod.ChaAngularFeaturesNhlStatsModule
           ),
       },
-      {
-        path: 'twitter',
-        loadChildren: () =>
-          import('@cha/cha-angular/features/nhl-twitter').then(
-            (mod) => mod.ChaAngularFeaturesNhlTwitterModule
-          ),
-      },
     ],
   },
 ];

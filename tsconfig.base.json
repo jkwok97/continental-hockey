@@ -144,9 +144,6 @@
       "@cha/cha-angular/features/nhl-stats": [
         "libs/cha-angular/features/nhl-stats/src/index.ts"
       ],
-      "@cha/cha-angular/features/nhl-twitter": [
-        "libs/cha-angular/features/nhl-twitter/src/index.ts"
-      ],
       "@cha/cha-angular/features/rules-egr": [
         "libs/cha-angular/features/rules-egr/src/index.ts"
       ],

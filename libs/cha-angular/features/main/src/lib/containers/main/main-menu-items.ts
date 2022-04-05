@@ -233,10 +233,6 @@ export const mainMenuItems: MenuItem[] = [
         label: 'Statistics',
         routerLink: ['/nhl/stats'],
       },
-      {
-        label: 'Twitter Updates',
-        routerLink: ['/nhl/twitter'],
-      },
     ],
   },
   {
