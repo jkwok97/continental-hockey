@@ -16,45 +16,27 @@ export class NhlStatsFacade {
     NhlStatsSelectors.selectLoaded
   );
 
-  stats$: Observable<NhlPlayerStatDto[] | NhlGoalieStatDto[]> =
-    this.store.select(NhlStatsSelectors.selectStats);
+  rookieStats$: Observable<NhlPlayerStatDto[]> = this.store.select(
+    NhlStatsSelectors.selectRookieStats
+  );
+
+  skaterStats$: Observable<NhlPlayerStatDto[]> = this.store.select(
+    NhlStatsSelectors.selectSkaterStats
+  );
+
+  goalieStats$: Observable<NhlGoalieStatDto[]> = this.store.select(
+    NhlStatsSelectors.selectGoalieStats
+  );
 
   total$: Observable<number> = this.store.select(NhlStatsSelectors.selectTotal);
 
   constructor(private store: Store<State>) {}
 
-  getStats(
-    statType: string,
-    sortType: string,
-    sortOrder: string,
-    start: number,
-    pageSize: number
-  ) {
+  getSportsnetStats(season: string, season_type: string) {
     this.store.dispatch(
-      NhlStatsActions.getStats({
-        statType,
-        sortType,
-        sortOrder,
-        start,
-        pageSize,
-      })
-    );
-  }
-
-  getGoalieStats(
-    statType: string,
-    sortType: string,
-    sortOrder: string,
-    start: number,
-    pageSize: number
-  ) {
-    this.store.dispatch(
-      NhlStatsActions.getGoalieStats({
-        statType,
-        sortType,
-        sortOrder,
-        start,
-        pageSize,
+      NhlStatsActions.getSportsnetStats({
+        season,
+        season_type,
       })
     );
   }

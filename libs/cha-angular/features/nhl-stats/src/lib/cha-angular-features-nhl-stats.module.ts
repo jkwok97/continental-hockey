@@ -25,7 +25,10 @@ import { NhlStatsEffects } from './+state/nhl-stats.effects';
 import { NhlStatsFacade } from './+state/nhl-stats.facade';
 
 import { NhlStatsComponent } from './containers';
-import { NhlStatsSkaterTableComponent } from './components';
+import {
+  NhlStatsSkaterTableComponent,
+  NhlStatsGoalieTableComponent,
+} from './components';
 
 @NgModule({
   imports: [
@@ -46,7 +49,11 @@ import { NhlStatsSkaterTableComponent } from './components';
     StoreModule.forFeature('nhl-stats', reducer),
     EffectsModule.forFeature([NhlStatsEffects]),
   ],
-  declarations: [NhlStatsComponent, NhlStatsSkaterTableComponent],
+  declarations: [
+    NhlStatsComponent,
+    NhlStatsSkaterTableComponent,
+    NhlStatsGoalieTableComponent,
+  ],
   providers: [NhlStatsEffects, NhlStatsFacade],
 })
 export class ChaAngularFeaturesNhlStatsModule {}

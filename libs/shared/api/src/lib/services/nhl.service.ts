@@ -9,7 +9,11 @@ import {
   tap,
 } from 'rxjs/operators';
 import { combineLatest, Observable, of, switchMap } from 'rxjs';
-import { NhlGoalieStatDto, NhlPlayerStatDto } from '../models';
+import {
+  NhlGoalieStatDto,
+  NhlPlayerStatDto,
+  SharedUiLogosEnum,
+} from '../models';
 
 @Injectable()
 export class NhlService {
@@ -103,6 +107,26 @@ export class NhlService {
     return this._http.get(`${this.apiUrl}/nhl-defense-leaders/`, options);
   }
 
+  getNHLSummarySportsnet(
+    season: string,
+    season_type: string
+  ): Observable<{ skaters: any[]; goalies: any[] }> {
+    const options = {
+      params: new HttpParams()
+        .set('season', season)
+        .set('season_type', season_type),
+    };
+    return this._http.get(`${this.apiUrl}/nhl-summary`, options).pipe(
+      map((result: any) => {
+        return {
+          skaters: result['data']['player_stats']['skaters'],
+          goalies: result['data']['player_stats']['goalies'],
+        };
+      }),
+      delay(500)
+    );
+  }
+
   getNHLsummary(
     season: string,
     player: string,
@@ -194,16 +218,30 @@ export class NhlService {
   }
 
   getPlayerStatsWithChaLogo(stat: NhlPlayerStatDto): NhlPlayerStatDto {
-    this.getPlayerTeamLogo(stat.playerId)
-      .pipe(first())
-      .subscribe((logo) => {
-        if (logo && logo.teamlogo) {
-          stat.chaTeam = logo.teamlogo;
-        } else {
-          stat.chaTeam = '';
-        }
-      });
+    stat = {
+      ...stat,
+      // chaTeam: this.getPlayerTeamLogo(stat.playerId).pipe(
+      //   map((logo) => (logo.teamlogo ? logo.teamlogo : ''))
+      // ),
+    };
+
     return stat;
+
+    // this.getPlayerTeamLogo(stat.playerId)
+    //   .pipe(first(), delay(100))
+    //   .subscribe((logo) => {
+    //     if (logo && logo.teamlogo) {
+    //       stat = {
+    //         ...stat,
+    //         chaTeam: logo.teamlogo,
+    //       };
+    //     } else {
+    //       stat = {
+    //         ...stat,
+    //         chaTeam: '',
+    //       };
+    //     }
+    //   });
   }
 
   getPlayerTeamLogo(nhlId: number): Observable<{ teamlogo: string }> {

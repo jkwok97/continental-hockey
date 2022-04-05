@@ -1,42 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LeagueDataFacade } from '@cha/cha-angular/domain/core';
-import { NhlGoalieStatDto, NhlPlayerStatDto, TeamDto } from '@cha/shared/api';
-import { Observable, first, filter } from 'rxjs';
+import { TeamDto, NhlPlayerStatDto, NhlGoalieStatDto } from '@cha/shared/api';
+import { Observable, filter, first } from 'rxjs';
 import { NhlStatsFacade } from '../../+state/nhl-stats.facade';
 
 @Component({
-  selector: 'cha-ang-nhl-stats-skater-table',
-  templateUrl: './nhl-stats-skater-table.component.html',
-  styleUrls: ['./nhl-stats-skater-table.component.scss'],
+  selector: 'cha-ang-nhl-stats-goalie-table',
+  templateUrl: './nhl-stats-goalie-table.component.html',
+  styleUrls: ['./nhl-stats-goalie-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NhlStatsSkaterTableComponent {
+export class NhlStatsGoalieTableComponent {
   teams$: Observable<TeamDto[]>;
   total$: Observable<number>;
   isLoading$: Observable<boolean>;
 
-  skaterStats$: Observable<NhlPlayerStatDto[]>;
+  goalieStats$: Observable<NhlGoalieStatDto[]>;
 
-  playerTableColumns = [
+  goalieTableColumns = [
     { field: 'skaterFullName', header: 'Name' },
-    { field: 'position', header: 'Position' },
     { field: 'games_played', header: 'GP' },
-    { field: 'goals', header: 'G' },
-    { field: 'assists', header: 'A' },
-    { field: 'points', header: 'Pts' },
-    { field: 'points_per_game', header: 'PPG' },
-    { field: 'plus_minus', header: '+/-' },
-    { field: 'penalty_minutes', header: 'PIM' },
-    { field: 'power_play_points', header: 'PPP' },
-    { field: 'short_handed_points', header: 'SHP' },
-    { field: 'game_winning_goals', header: 'GWG' },
-    { field: 'shots_on_goal', header: 'SOG' },
-    { field: 'shooting_pct', header: 'Sh%' },
+    { field: 'wins', header: 'W' },
+    { field: 'losses', header: 'L' },
+    { field: 'goals_against_avg', header: 'GAA' },
+    { field: 'shutouts', header: 'SO' },
+    { field: 'goals_against', header: 'GA' },
+    { field: 'saves', header: 'Sv' },
+    { field: 'shots_against', header: 'SF' },
+    { field: 'save_pct', header: 'Sv%' },
   ];
 
   first = 0;
-  rows = 100;
+  rows = 50;
   totalRecords = 0;
-  sortField = 'points';
+  sortField = 'wins';
   stats!: NhlPlayerStatDto[] | NhlGoalieStatDto[];
 
   constructor(
@@ -46,9 +43,9 @@ export class NhlStatsSkaterTableComponent {
     this.teams$ = this.leagueDataFacade.leagueTeams$;
     this.total$ = this.nhlStatsFacade.total$;
     this.isLoading$ = this.nhlStatsFacade.isLoading$;
-    this.skaterStats$ = this.nhlStatsFacade.skaterStats$;
+    this.goalieStats$ = this.nhlStatsFacade.goalieStats$;
 
-    this.skaterStats$
+    this.goalieStats$
       .pipe(
         filter((stats) => stats.length > 0),
         first()

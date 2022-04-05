@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+
 export interface NhlPlayerStatDto {
   assists: number;
   evGoals?: number;
@@ -10,6 +12,7 @@ export interface NhlPlayerStatDto {
   otGoals?: number;
   penaltyMinutes: number;
   playerId: number;
+  player_id?: number;
   plusMinus?: number;
   points: number;
   pointsPerGame?: number;

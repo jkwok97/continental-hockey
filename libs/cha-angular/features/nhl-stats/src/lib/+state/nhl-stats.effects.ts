@@ -13,44 +13,16 @@ export class NhlStatsEffects {
     private leagueDataFacade: LeagueDataFacade
   ) {}
 
-  getStats$ = createEffect(() =>
+  getSportnetStats$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(NhlStatsActions.getStats),
-      withLatestFrom(this.leagueDataFacade.leagueData$),
-      exhaustMap(([action, data]) =>
+      ofType(NhlStatsActions.getSportsnetStats),
+      exhaustMap((action) =>
         this.nhlService
-          .getNHLsummary(
-            data.nhl_year,
-            action.statType,
-            action.sortType,
-            action.sortOrder,
-            action.start,
-            action.pageSize
-          )
+          .getNHLSummarySportsnet(action.season, action.season_type)
           .pipe(
-            map(({stats, total}) => NhlStatsActions.getStatsSuccess({ stats, total })),
-            catchError(() => of(NhlStatsActions.error()))
-          )
-      )
-    )
-  );
-
-  getGoalieStats$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(NhlStatsActions.getGoalieStats),
-      withLatestFrom(this.leagueDataFacade.leagueData$),
-      exhaustMap(([action, data]) =>
-        this.nhlService
-          .getNHLGoaliesummary(
-            data.nhl_year,
-            action.statType,
-            action.sortType,
-            action.sortOrder,
-            action.start,
-            action.pageSize
-          )
-          .pipe(
-            map(({stats, total}) => NhlStatsActions.getGoalieStatsSuccess({ stats, total })),
+            map(({ skaters, goalies }) =>
+              NhlStatsActions.getSportsnetStatsSuccess({ skaters, goalies })
+            ),
             catchError(() => of(NhlStatsActions.error()))
           )
       )
@@ -72,7 +44,9 @@ export class NhlStatsEffects {
             action.pageSize
           )
           .pipe(
-            map(({stats, total}) => NhlStatsActions.getRookieStatsSuccess({ stats, total })),
+            map(({ stats, total }) =>
+              NhlStatsActions.getRookieStatsSuccess({ stats, total })
+            ),
             catchError(() => of(NhlStatsActions.error()))
           )
       )

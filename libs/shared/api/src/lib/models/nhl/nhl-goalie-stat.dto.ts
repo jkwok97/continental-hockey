@@ -11,6 +11,7 @@ export interface NhlGoalieStatDto {
   otLosses?: number;
   penaltyMinutes: number;
   playerId: number;
+  player_id?: number;
   points: number;
   savePct?: number;
   saves?: number;
