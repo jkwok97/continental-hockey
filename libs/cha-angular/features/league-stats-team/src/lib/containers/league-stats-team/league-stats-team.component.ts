@@ -17,5 +17,7 @@ export class LeagueStatsTeamComponent implements OnInit {
     this.isLoaded$ = this.leagueStatsTeamFacade.isLoaded$;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.leagueStatsTeamFacade.getLeagueTeamStats();
+  }
 }

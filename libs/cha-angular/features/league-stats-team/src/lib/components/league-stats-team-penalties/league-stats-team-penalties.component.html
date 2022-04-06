@@ -1,1 +1,8 @@
-<p>league-stats-team-penalties works!</p>
+<p-accordion>
+  <p-accordionTab header="Team Penalties" [selected]="true">
+    <cha-ang-league-stats-team-table
+      [tableColumns]="tableColumns"
+      [stats]="stats"
+    ></cha-ang-league-stats-team-table>
+  </p-accordionTab>
+</p-accordion>

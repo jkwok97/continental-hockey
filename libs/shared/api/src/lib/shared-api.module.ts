@@ -6,6 +6,7 @@ import {
   DisplayService,
   DraftService,
   LeagueDataService,
+  LeagueStatsService,
   NhlService,
   TeamInfoService,
 } from './services';
@@ -19,6 +20,7 @@ import {
     DraftService,
     LeagueDataService,
     NhlService,
+    LeagueStatsService,
   ],
 })
 export class SharedApiModule {

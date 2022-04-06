@@ -1,15 +1,24 @@
 <cha-ang-layout-feature-content>
-  <div class="draft-current">
+  <div class="league-stats-team">
     <p-progressBar
       mode="indeterminate"
       [style]="{ height: '6px' }"
       *ngIf="isLoading$ | async"
     ></p-progressBar>
 
-    hello
-
-    <cha-ang-card>
-      <cha-ang-card-body> </cha-ang-card-body>
+    <cha-ang-card *ngIf="isLoaded$ | async">
+      <cha-ang-card-body>
+        <div class="league-stats-team-container">
+          <cha-ang-league-stats-team-standings></cha-ang-league-stats-team-standings>
+          <cha-ang-league-stats-team-streak></cha-ang-league-stats-team-streak>
+          <cha-ang-league-stats-team-penalties></cha-ang-league-stats-team-penalties>
+        </div>
+        <div class="league-stats-team-container">
+          <cha-ang-league-stats-team-differentials></cha-ang-league-stats-team-differentials>
+          <cha-ang-league-stats-team-pp></cha-ang-league-stats-team-pp>
+          <cha-ang-league-stats-team-pk></cha-ang-league-stats-team-pk>
+        </div>
+      </cha-ang-card-body>
     </cha-ang-card>
   </div>
 </cha-ang-layout-feature-content>

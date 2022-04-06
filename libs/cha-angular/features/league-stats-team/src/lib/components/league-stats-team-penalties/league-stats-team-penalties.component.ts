@@ -1,16 +1,28 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { statTeamDto } from '@cha/shared/api';
+import { first } from 'rxjs';
+import { LeagueStatsTeamFacade } from '../../+state/league-stats-team.facade';
 
 @Component({
   selector: 'cha-ang-league-stats-team-penalties',
   templateUrl: './league-stats-team-penalties.component.html',
   styleUrls: ['./league-stats-team-penalties.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LeagueStatsTeamPenaltiesComponent implements OnInit {
+export class LeagueStatsTeamPenaltiesComponent {
+  stats!: statTeamDto[];
 
-  constructor() { }
+  tableColumns = [
+    { field: 'team', header: 'Team' },
+    { field: 'penalty_minutes', header: 'PIM' },
+    { field: 'pim_game', header: 'PIM/G' },
+  ];
 
-  ngOnInit(): void {
+  constructor(private leagueStatsTeamFacade: LeagueStatsTeamFacade) {
+    this.leagueStatsTeamFacade.leagueTeamPenalties$
+      .pipe(first())
+      .subscribe((teamStats: statTeamDto[]) => {
+        this.stats = teamStats;
+      });
   }
-
 }

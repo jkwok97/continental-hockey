@@ -1,1 +1,11 @@
-<p>league-stats-team-standings works!</p>
+<p-accordion>
+  <p-accordionTab
+    header="League Standings - *Ties - Wins / Goal Diff"
+    [selected]="true"
+  >
+    <cha-ang-league-stats-team-table
+      [tableColumns]="tableColumns"
+      [stats]="stats"
+    ></cha-ang-league-stats-team-table>
+  </p-accordionTab>
+</p-accordion>

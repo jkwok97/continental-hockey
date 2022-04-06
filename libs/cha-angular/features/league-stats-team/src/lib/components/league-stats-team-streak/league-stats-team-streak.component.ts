@@ -1,16 +1,27 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { statTeamDto } from '@cha/shared/api';
+import { first } from 'rxjs';
+import { LeagueStatsTeamFacade } from '../../+state/league-stats-team.facade';
 
 @Component({
   selector: 'cha-ang-league-stats-team-streak',
   templateUrl: './league-stats-team-streak.component.html',
   styleUrls: ['./league-stats-team-streak.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LeagueStatsTeamStreakComponent implements OnInit {
+export class LeagueStatsTeamStreakComponent {
+  stats!: statTeamDto[];
 
-  constructor() { }
+  tableColumns = [
+    { field: 'team', header: 'Team' },
+    { field: 'long_win_streak', header: 'Games' },
+  ];
 
-  ngOnInit(): void {
+  constructor(private leagueStatsTeamFacade: LeagueStatsTeamFacade) {
+    this.leagueStatsTeamFacade.leagueTeamWinningStreak$
+      .pipe(first())
+      .subscribe((teamStats: statTeamDto[]) => {
+        this.stats = teamStats;
+      });
   }
-
 }

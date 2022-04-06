@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProgressBarModule } from 'primeng/progressbar';
+import { AccordionModule } from 'primeng/accordion';
+import { TableModule } from 'primeng/table';
 
 import { SharedUiAngularLayoutModule } from '@cha/shared/ui/angular/layout';
 import { SharedUiAngularCardModule } from '@cha/shared/ui/angular/card';
@@ -32,6 +34,8 @@ import { StoreModule } from '@ngrx/store';
     CommonModule,
     LeagueStatsTeamRoutingModule,
     ProgressBarModule,
+    AccordionModule,
+    TableModule,
     SharedUiAngularLayoutModule,
     SharedUiAngularCardModule,
     SharedUiAngularDividerModule,

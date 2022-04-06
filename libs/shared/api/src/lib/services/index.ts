@@ -4,3 +4,4 @@ export * from './awards.service';
 export * from './draft.service';
 export * from './league-data.service';
 export * from './nhl.service';
+export * from './league-stats.service';

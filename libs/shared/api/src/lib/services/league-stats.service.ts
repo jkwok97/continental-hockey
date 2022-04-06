@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { statTeamDto } from '../models';
 
 @Injectable()
-export class LeagueDataService {
+export class LeagueStatsService {
   constructor(
     private _http: HttpClient,
     @Inject('apiUrl') private apiUrl: string

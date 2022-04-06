@@ -2,7 +2,6 @@ import {
   Component,
   ChangeDetectionStrategy,
   Input,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import { TeamDto } from '@cha/shared/api';
@@ -14,7 +13,7 @@ import { Table } from 'primeng/table';
   styleUrls: ['./table.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   @Input() data: any;
   @Input() layout = 'scroll';
   @Input() tableColumns: any[] = [];
@@ -27,11 +26,6 @@ export class TableComponent implements OnInit {
   @ViewChild('dt') dt: Table | undefined;
 
   loadedData!: any[];
-
-  ngOnInit(): void {
-    console.log(this.data);
-    console.log(this.totalRecords);
-  }
 
   getLogo(item: any) {
     if (this.teams.length > 0) {

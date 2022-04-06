@@ -1,1 +1,8 @@
-<p>league-stats-team-pp works!</p>
+<p-accordion>
+  <p-accordionTab header="PP Efficiency%" [selected]="true">
+    <cha-ang-league-stats-team-table
+      [tableColumns]="tableColumns"
+      [stats]="stats"
+    ></cha-ang-league-stats-team-table>
+  </p-accordionTab>
+</p-accordion>
