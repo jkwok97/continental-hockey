@@ -44,7 +44,6 @@
     "cha-angular-features-main-rules": "libs/cha-angular/features/main-rules",
     "cha-angular-features-nhl-leaders": "libs/cha-angular/features/nhl-leaders",
     "cha-angular-features-nhl-stats": "libs/cha-angular/features/nhl-stats",
-    "cha-angular-features-nhl-twitter": "libs/cha-angular/features/nhl-twitter",
     "cha-angular-features-rules-egr": "libs/cha-angular/features/rules-egr",
     "cha-angular-features-rules-equalization": "libs/cha-angular/features/rules-equalization",
     "cha-angular-features-rules-lottery": "libs/cha-angular/features/rules-lottery",
