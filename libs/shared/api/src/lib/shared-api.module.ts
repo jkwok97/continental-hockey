@@ -8,6 +8,7 @@ import {
   LeagueDataService,
   LeagueStatsService,
   NhlService,
+  PlayerStatsService,
   TeamInfoService,
 } from './services';
 
@@ -21,6 +22,7 @@ import {
     LeagueDataService,
     NhlService,
     LeagueStatsService,
+    PlayerStatsService,
   ],
 })
 export class SharedApiModule {

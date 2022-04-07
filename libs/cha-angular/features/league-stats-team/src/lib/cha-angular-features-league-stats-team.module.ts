@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+
 import { ProgressBarModule } from 'primeng/progressbar';
 import { AccordionModule } from 'primeng/accordion';
 import { TableModule } from 'primeng/table';
@@ -26,8 +29,6 @@ import {
   LeagueStatsTeamPkComponent,
   LeagueStatsTeamTableComponent,
 } from './components';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   imports: [
