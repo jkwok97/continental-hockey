@@ -4,15 +4,19 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from '@angular/core';
-import { NhlPlayerDto, NhlGoalieDto } from '@cha/shared/api';
+import {
+  NhlPlayerDto,
+  NhlGoalieDto,
+  StatPlayerLeaderDto,
+} from '@cha/shared/api';
 
 @Component({
-  selector: 'cha-ang-leader-card',
-  templateUrl: './leader-card.component.html',
-  styleUrls: ['./leader-card.component.scss'],
+  selector: 'cha-ang-nhl-leader-card',
+  templateUrl: './nhl-leader-card.component.html',
+  styleUrls: ['./nhl-leader-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LeaderCardComponent implements OnInit {
+export class NhlLeaderCardComponent implements OnInit {
   @Input() leaders!: NhlPlayerDto[] | null;
   @Input() goalieLeaders!: NhlGoalieDto[] | null;
   @Input() type: any;

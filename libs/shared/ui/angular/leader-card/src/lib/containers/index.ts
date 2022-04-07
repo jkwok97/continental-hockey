@@ -1,1 +1,2 @@
-export * from './leader-card';
+export * from './nhl-leader-card';
+export * from './cha-leader-card';

@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { AvatarModule } from 'primeng/avatar';
 
-import { LeaderCardComponent } from './containers';
+import { NhlLeaderCardComponent, ChaLeaderCardComponent } from './containers';
 
 @NgModule({
   imports: [CommonModule, AvatarModule],
-  declarations: [LeaderCardComponent],
-  exports: [LeaderCardComponent],
+  declarations: [NhlLeaderCardComponent, ChaLeaderCardComponent],
+  exports: [NhlLeaderCardComponent, ChaLeaderCardComponent],
 })
 export class SharedUiAngularLeaderCardModule {}

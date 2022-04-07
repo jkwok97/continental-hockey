@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LeaderCardComponent } from './leader-card.component';
+import { NhlLeaderCardComponent } from './nhl-leader-card.component';
 
 describe('LeaderCardComponent', () => {
-  let component: LeaderCardComponent;
-  let fixture: ComponentFixture<LeaderCardComponent>;
+  let component: NhlLeaderCardComponent;
+  let fixture: ComponentFixture<NhlLeaderCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LeaderCardComponent ]
-    })
-    .compileComponents();
+      declarations: [NhlLeaderCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LeaderCardComponent);
+    fixture = TestBed.createComponent(NhlLeaderCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,1 +1,88 @@
-<p>league-stats-players works!</p>
+<cha-ang-layout-feature-content>
+  <div class="league-stats-players">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+      *ngIf="isLoading$ | async"
+    ></p-progressBar>
+
+    <ng-container *ngIf="isLoaded$ | async">
+      <div class="league-stats-players-section">
+        <div class="league-stats-players-section-body">
+          <cha-ang-cha-leader-card
+            [leaders]="pointsLeaders$ | async"
+            [type]="'points'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="defenseLeaders$ | async"
+            [type]="'defense points'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="rookieLeaders$ | async"
+            [type]="'rookie points'"
+          ></cha-ang-cha-leader-card>
+        </div>
+
+        <div class="league-stats-players-section-body">
+          <cha-ang-cha-leader-card
+            [leaders]="goalsLeaders$ | async"
+            [type]="'goals'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="assistsLeaders$ | async"
+            [type]="'assists'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="shotsLeaders$ | async"
+            [type]="'shots'"
+          ></cha-ang-cha-leader-card>
+        </div>
+
+        <div class="league-stats-players-section-body">
+          <cha-ang-cha-leader-card
+            [leaders]="minutesLeaders$ | async"
+            [type]="'minutes'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="ppGoalsLeaders$ | async"
+            [type]="'pp goals'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="shGoalsLeaders$ | async"
+            [type]="'sh goals'"
+          ></cha-ang-cha-leader-card>
+        </div>
+
+        <div class="league-stats-players-section-body">
+          <cha-ang-cha-leader-card
+            [leaders]="penaltyLeaders$ | async"
+            [type]="'penalty minutes'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="blockedShotsLeaders$ | async"
+            [type]="'blocked shots'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="hitsLeaders$ | async"
+            [type]="'hits'"
+          ></cha-ang-cha-leader-card>
+        </div>
+
+        <div class="league-stats-players-section-body">
+          <cha-ang-cha-leader-card
+            [leaders]="bestPlusMinusLeaders$ | async"
+            [type]="'+/-'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="currStreakLeaders$ | async"
+            [type]="'current streak'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [leaders]="longStreakLeaders$ | async"
+            [type]="'longest streak'"
+          ></cha-ang-cha-leader-card>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</cha-ang-layout-feature-content>

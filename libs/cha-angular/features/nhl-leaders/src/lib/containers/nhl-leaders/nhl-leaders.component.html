@@ -9,69 +9,69 @@
       <div class="nhl-leaders-section">
         <div class="nhl-leaders-section-header">Skaters</div>
         <div class="nhl-leaders-section-body">
-          <cha-ang-leader-card
+          <cha-ang-nhl-leader-card
             [leaders]="pointsLeaders$ | async"
             [type]="'points'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [leaders]="goalsLeaders$ | async"
             [type]="'goals'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [leaders]="assistsLeaders$ | async"
             [type]="'assists'"
-          ></cha-ang-leader-card>
+          ></cha-ang-nhl-leader-card>
         </div>
       </div>
       <div class="nhl-leaders-section">
         <div class="nhl-leaders-section-header">Defense</div>
         <div class="nhl-leaders-section-body">
-          <cha-ang-leader-card
+          <cha-ang-nhl-leader-card
             [leaders]="defensePointsLeaders$ | async"
             [type]="'points'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [leaders]="defenseGoalsLeaders$ | async"
             [type]="'goals'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [leaders]="defenseAssistsLeaders$ | async"
             [type]="'assists'"
-          ></cha-ang-leader-card>
+          ></cha-ang-nhl-leader-card>
         </div>
       </div>
       <div class="nhl-leaders-section">
         <div class="nhl-leaders-section-header">Rookies</div>
         <div class="nhl-leaders-section-body">
-          <cha-ang-leader-card
+          <cha-ang-nhl-leader-card
             [leaders]="rookiePointsLeaders$ | async"
             [type]="'points'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [leaders]="rookieGoalsLeaders$ | async"
             [type]="'goals'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [leaders]="rookieAssistsLeaders$ | async"
             [type]="'assists'"
-          ></cha-ang-leader-card>
+          ></cha-ang-nhl-leader-card>
         </div>
       </div>
       <div class="nhl-leaders-section">
         <div class="nhl-leaders-section-header">Goalies</div>
         <div class="nhl-leaders-section-body">
-          <cha-ang-leader-card
+          <cha-ang-nhl-leader-card
             [goalieLeaders]="gaaLeaders$ | async"
             [type]="'gaa'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [goalieLeaders]="savePctLeaders$ | async"
             [type]="'savePct'"
-          ></cha-ang-leader-card>
-          <cha-ang-leader-card
+          ></cha-ang-nhl-leader-card>
+          <cha-ang-nhl-leader-card
             [goalieLeaders]="shutoutLeaders$ | async"
             [type]="'shutouts'"
-          ></cha-ang-leader-card>
+          ></cha-ang-nhl-leader-card>
         </div>
       </div>
     </ng-container>
