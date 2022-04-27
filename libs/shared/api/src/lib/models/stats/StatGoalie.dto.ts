@@ -1,0 +1,36 @@
+export interface GoalieStatDto {
+  id: number;
+  player_id: number;
+  team_name: string;
+  games_played: number;
+  minutes_played: number;
+  goals_against_avg: string;
+  wins: number;
+  loss: number;
+  ties: number;
+  en_goals: number;
+  shutouts: number;
+  goals_against: number;
+  saves: number;
+  shots_for: number;
+  save_pct: string;
+  goals: number;
+  assists: number;
+  points: number;
+  penalty_minutes: number;
+  pass_complete: number;
+  pass_incomplete: number;
+  pass_attempts: number;
+  pass_pct: string;
+  penalty_minor: number;
+  penalty_minor_coincidental: number;
+  penalty_major: number;
+  penalty_fighting_major: number;
+  penalty_match: number;
+  penalty_misconduct: number;
+  penalty_game_misconduct: number;
+  penalty_gross_misconduct: number;
+  playing_year: string;
+  season_type: string;
+  player_status: string;
+}

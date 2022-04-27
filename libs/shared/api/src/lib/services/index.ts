@@ -6,3 +6,4 @@ export * from './league-data.service';
 export * from './nhl.service';
 export * from './league-stats.service';
 export * from './player-stats.service';
+export * from './goalie-stats.service';
