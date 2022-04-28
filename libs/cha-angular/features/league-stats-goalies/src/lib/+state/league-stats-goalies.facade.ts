@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { StatGoalieLeadersDto } from '@cha/shared/api';
+import { StatGoalieLeaderDto, StatGoalieLeadersDto } from '@cha/shared/api';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { LeagueStatsGoaliesActions } from './league-stats-goalies.actions';
@@ -18,6 +18,26 @@ export class LeagueStatsGoaliesFacade {
 
   allLeaders$: Observable<StatGoalieLeadersDto | null> = this.store.select(
     LeagueStatsGoaliesSelectors.selectAllLeaders
+  );
+
+  winsLeaders$: Observable<StatGoalieLeaderDto[]> = this.store.select(
+    LeagueStatsGoaliesSelectors.selectWinsLeaders
+  );
+
+  gaaLeaders$: Observable<StatGoalieLeaderDto[]> = this.store.select(
+    LeagueStatsGoaliesSelectors.selectGaaLeaders
+  );
+
+  savePctLeaders$: Observable<StatGoalieLeaderDto[]> = this.store.select(
+    LeagueStatsGoaliesSelectors.selectSavePctLeaders
+  );
+
+  shotsFacedLeaders$: Observable<StatGoalieLeaderDto[]> = this.store.select(
+    LeagueStatsGoaliesSelectors.selectShotsFacedLeaders
+  );
+
+  shutoutsLeaders$: Observable<StatGoalieLeaderDto[]> = this.store.select(
+    LeagueStatsGoaliesSelectors.selectShutoutsLeaders
   );
 
   constructor(private store: Store<State>) {}

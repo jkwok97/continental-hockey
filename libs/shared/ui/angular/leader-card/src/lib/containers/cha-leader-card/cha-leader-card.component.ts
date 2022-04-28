@@ -4,7 +4,11 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from '@angular/core';
-import { NhlGoalieDto, StatPlayerLeaderDto } from '@cha/shared/api';
+import {
+  NhlGoalieDto,
+  StatGoalieLeaderDto,
+  StatPlayerLeaderDto,
+} from '@cha/shared/api';
 
 @Component({
   selector: 'cha-ang-cha-leader-card',
@@ -14,7 +18,7 @@ import { NhlGoalieDto, StatPlayerLeaderDto } from '@cha/shared/api';
 })
 export class ChaLeaderCardComponent implements OnInit {
   @Input() leaders!: StatPlayerLeaderDto[] | null;
-  @Input() goalieLeaders!: NhlGoalieDto[] | null;
+  @Input() goalieLeaders!: StatGoalieLeaderDto[] | null;
   @Input() type: any;
 
   selected!: any;
@@ -116,12 +120,16 @@ export class ChaLeaderCardComponent implements OnInit {
           return this.selected.current_points_streak;
         case 'longest streak':
           return this.selected.longest_points_streak;
-        case 'gaa':
-          return this.selected.gaa.toFixed(2);
-        case 'savePct':
-          return this.selected.savePctg;
+        case 'Goals Against Avg':
+          return this.selected.goals_against_avg;
+        case 'Save Pct':
+          return this.selected.save_pct;
         case 'shutouts':
           return this.selected.shutouts;
+        case 'wins':
+          return this.selected.wins;
+        case 'shots faced':
+          return this.selected.shots_for;
         default:
           return '';
       }

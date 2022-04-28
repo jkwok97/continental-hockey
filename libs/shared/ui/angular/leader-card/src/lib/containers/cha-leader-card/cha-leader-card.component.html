@@ -59,17 +59,19 @@
         </div>
       </div>
     </ng-container>
-    <!-- <ng-container *ngFor="let item of goalieLeaders">
-        <div
-          class="leader-card-chart-item"
-          (mouseover)="onMouseOver(item)"
-          (mouseout)="onMouseOut()"
-        >
-          <div>{{ item.player.fullName }}</div>
-          <div *ngIf="item.gaa">{{ item.gaa.toFixed(2) }}</div>
-          <div *ngIf="item.savePctg">{{ item.savePctg }}</div>
-          <div *ngIf="item.shutouts">{{ item.shutouts }}</div>
-        </div>
-      </ng-container> -->
+    <ng-container *ngFor="let item of goalieLeaders">
+      <div
+        class="leader-card-chart-item"
+        (mouseover)="onMouseOver(item)"
+        (mouseout)="onMouseOut()"
+      >
+        <div>{{ item.firstname }} {{ item.lastname }}</div>
+        <div *ngIf="item.goals_against_avg">{{ item.goals_against_avg }}</div>
+        <div *ngIf="item.save_pct">{{ item.save_pct }}</div>
+        <div *ngIf="item.shutouts">{{ item.shutouts }}</div>
+        <div *ngIf="item.wins">{{ item.wins }}</div>
+        <div *ngIf="item.shots_for">{{ item.shots_for }}</div>
+      </div>
+    </ng-container>
   </div>
 </div>

@@ -1,1 +1,39 @@
-<p>league-stats-goalies works!</p>
+<cha-ang-layout-feature-content>
+  <div class="league-stats-goalies">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+      *ngIf="isLoading$ | async"
+    ></p-progressBar>
+
+    <ng-container *ngIf="isLoaded$ | async">
+      <div class="league-stats-goalies-section">
+        <div class="league-stats-goalies-section-body">
+          <cha-ang-cha-leader-card
+            [goalieLeaders]="winsLeaders$ | async"
+            [type]="'wins'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [goalieLeaders]="gaaLeaders$ | async"
+            [type]="'Goals Against Avg'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [goalieLeaders]="savePctLeaders$ | async"
+            [type]="'Save Pct'"
+          ></cha-ang-cha-leader-card>
+        </div>
+
+        <div class="league-stats-goalies-section-body">
+          <cha-ang-cha-leader-card
+            [goalieLeaders]="shotsFacedLeaders$ | async"
+            [type]="'shots faced'"
+          ></cha-ang-cha-leader-card>
+          <cha-ang-cha-leader-card
+            [goalieLeaders]="shutoutLeaders$ | async"
+            [type]="'shutouts'"
+          ></cha-ang-cha-leader-card>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</cha-ang-layout-feature-content>

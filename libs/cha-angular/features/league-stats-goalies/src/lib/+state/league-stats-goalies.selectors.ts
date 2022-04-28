@@ -1,3 +1,4 @@
+import { StatGoalieLeadersDto } from '@cha/shared/api';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import * as LeagueStatsGoalieReducer from './league-stats-goalies.reducer';
@@ -20,8 +21,38 @@ const selectAllLeaders = createSelector(
   LeagueStatsGoalieReducer.getLeaders
 );
 
+const selectShotsFacedLeaders = createSelector(
+  selectAllLeaders,
+  (leaders: StatGoalieLeadersDto | null) => (leaders ? leaders.shotsFaced : [])
+);
+
+const selectSavePctLeaders = createSelector(
+  selectAllLeaders,
+  (leaders: StatGoalieLeadersDto | null) => (leaders ? leaders.savePct : [])
+);
+
+const selectShutoutsLeaders = createSelector(
+  selectAllLeaders,
+  (leaders: StatGoalieLeadersDto | null) => (leaders ? leaders.shutouts : [])
+);
+
+const selectGaaLeaders = createSelector(
+  selectAllLeaders,
+  (leaders: StatGoalieLeadersDto | null) => (leaders ? leaders.gaa : [])
+);
+
+const selectWinsLeaders = createSelector(
+  selectAllLeaders,
+  (leaders: StatGoalieLeadersDto | null) => (leaders ? leaders.wins : [])
+);
+
 export const LeagueStatsGoaliesSelectors = {
   selectLoaded,
   selectLoading,
   selectAllLeaders,
+  selectShotsFacedLeaders,
+  selectSavePctLeaders,
+  selectShutoutsLeaders,
+  selectGaaLeaders,
+  selectWinsLeaders,
 };
