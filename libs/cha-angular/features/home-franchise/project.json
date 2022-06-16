@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/cha-angular/features/home-franchise",
   "sourceRoot": "libs/cha-angular/features/home-franchise/src",
   "prefix": "cha-ang",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/cha-angular/features/home-franchise"],
       "options": {
-        "jestConfig": "libs/cha-angular/features/home-franchise/jest.config.js",
+        "jestConfig": "libs/cha-angular/features/home-franchise/jest.config.ts",
         "passWithNoTests": true
       }
     },

@@ -16,7 +16,8 @@
     "**/*.spec.js",
     "**/*.test.js",
     "**/*.spec.jsx",
-    "**/*.test.jsx"
+    "**/*.test.jsx",
+    "jest.config.ts"
   ],
   "include": [
     "**/*.js",
@@ -24,6 +25,7 @@
     "**/*.ts",
     "**/*.tsx",
     "./models/logo/shared-ui-logos.enum.ts",
-    "./models/logo/index.ts"
-, "../../../api/src/lib/models/logo/shared-ui-logos.enum.ts"  ]
+    "./models/logo/index.ts",
+    "../../../api/src/lib/models/logo/shared-ui-logos.enum.ts"
+  ]
 }

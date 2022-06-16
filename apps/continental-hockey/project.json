@@ -1,5 +1,5 @@
 {
-  "root": "apps/continental-hockey",
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "sourceRoot": "apps/continental-hockey",
   "projectType": "application",
   "targets": {
@@ -19,7 +19,8 @@
         ]
       },
       "configurations": {
-        "production": {}
+        "production": {},
+        "development": {}
       }
     },
     "serve": {
@@ -32,8 +33,13 @@
         "production": {
           "buildTarget": "continental-hockey:build:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "continental-hockey:build:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -45,7 +51,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/continental-hockey"],
       "options": {
-        "jestConfig": "apps/continental-hockey/jest.config.js",
+        "jestConfig": "apps/continental-hockey/jest.config.ts",
         "passWithNoTests": true
       }
     },

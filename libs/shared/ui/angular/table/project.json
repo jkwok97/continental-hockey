@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/shared/ui/angular/table",
   "sourceRoot": "libs/shared/ui/angular/table/src",
   "prefix": "cha-ang",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared/ui/angular/table"],
       "options": {
-        "jestConfig": "libs/shared/ui/angular/table/jest.config.js",
+        "jestConfig": "libs/shared/ui/angular/table/jest.config.ts",
         "passWithNoTests": true
       }
     },

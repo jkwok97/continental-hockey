@@ -1,5 +1,5 @@
 {
-  "root": "libs/shared/ui/react/button",
+  "$schema": "..\\..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "sourceRoot": "libs/shared/ui/react/button/src",
   "projectType": "library",
   "tags": ["react:ui"],
@@ -15,7 +15,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared/ui/react/button"],
       "options": {
-        "jestConfig": "libs/shared/ui/react/button/jest.config.js",
+        "jestConfig": "libs/shared/ui/react/button/jest.config.ts",
         "passWithNoTests": true
       }
     }

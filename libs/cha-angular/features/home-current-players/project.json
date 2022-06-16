@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/cha-angular/features/home-current-players",
   "sourceRoot": "libs/cha-angular/features/home-current-players/src",
   "prefix": "cha-ang",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/cha-angular/features/home-current-players"],
       "options": {
-        "jestConfig": "libs/cha-angular/features/home-current-players/jest.config.js",
+        "jestConfig": "libs/cha-angular/features/home-current-players/jest.config.ts",
         "passWithNoTests": true
       }
     },

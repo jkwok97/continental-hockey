@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/cha-angular/features/awards-season",
   "sourceRoot": "libs/cha-angular/features/awards-season/src",
   "prefix": "cha-ang",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/cha-angular/features/awards-season"],
       "options": {
-        "jestConfig": "libs/cha-angular/features/awards-season/jest.config.js",
+        "jestConfig": "libs/cha-angular/features/awards-season/jest.config.ts",
         "passWithNoTests": true
       }
     },

@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/shared/ui/angular/button",
   "sourceRoot": "libs/shared/ui/angular/button/src",
   "prefix": "cha-ang",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared/ui/angular/button"],
       "options": {
-        "jestConfig": "libs/shared/ui/angular/button/jest.config.js",
+        "jestConfig": "libs/shared/ui/angular/button/jest.config.ts",
         "passWithNoTests": true
       }
     },

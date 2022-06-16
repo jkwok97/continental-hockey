@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/cha-angular/features/league-stats-goalies-detailed",
   "sourceRoot": "libs/cha-angular/features/league-stats-goalies-detailed/src",
   "prefix": "cha-ang",
   "targets": {
@@ -10,7 +10,7 @@
         "coverage/libs/cha-angular/features/league-stats-goalies-detailed"
       ],
       "options": {
-        "jestConfig": "libs/cha-angular/features/league-stats-goalies-detailed/jest.config.js",
+        "jestConfig": "libs/cha-angular/features/league-stats-goalies-detailed/jest.config.ts",
         "passWithNoTests": true
       }
     },

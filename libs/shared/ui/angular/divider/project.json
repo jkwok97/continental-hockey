@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/shared/ui/angular/divider",
   "sourceRoot": "libs/shared/ui/angular/divider/src",
   "prefix": "cha-ang",
   "targets": {
@@ -8,7 +8,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/shared/ui/angular/divider"],
       "options": {
-        "jestConfig": "libs/shared/ui/angular/divider/jest.config.js",
+        "jestConfig": "libs/shared/ui/angular/divider/jest.config.ts",
         "passWithNoTests": true
       }
     },

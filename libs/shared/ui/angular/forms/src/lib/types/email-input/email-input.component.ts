@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { FieldType } from '@ngx-formly/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { FieldType } from '@ngx-formly/core';
   styleUrls: ['./email-input.component.scss'],
 })
 export class EmailInputComponent extends FieldType {
-  override formControl!: FormControl;
+  override formControl!: UntypedFormControl;
 
   override defaultOptions = {
     templateOptions: {

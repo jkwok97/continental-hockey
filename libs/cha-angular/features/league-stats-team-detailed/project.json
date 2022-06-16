@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "library",
-  "root": "libs/cha-angular/features/league-stats-team-detailed",
   "sourceRoot": "libs/cha-angular/features/league-stats-team-detailed/src",
   "prefix": "cha-ang",
   "targets": {
@@ -10,7 +10,7 @@
         "coverage/libs/cha-angular/features/league-stats-team-detailed"
       ],
       "options": {
-        "jestConfig": "libs/cha-angular/features/league-stats-team-detailed/jest.config.js",
+        "jestConfig": "libs/cha-angular/features/league-stats-team-detailed/jest.config.ts",
         "passWithNoTests": true
       }
     },

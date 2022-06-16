@@ -7,7 +7,7 @@ import {
   AfterViewInit,
   OnInit,
 } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { distinctUntilChanged } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
@@ -23,7 +23,7 @@ export class SelectButtonComponent implements OnInit, AfterViewInit {
 
   @Output() optionChanged = new EventEmitter<string>();
 
-  optionSelected = new FormControl();
+  optionSelected = new UntypedFormControl();
 
   onOptionClick(option: any) {
     this.optionSelected.setValue(option.option.value);

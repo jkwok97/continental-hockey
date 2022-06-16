@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { EmailValidatorMessage } from '@cha/shared/ui/angular/forms';
 import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
@@ -10,7 +10,7 @@ import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
-  form = new FormGroup({});
+  form = new UntypedFormGroup({});
   model: any = {};
   options: FormlyFormOptions = {};
   fields: FormlyFieldConfig[] = [

@@ -1,6 +1,6 @@
 {
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
   "projectType": "application",
-  "root": "apps/continental-hockey-angular",
   "sourceRoot": "apps/continental-hockey-angular/src",
   "prefix": "cha-ang",
   "targets": {
@@ -95,7 +95,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/continental-hockey-angular"],
       "options": {
-        "jestConfig": "apps/continental-hockey-angular/jest.config.js",
+        "jestConfig": "apps/continental-hockey-angular/jest.config.ts",
         "passWithNoTests": true
       }
     }

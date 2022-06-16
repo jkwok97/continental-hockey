@@ -3,9 +3,6 @@
   "affected": {
     "defaultBase": "master"
   },
-  "cli": {
-    "defaultCollection": "@nrwl/next"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
@@ -17,23 +14,10 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "NDg0ZTRhNDYtNWRlYy00ODk2LTk2YmEtNGIzYTJiMmM5YWQ1fHJlYWQtd3JpdGU="
       }
     }
-  },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
   },
   "generators": {
     "@nrwl/react": {
@@ -61,5 +45,11 @@
       "style": "scss"
     }
   },
-  "defaultProject": "continental-hockey"
+  "defaultProject": "continental-hockey",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  }
 }
