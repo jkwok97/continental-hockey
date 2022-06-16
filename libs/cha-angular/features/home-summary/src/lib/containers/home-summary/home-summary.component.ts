@@ -6,11 +6,5 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./home-summary.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeSummaryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class HomeSummaryComponent {
 }

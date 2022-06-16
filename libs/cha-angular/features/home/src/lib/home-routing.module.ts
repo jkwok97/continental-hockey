@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { HomeComponent } from './containers';

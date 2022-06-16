@@ -1,3 +1,4 @@
+/* eslint-disable @nrwl/nx/enforce-module-boundaries */
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { MainComponent } from './containers';
@@ -11,6 +12,7 @@ const ROUTES: Route[] = [
       {
         path: '',
         pathMatch: 'full',
+        component: MainComponent,
         resolve: [MainResolver],
       },
       {

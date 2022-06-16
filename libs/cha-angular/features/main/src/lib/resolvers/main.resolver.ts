@@ -7,15 +7,8 @@ import {
 } from '@angular/router';
 import { UserDto } from '@cha/shared/api';
 import { AuthFacade } from '@cha/shared/auth/angular/auth-angular';
-import { iif, Observable, of } from 'rxjs';
-import {
-  filter,
-  finalize,
-  first,
-  mergeMap,
-  tap,
-  withLatestFrom,
-} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { finalize, first, tap } from 'rxjs/operators';
 
 @Injectable()
 export class MainResolver implements Resolve<boolean> {

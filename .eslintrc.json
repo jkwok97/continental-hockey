@@ -36,6 +36,16 @@
                 ]
               },
               {
+                "sourceTag": "angular:feature",
+                "onlyDependOnLibsWithTags": [
+                  "shared-api",
+                  "angular:ui",
+                  "angular:auth",
+                  "angular:routing",
+                  "angular:domain"
+                ]
+              },
+              {
                 "sourceTag": "angular:auth",
                 "onlyDependOnLibsWithTags": ["shared-api", "angular:domain"]
               },
